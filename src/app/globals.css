@@ -3,11 +3,15 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  /* Alias cho chỗ không dùng utility Tailwind (vd. CSS thuần) */
+  --primary: #7b241c;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  /* Giá trị literal để Tailwind emit đúng token trong @layer theme :root,:host */
+  --color-primary: #7b241c;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -23,4 +27,8 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.custom-container {
+  @apply mx-auto max-w-[1200px];
 }
