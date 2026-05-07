@@ -12,8 +12,21 @@
   --color-foreground: var(--foreground);
   /* Giá trị literal để Tailwind emit đúng token trong @layer theme :root,:host */
   --color-primary: #7b241c;
+  --color-footer-gold: #d4af37;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+
+  /* Figma — Mobile body / Body 2: 13px, lh 16px, weight 500 (thêm ở @layer components) */
+  --text-mobile-body-2: 0.8125rem;
+  --text-mobile-body-2--line-height: 1rem;
+
+  /* Body 3: 14px, lh 20px — weight dùng font-medium / font-normal trong JSX */
+  --text-body-3: 0.875rem;
+  --text-body-3--line-height: 1.25rem;
+
+  /* Figma — Colors / Neutral / Black */
+  --color-neutral-black: #263238;
 }
 
 @media (prefers-color-scheme: dark) {

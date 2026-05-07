@@ -25,7 +25,7 @@ const HeaderCtaLink = ({
   onNavigate?: () => void;
 }) => (
   <Link href={CTA_HREF} className={className} onClick={onNavigate}>
-    <span className="uppercase">{CTA_LABEL}</span>
+    <span className="uppercase text-mobile-body-2">{CTA_LABEL}</span>
   </Link>
 );
 
@@ -91,10 +91,10 @@ export const SiteHeader = () => {
   return (
     <>
       <header ref={headerRef} className="relative z-50 bg-primary">
-        <div className="flex shrink-0 items-center gap-3 border-b border-white/10 px-4 py-3 sm:px-6 custom-container">
+        <div className="flex h-16 shrink-0 items-center gap-3 border-b border-white/10 px-4 py-3 md:h-[82px] md:px-0 md:py-4 custom-container">
           <Link
             href="/"
-            className="relative block h-9 w-[120px] shrink-0 md:h-11 md:w-[150px]"
+            className="relative block h-10 w-[45px] shrink-0 md:h-[50px] md:w-[56px]"
             onClick={closeMobile}
           >
             <Image
@@ -103,7 +103,7 @@ export const SiteHeader = () => {
               fill
               className="object-contain object-left"
               priority
-              sizes="150px"
+              sizes="(max-width: 767px) 45px, 56px"
             />
           </Link>
 
@@ -129,7 +129,7 @@ export const SiteHeader = () => {
           <div className="ml-auto flex shrink-0 items-center gap-2 md:hidden">
             <HeaderCtaLink
               onNavigate={closeMobile}
-              className="rounded-lg bg-white px-3 py-2 text-[9px] font-semibold leading-tight tracking-tight text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:px-3.5 sm:text-[10px]"
+              className="flex h-8 w-[177px] shrink-0 items-center justify-center rounded-lg bg-white text-center text-[9px] font-semibold leading-tight tracking-tight text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:text-[10px]"
             />
             <button
               type="button"
