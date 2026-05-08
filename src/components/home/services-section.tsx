@@ -46,7 +46,7 @@ const ServiceCardInner = ({
       <div className="mb-4 w-fit rounded-lg bg-rose-100 p-2.5">
         <Icon className={iconClass} aria-hidden />
       </div>
-      <h3 className="font-serif text-base font-semibold text-[#2D3436] sm:text-lg">
+      <h3 className=" text-base font-semibold text-[#2D3436] sm:text-lg">
         {title}
       </h3>
       <div className="mt-3 h-1 w-10 rounded-full bg-primary" aria-hidden />
@@ -86,7 +86,7 @@ export const ServicesSection = () => (
       <header className="mx-auto max-w-2xl text-center">
         <h2
           id="services-heading"
-          className="font-serif text-2xl font-semibold tracking-tight text-[#2D3436] sm:text-3xl"
+          className=" text-2xl font-semibold tracking-tight text-[#2D3436] sm:text-3xl"
         >
           Dịch vụ của <span className="text-primary">chúng tôi</span>
         </h2>
