@@ -11,3 +11,7 @@ export const GIOI_THIEU_MISSION_IMAGE_SRC =
 
 export const GIOI_THIEU_TEAM_CARD_IMAGE_SRC =
   "/images/gioi-thieu/quote-background.jpg";
+
+export const GIOI_THIEU_CTA_ILLUSTRATION_SRC =
+  "/images/judge%20gavel%20with%20law%20books%20and%20scales.svg";
+

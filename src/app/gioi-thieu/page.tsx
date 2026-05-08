@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { GioiThieuHero } from "@/components/gioi-thieu/gioi-thieu-hero";
 import { GioiThieuSections } from "@/components/gioi-thieu/gioi-thieu-sections";
 import { siteName } from "@/lib/site-seo";
+import { ServicesSection } from "@/components/home/services-section";
+import { GioiThieuCtaSection } from "@/components/gioi-thieu/gioi-thieu-cta-section";
 
 const pageTitle = "Giới thiệu";
 
@@ -25,6 +27,8 @@ export default function GioiThieuPage() {
     <>
       <GioiThieuHero />
       <GioiThieuSections />
+      <ServicesSection />
+      <GioiThieuCtaSection />
     </>
   );
 }

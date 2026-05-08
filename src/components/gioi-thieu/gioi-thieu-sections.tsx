@@ -6,12 +6,12 @@ import {
   GIOI_THIEU_QUOTE_IMAGE_SRC,
 } from "./gioi-thieu-urls";
 import { GioiThieuTeamSection } from "./gioi-thieu-team-section";
+import { GioiThieuCtaSection } from "./gioi-thieu-cta-section";
 
 const sectionShell = "bg-[#F5F6F7]";
 const proseTitle =
   "font-serif text-mobile-heading-3 font-bold text-[#2D3436] sm:text-heading-3";
-const proseBody =
-  "mt-4 text-mobile-body-1 text-[#555555] sm:text-body-2";
+const proseBody = "mt-4 text-mobile-body-1 text-[#555555] sm:text-body-2";
 
 const roundedMedia = "overflow-hidden rounded-[14px] sm:rounded-2xl";
 
@@ -29,7 +29,9 @@ const ImageTextRow = ({
   <section className={`${sectionShell} py-12 sm:py-14 lg:py-20`}>
     <div className="custom-container px-4 sm:px-6">
       <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-12 xl:gap-16">
-        <div className={`relative aspect-[4/3] w-full max-lg:mx-auto max-lg:max-w-2xl ${roundedMedia}`}>
+        <div
+          className={`relative aspect-[4/3] w-full max-lg:mx-auto max-lg:max-w-2xl ${roundedMedia}`}
+        >
           <Image
             src={imageSrc}
             alt={imageAlt}
@@ -66,7 +68,8 @@ const QuoteOverlapSection = () => (
       <div className="mx-auto w-full max-w-xl max-lg:-mt-12 max-lg:px-0.5 sm:max-lg:-mt-14 lg:mx-0 lg:max-w-[min(100%,30rem)] lg:py-14 xl:max-w-xl">
         <figure className="rounded-[14px] bg-white p-6 shadow-[0_12px_40px_rgba(0,0,0,0.12)] sm:rounded-2xl sm:p-8 lg:p-10">
           <blockquote className="font-serif text-mobile-heading-3 font-bold text-[#2D3436] sm:text-[26px] lg:text-heading-3">
-            “Thành Sen luôn giữ chữ tín hàng đầu, bảo vệ chữ tín như bảo vệ chính mình”
+            “Thành Sen luôn giữ chữ tín hàng đầu, bảo vệ chữ tín như bảo vệ
+            chính mình”
           </blockquote>
           <figcaption className="mt-5 text-mobile-body-2 text-[#666666] sm:text-body-3">
             Luật sư Lê Minh Hải – Chủ tịch HĐQT - TGĐ Thành Sen Group
