@@ -6,7 +6,7 @@ import {
   GIOI_THIEU_QUOTE_IMAGE_SRC,
 } from "./gioi-thieu-urls";
 
-const sectionShell = "bg-[#F5F6F7]";
+const sectionShell = "bg-white";
 const proseTitle =
   "font-serif text-mobile-heading-3 font-bold text-[#2D3436] sm:text-heading-3";
 const proseBody = "mt-4 text-mobile-body-1 text-[#555555] sm:text-body-2";
@@ -49,11 +49,11 @@ const ImageTextRow = ({
 
 const QuoteOverlapSection = () => (
   <section
-    className={`relative overflow-hidden ${sectionShell} py-10 sm:py-12 lg:min-h-[min(90vh,560px)] lg:py-0 bg-white`}
+    className={`relative overflow-hidden py-10 sm:py-12 lg:h-[528px] lg:min-h-0 lg:py-0 bg-surface-muted`}
   >
-    <div className="custom-container relative z-0 px-4 sm:px-6 lg:min-h-[min(90vh,560px)]">
+    <div className="custom-container relative z-0 px-4 sm:px-6 lg:h-full lg:min-h-0">
       <div
-        className={`relative z-0 mx-auto aspect-16/11 w-full max-w-2xl overflow-hidden sm:mx-6 max-lg:-mb-2 ${roundedMedia} lg:absolute lg:right-0 lg:top-1/2 lg:mx-0 lg:mb-0 lg:h-[528px] lg:w-[806px] lg:max-w-none lg:-translate-y-1/2 lg:rounded-none lg:rounded-l-2xl`}
+        className={`relative z-0 mx-auto aspect-16/11 w-full max-w-2xl overflow-hidden sm:mx-6 max-lg:-mb-2 ${roundedMedia} lg:absolute lg:right-0 lg:top-0 lg:mx-0 lg:mb-0 lg:h-[528px] lg:w-[806px] lg:max-w-none lg:rounded-none lg:rounded-l-2xl`}
       >
         <Image
           src={GIOI_THIEU_QUOTE_IMAGE_SRC}
@@ -63,7 +63,7 @@ const QuoteOverlapSection = () => (
           sizes="(max-width: 1023px) 100vw, 806px"
         />
       </div>
-      <div className="relative z-10 flex min-h-0 lg:min-h-[min(90vh,560px)] lg:items-center lg:py-14">
+      <div className="relative z-10 flex min-h-0 lg:h-full lg:items-center lg:overflow-hidden lg:py-0">
         <div className="mx-auto w-full max-w-xl max-lg:-mt-12 max-lg:px-0.5 sm:max-lg:-mt-14 lg:mx-0 lg:max-w-[min(100%,30rem)] xl:max-w-xl">
           <figure className="rounded-[14px] bg-white p-6 shadow-[0_12px_40px_rgba(0,0,0,0.12)] sm:rounded-2xl sm:p-8 lg:p-10">
             <blockquote className="font-serif text-mobile-heading-3 font-bold text-[#2D3436] sm:text-[26px] lg:text-heading-3">
