@@ -37,10 +37,7 @@ const ServiceCardInner = ({ item }: { item: ServiceItem }) => {
       <h3 className="font-serif text-base font-semibold text-[#2D3436] sm:text-lg">
         {item.title}
       </h3>
-      <div
-        className="mt-3 h-1 w-10 rounded-full bg-primary"
-        aria-hidden
-      />
+      <div className="mt-3 h-1 w-10 rounded-full bg-primary" aria-hidden />
     </>
   );
 };
@@ -64,10 +61,7 @@ const ServiceCard = ({ item }: { item: ServiceItem }) => {
 };
 
 export const ServicesSection = () => (
-  <section
-    aria-labelledby="services-heading"
-    className="bg-[#F8F9FA]"
-  >
+  <section aria-labelledby="services-heading" className="bg-[#F8F9FA]">
     <div className="custom-container px-4 py-12 sm:px-6 lg:py-16">
       <header className="mx-auto max-w-2xl text-center">
         <h2
@@ -76,7 +70,7 @@ export const ServicesSection = () => (
         >
           Dịch vụ của <span className="text-primary">chúng tôi</span>
         </h2>
-        <p className="mt-4 text-sm leading-relaxed text-neutral-600 sm:text-base">
+        <p className="mt-4 text-sm text-neutral-600 sm:text-base">
           {SERVICES_SUBTITLE}
         </p>
       </header>

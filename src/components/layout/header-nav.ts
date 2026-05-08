@@ -5,7 +5,7 @@ export const NAV_LINKS: NavLink[] = [
   { label: "Tư vấn pháp luật", href: "#" },
   { label: "Thẩm định giá", href: "#" },
   { label: "Thừa phát lại", href: "#" },
-  { label: "Tin tức", href: "#" },
+  { label: "Liên hệ", href: "/lien-he" },
 ];
 
 export const CTA_HREF = "/lien-he";

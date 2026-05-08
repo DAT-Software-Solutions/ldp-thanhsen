@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 
+import { BranchesMapSection } from "@/components/lien-he/branches-map-section";
+import { ContactHero } from "@/components/lien-he/contact-hero";
+import { ContactInfoForm } from "@/components/lien-he/contact-info-form";
 import { siteName } from "@/lib/site-seo";
 
 const pageTitle = "Liên hệ";
@@ -19,5 +22,11 @@ export const metadata: Metadata = {
 };
 
 export default function LienHePage() {
-  return <main className="flex-1" />;
+  return (
+    <>
+      <ContactHero />
+      <ContactInfoForm />
+      <BranchesMapSection />
+    </>
+  );
 }

@@ -123,13 +123,13 @@ export const SiteHeader = () => {
               ))}
             </nav>
 
-            <HeaderCtaLink className="rounded-lg bg-white px-4 py-2 text-center text-[10px] font-semibold leading-tight tracking-tight text-primary transition-opacity hover:opacity-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:text-xs" />
+            <HeaderCtaLink className="rounded-lg bg-white px-4 py-2 text-center text-[10px] font-semibold tracking-tight text-primary transition-opacity hover:opacity-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:text-xs" />
           </div>
 
           <div className="ml-auto flex shrink-0 items-center gap-2 md:hidden">
             <HeaderCtaLink
               onNavigate={closeMobile}
-              className="flex h-8 w-[177px] shrink-0 items-center justify-center rounded-lg bg-white text-center text-[9px] font-semibold leading-tight tracking-tight text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:text-[10px]"
+              className="flex h-8 w-[177px] shrink-0 items-center justify-center rounded-lg bg-white text-center text-[9px] font-semibold tracking-tight text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:text-[10px]"
             />
             <button
               type="button"

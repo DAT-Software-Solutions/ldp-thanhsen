@@ -22,12 +22,12 @@ export const HeroThanhSen = () => (
         <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
           <h1
             id="hero-heading"
-            className="font-serif text-3xl font-bold uppercase leading-tight tracking-tight sm:text-4xl lg:text-5xl"
+            className="font-serif text-3xl font-bold uppercase tracking-tight sm:text-4xl lg:text-5xl"
           >
             <span className="text-[#2D3436]">Thành Sen </span>
             <span className="text-primary">Group</span>
           </h1>
-          <p className="mt-5 max-w-xl text-sm leading-relaxed text-neutral-700 sm:text-base">
+          <p className="mt-5 max-w-xl text-sm text-neutral-700 sm:text-base">
             Là đơn vị tiên phong trong lĩnh vực pháp lý tại Việt Nam, Thành Sen
             Group cam kết mang đến giải pháp toàn diện, bảo vệ tối đa quyền lợi
             của khách hàng bằng sự tận tâm và chuyên nghiệp.

@@ -122,7 +122,7 @@ const BranchesBlock = () => (
 
 const CopyrightAndSocial = () => (
   <div className="flex flex-col gap-4">
-    <p className="text-xs leading-relaxed text-white/90 sm:text-sm">
+    <p className="text-xs text-white/90 sm:text-sm">
       Copyright © 2020 Thanh Sen Group. All rights reserved
     </p>
     <ul className="flex flex-wrap gap-3">

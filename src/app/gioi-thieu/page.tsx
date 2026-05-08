@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 
+import { GioiThieuHero } from "@/components/gioi-thieu/gioi-thieu-hero";
+import { GioiThieuSections } from "@/components/gioi-thieu/gioi-thieu-sections";
 import { siteName } from "@/lib/site-seo";
 
 const pageTitle = "Giới thiệu";
@@ -19,5 +21,10 @@ export const metadata: Metadata = {
 };
 
 export default function GioiThieuPage() {
-  return <main className="flex-1" />;
+  return (
+    <>
+      <GioiThieuHero />
+      <GioiThieuSections />
+    </>
+  );
 }
