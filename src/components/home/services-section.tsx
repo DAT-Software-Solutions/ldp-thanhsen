@@ -81,7 +81,7 @@ const ServiceCard = ({
 };
 
 export const ServicesSection = () => (
-  <section aria-labelledby="services-heading" className="bg-[#F8F9FA]">
+  <section aria-labelledby="services-heading" className="bg-white">
     <div className="custom-container px-4 py-12 sm:px-6 lg:py-16">
       <header className="mx-auto max-w-2xl text-center">
         <h2
@@ -91,7 +91,8 @@ export const ServicesSection = () => (
           Dịch vụ của <span className="text-primary">chúng tôi</span>
         </h2>
         <p className="mt-4 text-sm text-neutral-600 sm:text-base">
-          Thành Sen Group luôn sẵn sàng đem lại các dịch vụ pháp lý chất lượng cao tới quý khách hàng
+          Thành Sen Group luôn sẵn sàng đem lại các dịch vụ pháp lý chất lượng
+          cao tới quý khách hàng
         </p>
       </header>
 
@@ -103,7 +104,11 @@ export const ServicesSection = () => (
           iconKey="arbitration"
           title="Trọng tài thương mại"
         />
-        <ServiceCard href={HASH_LINK} iconKey="valuation" title="Thẩm định giá" />
+        <ServiceCard
+          href={HASH_LINK}
+          iconKey="valuation"
+          title="Thẩm định giá"
+        />
         <ServiceCard href={HASH_LINK} iconKey="auction" title="Đấu giá" />
       </div>
     </div>

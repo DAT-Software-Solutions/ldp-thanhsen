@@ -6,6 +6,8 @@ import { HomePressSection } from "@/components/home/home-press-section";
 import { HomeWhyChooseSection } from "@/components/home/home-why-choose-section";
 import { ServicesSection } from "@/components/home/services-section";
 import { defaultDescription, siteName } from "@/lib/site-seo";
+import { GioiThieuNewsSection } from "@/components/gioi-thieu/gioi-thieu-news-section";
+import { BranchesMapSection } from "@/components/lien-he/branches-map-section";
 
 const homeTitle = `${siteName} — Tư vấn pháp lý toàn diện tại Việt Nam`;
 
@@ -28,6 +30,8 @@ export default function Home() {
       <HomeAboutIntroSection />
       <HomeWhyChooseSection />
       <HomePressSection />
+      <GioiThieuNewsSection />
+      <BranchesMapSection />
     </>
   );
 }
