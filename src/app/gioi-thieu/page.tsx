@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 
 import { GioiThieuHero } from "@/components/gioi-thieu/gioi-thieu-hero";
+import { GioiThieuNewsSection } from "@/components/gioi-thieu/gioi-thieu-news-section";
 import { GioiThieuSections } from "@/components/gioi-thieu/gioi-thieu-sections";
 import { siteName } from "@/lib/site-seo";
 import { ServicesSection } from "@/components/home/services-section";
 import { GioiThieuCtaSection } from "@/components/gioi-thieu/gioi-thieu-cta-section";
+import { GioiThieuTeamSection } from "@/components/gioi-thieu/gioi-thieu-team-section";
 
 const pageTitle = "Giới thiệu";
 
@@ -27,8 +29,10 @@ export default function GioiThieuPage() {
     <>
       <GioiThieuHero />
       <GioiThieuSections />
+      <GioiThieuTeamSection />
       <ServicesSection />
       <GioiThieuCtaSection />
+      <GioiThieuNewsSection />
     </>
   );
 }

@@ -95,6 +95,5 @@ export const GioiThieuSections = () => (
       title="Hướng đến xây dựng một địa chỉ pháp lý đảm bảo sự chuyên nghiệp – minh bạch – tận tâm."
       body="Thẩm định giá Thành Sen được thành lập nhằm đáp ứng nhu cầu của các cơ quan, đối tác trên địa bàn tỉnh Hà Tĩnh, góp phần minh bạch thị trường và định giá tài sản đúng giá trị."
     />
-    <GioiThieuTeamSection />
   </>
 );
