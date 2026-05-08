@@ -12,7 +12,7 @@ export type ServiceItem = {
 };
 
 export const SERVICES: ServiceItem[] = [
-  { title: "Luật Sư", href: "/trang-chủ/luat-su", iconKey: "lawyer" },
+  { title: "Dịch vụ", href: "/dich-vu", iconKey: "lawyer" },
   { title: "Thừa phát lại", href: "#", iconKey: "bailiff" },
   { title: "Trọng tài thương mại", href: "#", iconKey: "arbitration" },
   { title: "Thẩm định giá", href: "#", iconKey: "valuation" },

@@ -1,11 +1,11 @@
 import type { NavLink } from "./header-nav";
 
-/** Menu “Khám phá” — thứ tự theo design. Href giữ `/trang-chủ/...` (rewrite → trang-chu). */
+/** Menu “Khám phá” — thứ tự theo design. */
 export const FOOTER_EXPLORE_LINKS: NavLink[] = [
-  { label: "Giới thiệu", href: "/trang-chủ/gioi-thieu" },
+  { label: "Giới thiệu", href: "/gioi-thieu" },
   { label: "Tin tức", href: "#" },
-  { label: "Liên hệ", href: "/trang-chủ/lien-he" },
-  { label: "Luật sư", href: "/trang-chủ/luat-su" },
+  { label: "Liên hệ", href: "/lien-he" },
+  { label: "Dịch vụ", href: "/dich-vu" },
   { label: "Thẩm định giá", href: "#" },
   { label: "Thừa phát lại", href: "#" },
 ];

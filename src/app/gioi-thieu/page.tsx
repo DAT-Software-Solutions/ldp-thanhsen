@@ -10,11 +10,11 @@ const pageDescription =
 export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
-  alternates: { canonical: "/trang-chu/gioi-thieu" },
+  alternates: { canonical: "/gioi-thieu" },
   openGraph: {
     title: `${pageTitle} | ${siteName}`,
     description: pageDescription,
-    url: "/trang-chu/gioi-thieu",
+    url: "/gioi-thieu",
   },
 };
 

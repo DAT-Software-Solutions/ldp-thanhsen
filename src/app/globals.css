@@ -17,13 +17,47 @@
   --font-mono: var(--font-geist-mono);
   --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 
-  /* Figma — Mobile body / Body 2: 13px, lh 16px, weight 500 (thêm ở @layer components) */
-  --text-mobile-body-2: 0.8125rem;
-  --text-mobile-body-2--line-height: 1rem;
+  /* Figma — Regular / Medium → font-body-regular (400), font-body-medium (500) */
+  --font-weight-body-regular: 400;
+  --font-weight-body-medium: 500;
 
-  /* Body 3: 14px, lh 20px — weight dùng font-medium / font-normal trong JSX */
-  --text-body-3: 0.875rem;
-  --text-body-3--line-height: 1.25rem;
+  /* Figma typography → utilities text-mobile-* / text-heading-* / text-body-* */
+  --text-mobile-heading-1: 32px;
+  --text-mobile-heading-1--line-height: 38px;
+  --text-mobile-heading-2: 28px;
+  --text-mobile-heading-2--line-height: 36px;
+  --text-mobile-heading-3: 24px;
+  --text-mobile-heading-3--line-height: 32px;
+  --text-mobile-heading-4: 16px;
+  --text-mobile-heading-4--line-height: 20px;
+
+  /* Mobile body = Regular (weight: font-body-regular / font-body-medium hoặc font-normal / font-medium) */
+  --text-mobile-body-1: 15px;
+  --text-mobile-body-1--line-height: 20px;
+  --text-mobile-body-2: 13px;
+  --text-mobile-body-2--line-height: 18px;
+  --text-mobile-body-3: 11px;
+  --text-mobile-body-3--line-height: 14px;
+  --text-mobile-body-4: 10px;
+  --text-mobile-body-4--line-height: normal;
+
+  --text-heading-1: 60px;
+  --text-heading-1--line-height: 60px;
+  --text-heading-2: 36px;
+  --text-heading-2--line-height: 44px;
+  --text-heading-3: 28px;
+  --text-heading-3--line-height: 36px;
+  --text-heading-4: 20px;
+  --text-heading-4--line-height: 28px;
+
+  --text-body-1: 18px;
+  --text-body-1--line-height: 28px;
+  --text-body-2: 16px;
+  --text-body-2--line-height: 24px;
+  --text-body-3: 14px;
+  --text-body-3--line-height: 20px;
+  --text-body-4: 12px;
+  --text-body-4--line-height: 16px;
 
   /* Figma — Colors / Neutral / Black */
   --color-neutral-black: #263238;

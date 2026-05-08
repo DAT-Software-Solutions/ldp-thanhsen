@@ -25,7 +25,7 @@ const HeaderCtaLink = ({
   onNavigate?: () => void;
 }) => (
   <Link href={CTA_HREF} className={className} onClick={onNavigate}>
-    <span className="uppercase text-mobile-body-2">{CTA_LABEL}</span>
+    <span className="font-body-medium uppercase text-mobile-body-2">{CTA_LABEL}</span>
   </Link>
 );
 
