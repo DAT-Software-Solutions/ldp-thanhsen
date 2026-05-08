@@ -2,12 +2,9 @@
 
 import type { FormEvent } from "react";
 
-import {
-  CONTACT_EMAIL,
-  CONTACT_HOURS_DISPLAY,
-  CONTACT_INFO_HEADING,
-  CONTACT_PHONE_DISPLAY,
-} from "./contact-page-data";
+import { SITE_TEL_HREF } from "@/components/layout/site-urls";
+
+import { CONTACT_MAILTO_URL } from "./contact-urls";
 
 const fieldFocus =
   "rounded-sm focus:border-primary focus:outline-none focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/30";
@@ -33,7 +30,8 @@ export const ContactInfoForm = () => {
               id="contact-info-heading"
               className="font-serif text-mobile-heading-2 font-semibold text-neutral-black sm:text-heading-4 lg:text-heading-3"
             >
-              {CONTACT_INFO_HEADING}
+              Chúng tôi luôn sẵn sàng giải đáp{" "}
+              <span className="text-primary">mọi thắc mắc</span>
             </h2>
             <dl className="mt-8 space-y-6">
               <div>
@@ -42,10 +40,10 @@ export const ContactInfoForm = () => {
                 </dt>
                 <dd className="mt-1 text-mobile-body-1 font-medium text-neutral-900 sm:text-body-2">
                   <a
-                    href={`mailto:${CONTACT_EMAIL}`}
+                    href={CONTACT_MAILTO_URL}
                     className="underline decoration-neutral-400 underline-offset-4 transition-colors hover:text-primary"
                   >
-                    {CONTACT_EMAIL}
+                    sample@gmail.com
                   </a>
                 </dd>
               </div>
@@ -55,10 +53,10 @@ export const ContactInfoForm = () => {
                 </dt>
                 <dd className="mt-1 text-mobile-body-1 font-medium text-neutral-900 sm:text-body-2">
                   <a
-                    href={`tel:${CONTACT_PHONE_DISPLAY.replace(/\./g, "")}`}
+                    href={SITE_TEL_HREF}
                     className="transition-colors hover:text-primary"
                   >
-                    {CONTACT_PHONE_DISPLAY}
+                    0913.294.683
                   </a>
                 </dd>
               </div>
@@ -67,7 +65,7 @@ export const ContactInfoForm = () => {
                   Giờ làm việc
                 </dt>
                 <dd className="mt-1 text-mobile-body-1 font-medium text-neutral-900 sm:text-body-2">
-                  {CONTACT_HOURS_DISPLAY}
+                  Giờ làm việc: 08:00 - 17:00 từ thứ 2 đến thứ 6
                 </dd>
               </div>
             </dl>

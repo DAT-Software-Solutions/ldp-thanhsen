@@ -12,10 +12,25 @@ import {
   useState,
 } from "react";
 
-import { CTA_HREF, CTA_LABEL, NAV_LINKS } from "./header-nav";
+import {
+  CTA_HREF,
+  HASH_LINK,
+  PAGE_GIOI_THIEU,
+  PAGE_HOME,
+  PAGE_LIEN_HE,
+} from "./site-urls";
 
 const linkFocus =
   "rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white";
+
+/** Thứ tự menu giống bản thiết kế — `href` lấy từ `site-urls`. */
+const MAIN_NAV_ITEMS = [
+  { href: PAGE_GIOI_THIEU, label: "Giới thiệu" },
+  { href: HASH_LINK, label: "Tư vấn pháp luật" },
+  { href: HASH_LINK, label: "Thẩm định giá" },
+  { href: HASH_LINK, label: "Thừa phát lại" },
+  { href: PAGE_LIEN_HE, label: "Liên hệ" },
+] as const;
 
 const HeaderCtaLink = ({
   className,
@@ -25,8 +40,33 @@ const HeaderCtaLink = ({
   onNavigate?: () => void;
 }) => (
   <Link href={CTA_HREF} className={className} onClick={onNavigate}>
-    <span className="font-body-medium uppercase text-mobile-body-2">{CTA_LABEL}</span>
+    <span className="font-body-medium uppercase text-mobile-body-2">
+      Liên hệ nhận tư vấn
+    </span>
   </Link>
+);
+
+const MainNavLinks = ({
+  className,
+  linkClassName,
+  onNavigate,
+}: {
+  className?: string;
+  linkClassName: string;
+  onNavigate?: () => void;
+}) => (
+  <nav aria-label="Chính" className={className}>
+    {MAIN_NAV_ITEMS.map(({ href, label }) => (
+      <Link
+        key={label}
+        href={href}
+        className={linkClassName}
+        onClick={onNavigate}
+      >
+        {label}
+      </Link>
+    ))}
+  </nav>
 );
 
 export const SiteHeader = () => {
@@ -88,12 +128,15 @@ export const SiteHeader = () => {
     }
   }, [mobileOpen]);
 
+  const desktopLinkClass = `whitespace-nowrap transition-opacity hover:opacity-80 ${linkFocus}`;
+  const mobileLinkClass = `border-b border-white/10 py-3 text-base font-medium text-white transition-opacity last:border-b-0 hover:opacity-80 ${linkFocus}`;
+
   return (
     <>
       <header ref={headerRef} className="relative z-50 bg-primary">
         <div className="flex h-16 shrink-0 items-center gap-3 border-b border-white/10 px-4 py-3 md:h-[82px] md:px-0 md:py-4 custom-container">
           <Link
-            href="/"
+            href={PAGE_HOME}
             className="relative block h-10 w-[45px] shrink-0 md:h-[50px] md:w-[56px]"
             onClick={closeMobile}
           >
@@ -108,20 +151,10 @@ export const SiteHeader = () => {
           </Link>
 
           <div className="ml-auto hidden items-center gap-6 md:flex lg:gap-8">
-            <nav
-              aria-label="Chính"
+            <MainNavLinks
               className="flex min-w-0 items-center gap-6 text-sm font-medium text-white lg:gap-8"
-            >
-              {NAV_LINKS.map((item) => (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className={`whitespace-nowrap transition-opacity hover:opacity-80 ${linkFocus}`}
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </nav>
+              linkClassName={desktopLinkClass}
+            />
 
             <HeaderCtaLink className="rounded-lg bg-white px-4 py-2 text-center text-[10px] font-semibold tracking-tight text-primary transition-opacity hover:opacity-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:text-xs" />
           </div>
@@ -178,21 +211,11 @@ export const SiteHeader = () => {
               className="fixed inset-x-0 bottom-0 z-50 overflow-y-auto bg-primary pb-[max(1rem,env(safe-area-inset-bottom))] will-change-transform md:hidden"
               style={{ top: belowHeaderPx }}
             >
-              <nav
-                aria-label="Chính"
+              <MainNavLinks
                 className="flex flex-col border-t border-white/10 px-4 py-4"
-              >
-                {NAV_LINKS.map((item) => (
-                  <Link
-                    key={item.label}
-                    href={item.href}
-                    className={`border-b border-white/10 py-3 text-base font-medium text-white transition-opacity last:border-b-0 hover:opacity-80 ${linkFocus}`}
-                    onClick={closeMobile}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </nav>
+                linkClassName={mobileLinkClass}
+                onNavigate={closeMobile}
+              />
             </motion.div>
           </>
         ) : null}

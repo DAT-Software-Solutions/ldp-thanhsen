@@ -72,3 +72,27 @@ body {
 .custom-container {
   @apply mx-auto max-w-[1200px];
 }
+
+/* Swiper — section đội ngũ trang Giới thiệu */
+.gioi-thieu-team-swiper .swiper-pagination {
+  position: relative;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .gioi-thieu-team-swiper .swiper-pagination {
+    margin-top: 1.75rem;
+  }
+}
+
+.gioi-thieu-team-swiper .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  margin: 0 5px !important;
+  background: #dec8c8;
+  opacity: 1;
+}
+
+.gioi-thieu-team-swiper .swiper-pagination-bullet-active {
+  background: var(--primary);
+}

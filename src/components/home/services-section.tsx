@@ -8,8 +8,14 @@ import {
 import Link from "next/link";
 import type { ComponentType, SVGProps } from "react";
 
-import { SERVICES, SERVICES_SUBTITLE } from "./services-data";
-import type { ServiceIconKey, ServiceItem } from "./services-data";
+import { HASH_LINK, PAGE_DICH_VU } from "@/components/layout/site-urls";
+
+type ServiceIconKey =
+  | "lawyer"
+  | "bailiff"
+  | "arbitration"
+  | "valuation"
+  | "auction";
 
 const cardFocus =
   "rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary";
@@ -27,35 +33,49 @@ const SERVICE_ICONS: Record<
   auction: DocumentTextIcon,
 };
 
-const ServiceCardInner = ({ item }: { item: ServiceItem }) => {
-  const Icon = SERVICE_ICONS[item.iconKey];
+const ServiceCardInner = ({
+  iconKey,
+  title,
+}: {
+  iconKey: ServiceIconKey;
+  title: string;
+}) => {
+  const Icon = SERVICE_ICONS[iconKey];
   return (
     <>
       <div className="mb-4 w-fit rounded-lg bg-rose-100 p-2.5">
         <Icon className={iconClass} aria-hidden />
       </div>
       <h3 className="font-serif text-base font-semibold text-[#2D3436] sm:text-lg">
-        {item.title}
+        {title}
       </h3>
       <div className="mt-3 h-1 w-10 rounded-full bg-primary" aria-hidden />
     </>
   );
 };
 
-const ServiceCard = ({ item }: { item: ServiceItem }) => {
+const ServiceCard = ({
+  href,
+  iconKey,
+  title,
+}: {
+  href: string;
+  iconKey: ServiceIconKey;
+  title: string;
+}) => {
   const className = `block h-full rounded-xl bg-white p-5 shadow-sm transition-shadow hover:shadow-md ${cardFocus}`;
 
-  if (item.href.startsWith("/")) {
+  if (href.startsWith("/")) {
     return (
-      <Link href={item.href} className={className}>
-        <ServiceCardInner item={item} />
+      <Link href={href} className={className}>
+        <ServiceCardInner iconKey={iconKey} title={title} />
       </Link>
     );
   }
 
   return (
-    <a href={item.href} className={className}>
-      <ServiceCardInner item={item} />
+    <a href={href} className={className}>
+      <ServiceCardInner iconKey={iconKey} title={title} />
     </a>
   );
 };
@@ -71,14 +91,20 @@ export const ServicesSection = () => (
           Dịch vụ của <span className="text-primary">chúng tôi</span>
         </h2>
         <p className="mt-4 text-sm text-neutral-600 sm:text-base">
-          {SERVICES_SUBTITLE}
+          Thành Sen Group luôn sẵn sàng đem lại các dịch vụ pháp lý chất lượng cao tới quý khách hàng
         </p>
       </header>
 
       <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 xl:grid-cols-5">
-        {SERVICES.map((item) => (
-          <ServiceCard key={item.title} item={item} />
-        ))}
+        <ServiceCard href={PAGE_DICH_VU} iconKey="lawyer" title="Dịch vụ" />
+        <ServiceCard href={HASH_LINK} iconKey="bailiff" title="Thừa phát lại" />
+        <ServiceCard
+          href={HASH_LINK}
+          iconKey="arbitration"
+          title="Trọng tài thương mại"
+        />
+        <ServiceCard href={HASH_LINK} iconKey="valuation" title="Thẩm định giá" />
+        <ServiceCard href={HASH_LINK} iconKey="auction" title="Đấu giá" />
       </div>
     </div>
   </section>

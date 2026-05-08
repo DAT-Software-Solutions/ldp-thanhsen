@@ -1,13 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { CTA_HREF } from "@/components/layout/header-nav";
+import { CTA_HREF } from "@/components/layout/site-urls";
 
-const HERO_ILLUSTRATION_SRC =
-  "/images/judge%20gavel%20with%20law%20books%20and%20scales.svg";
-
-/** TODO: thay bằng link Zalo OA hoặc zalo.me khi có. */
-const ZALO_CHAT_HREF = "#";
+import { HERO_ILLUSTRATION_SRC, ZALO_CHAT_HREF } from "./home-urls";
 
 const btnFocus =
   "rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary";

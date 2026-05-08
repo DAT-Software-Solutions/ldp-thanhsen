@@ -1,10 +1,11 @@
 import Image from "next/image";
 
 import {
-  GIOI_THIEU_INTRO,
-  GIOI_THIEU_MISSION,
-  GIOI_THIEU_QUOTE,
-} from "./gioi-thieu-content-data";
+  GIOI_THIEU_INTRO_IMAGE_SRC,
+  GIOI_THIEU_MISSION_IMAGE_SRC,
+  GIOI_THIEU_QUOTE_IMAGE_SRC,
+} from "./gioi-thieu-urls";
+import { GioiThieuTeamSection } from "./gioi-thieu-team-section";
 
 const sectionShell = "bg-[#F5F6F7]";
 const proseTitle =
@@ -54,8 +55,8 @@ const QuoteOverlapSection = () => (
       className={`relative z-0 mx-auto aspect-[16/11] w-full max-w-2xl overflow-hidden sm:mx-6 lg:absolute lg:inset-y-0 lg:right-0 lg:mx-0 lg:aspect-auto lg:max-w-none lg:h-full lg:w-[min(56vw,840px)] ${roundedMedia} lg:rounded-none lg:rounded-l-2xl`}
     >
       <Image
-        src={GIOI_THIEU_QUOTE.imageSrc}
-        alt={GIOI_THIEU_QUOTE.imageAlt}
+        src={GIOI_THIEU_QUOTE_IMAGE_SRC}
+        alt="Lãnh đạo Thành Sen Group trong môi trường làm việc chuyên nghiệp"
         fill
         className="object-cover object-[center_25%]"
         sizes="(max-width: 1024px) 100vw, 56vw"
@@ -65,10 +66,10 @@ const QuoteOverlapSection = () => (
       <div className="mx-auto w-full max-w-xl max-lg:-mt-12 max-lg:px-0.5 sm:max-lg:-mt-14 lg:mx-0 lg:max-w-[min(100%,30rem)] lg:py-14 xl:max-w-xl">
         <figure className="rounded-[14px] bg-white p-6 shadow-[0_12px_40px_rgba(0,0,0,0.12)] sm:rounded-2xl sm:p-8 lg:p-10">
           <blockquote className="font-serif text-mobile-heading-3 font-bold text-[#2D3436] sm:text-[26px] lg:text-heading-3">
-            “{GIOI_THIEU_QUOTE.quote}”
+            “Thành Sen luôn giữ chữ tín hàng đầu, bảo vệ chữ tín như bảo vệ chính mình”
           </blockquote>
           <figcaption className="mt-5 text-mobile-body-2 text-[#666666] sm:text-body-3">
-            {GIOI_THIEU_QUOTE.attribution}
+            Luật sư Lê Minh Hải – Chủ tịch HĐQT - TGĐ Thành Sen Group
           </figcaption>
         </figure>
       </div>
@@ -79,17 +80,18 @@ const QuoteOverlapSection = () => (
 export const GioiThieuSections = () => (
   <>
     <ImageTextRow
-      imageSrc={GIOI_THIEU_INTRO.imageSrc}
-      imageAlt={GIOI_THIEU_INTRO.imageAlt}
-      title={GIOI_THIEU_INTRO.title}
-      body={GIOI_THIEU_INTRO.body}
+      imageSrc={GIOI_THIEU_INTRO_IMAGE_SRC}
+      imageAlt="Đội ngũ Thành Sen Group"
+      title="Thành Sen là đơn vị đầu tiên trong khu vực được Bộ Tài chính cấp giấy phép hoạt động trong lĩnh vực thẩm định giá"
+      body="Thành Sen Group là quần thể dịch vụ chuyên nghiệp trong lĩnh vực pháp lý và tư pháp, hướng tới các giải pháp toàn diện, uy tín và hiệu quả cho khách hàng."
     />
     <QuoteOverlapSection />
     <ImageTextRow
-      imageSrc={GIOI_THIEU_MISSION.imageSrc}
-      imageAlt={GIOI_THIEU_MISSION.imageAlt}
-      title={GIOI_THIEU_MISSION.title}
-      body={GIOI_THIEU_MISSION.body}
+      imageSrc={GIOI_THIEU_MISSION_IMAGE_SRC}
+      imageAlt="Không gian phục vụ khách hàng tại Thành Sen"
+      title="Hướng đến xây dựng một địa chỉ pháp lý đảm bảo sự chuyên nghiệp – minh bạch – tận tâm."
+      body="Thẩm định giá Thành Sen được thành lập nhằm đáp ứng nhu cầu của các cơ quan, đối tác trên địa bàn tỉnh Hà Tĩnh, góp phần minh bạch thị trường và định giá tài sản đúng giá trị."
     />
+    <GioiThieuTeamSection />
   </>
 );

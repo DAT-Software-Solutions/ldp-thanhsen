@@ -2,8 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Fragment } from "react";
 
-const HERO_BG_IMAGE = "/images/contact-hero-bg.jpg";
-const HERO_BG_ALT = "Phông nền kệ sách pháp lý";
+import { PAGE_HERO_BACKGROUND_IMAGE_SRC } from "./page-hero-urls";
 
 export type PageHeroBreadcrumbItem = {
   label: string;
@@ -28,8 +27,8 @@ export const PageHero = ({
     className="relative min-h-[220px] w-full overflow-hidden sm:min-h-[280px] lg:min-h-[320px]"
   >
     <Image
-      src={HERO_BG_IMAGE}
-      alt={HERO_BG_ALT}
+      src={PAGE_HERO_BACKGROUND_IMAGE_SRC}
+      alt="Phông nền kệ sách pháp lý"
       fill
       priority
       className="object-cover"

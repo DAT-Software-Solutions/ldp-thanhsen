@@ -9,12 +9,13 @@ import Link from "next/link";
 import type { SVGProps } from "react";
 
 import {
-  FOOTER_BRANCHES,
-  FOOTER_EXPLORE_LINKS,
-  FOOTER_HOURS,
-  FOOTER_HOTLINE,
-  FOOTER_SOCIAL_LINKS,
-} from "./footer-data";
+  HASH_LINK,
+  PAGE_DICH_VU,
+  PAGE_GIOI_THIEU,
+  PAGE_HOME,
+  PAGE_LIEN_HE,
+  SITE_TEL_HREF,
+} from "./site-urls";
 
 const linkFocus =
   "rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white";
@@ -41,42 +42,49 @@ const YouTubeIcon = (props: SVGProps<SVGSVGElement>) => (
 
 const socialIconClass = "size-5";
 
-const SocialIcon = ({ label }: { label: string }) => {
-  if (label === "Instagram") {
-    return <InstagramIcon className={socialIconClass} />;
-  }
-  if (label === "Website") {
-    return <GlobeAltIcon className={socialIconClass} />;
-  }
-  if (label === "X (Twitter)") {
-    return <XIcon className={socialIconClass} />;
-  }
-  if (label === "YouTube") {
-    return <YouTubeIcon className={socialIconClass} />;
-  }
-  return <GlobeAltIcon className={socialIconClass} />;
-};
-
 const ExploreLinks = () => (
   <nav aria-label="Khám phá">
     <h2 className={sectionTitle}>Khám phá</h2>
     <ul className="mt-3 flex flex-col gap-2 text-sm text-white sm:text-base">
-      {FOOTER_EXPLORE_LINKS.map((item) => (
-        <li key={item.label}>
-          {item.href.startsWith("/") ? (
-            <Link
-              href={item.href}
-              className={`transition-opacity hover:opacity-80 ${linkFocus}`}
-            >
-              {item.label}
-            </Link>
-          ) : (
-            <a href={item.href} className={`${linkFocus} hover:opacity-80`}>
-              {item.label}
-            </a>
-          )}
-        </li>
-      ))}
+      <li>
+        <Link
+          href={PAGE_GIOI_THIEU}
+          className={`transition-opacity hover:opacity-80 ${linkFocus}`}
+        >
+          Giới thiệu
+        </Link>
+      </li>
+      <li>
+        <a href={HASH_LINK} className={`${linkFocus} hover:opacity-80`}>
+          Tin tức
+        </a>
+      </li>
+      <li>
+        <Link
+          href={PAGE_LIEN_HE}
+          className={`transition-opacity hover:opacity-80 ${linkFocus}`}
+        >
+          Liên hệ
+        </Link>
+      </li>
+      <li>
+        <Link
+          href={PAGE_DICH_VU}
+          className={`transition-opacity hover:opacity-80 ${linkFocus}`}
+        >
+          Dịch vụ
+        </Link>
+      </li>
+      <li>
+        <a href={HASH_LINK} className={`${linkFocus} hover:opacity-80`}>
+          Thẩm định giá
+        </a>
+      </li>
+      <li>
+        <a href={HASH_LINK} className={`${linkFocus} hover:opacity-80`}>
+          Thừa phát lại
+        </a>
+      </li>
     </ul>
   </nav>
 );
@@ -90,14 +98,22 @@ const ContactBlock = () => (
           className="mt-0.5 size-5 shrink-0 text-white"
           aria-hidden
         />
-        <span>Hotline: {FOOTER_HOTLINE}</span>
+        <span>
+          Hotline:{" "}
+          <a
+            href={SITE_TEL_HREF}
+            className={`underline-offset-4 transition-opacity hover:opacity-90 ${linkFocus}`}
+          >
+            0913.294.683
+          </a>
+        </span>
       </li>
       <li className="flex gap-2">
         <ClockIcon
           className="mt-0.5 size-5 shrink-0 text-white"
           aria-hidden
         />
-        <span>{FOOTER_HOURS}</span>
+        <span>Giờ làm việc: 08:00 - 17:00 từ thứ 2 đến thứ 6</span>
       </li>
     </ul>
   </section>
@@ -107,15 +123,60 @@ const BranchesBlock = () => (
   <section aria-label="Các chi nhánh">
     <h2 className={sectionTitle}>Các chi nhánh</h2>
     <ul className="mt-3 flex flex-col gap-3 text-sm text-white sm:text-base">
-      {FOOTER_BRANCHES.map((line) => (
-        <li key={line} className="flex gap-2">
-          <MapPinIcon
-            className="mt-0.5 size-5 shrink-0 text-white"
-            aria-hidden
-          />
-          <span>{line}</span>
-        </li>
-      ))}
+      <li className="flex gap-2">
+        <MapPinIcon
+          className="mt-0.5 size-5 shrink-0 text-white"
+          aria-hidden
+        />
+        <span>
+          Trụ sở chính: số 20 Tiền Giang, Tân Sơn Hòa, Hồ Chí Minh
+        </span>
+      </li>
+      <li className="flex gap-2">
+        <MapPinIcon
+          className="mt-0.5 size-5 shrink-0 text-white"
+          aria-hidden
+        />
+        <span>
+          CN Hà Tĩnh: Số 2, ngõ 1, Xuân Diệu, Phường Thành Sen, Hà Tĩnh
+        </span>
+      </li>
+      <li className="flex gap-2">
+        <MapPinIcon
+          className="mt-0.5 size-5 shrink-0 text-white"
+          aria-hidden
+        />
+        <span>
+          CN Hà Nội: Số 01 ngõ 33 Phạm Tuấn Tài, Phường Cầu Giấy, Hà Nội
+        </span>
+      </li>
+      <li className="flex gap-2">
+        <MapPinIcon
+          className="mt-0.5 size-5 shrink-0 text-white"
+          aria-hidden
+        />
+        <span>
+          CN Vũng Tàu: 1C Vòng xoay cửa lấp, Phước Thắng, Hồ Chí Minh
+        </span>
+      </li>
+      <li className="flex gap-2">
+        <MapPinIcon
+          className="mt-0.5 size-5 shrink-0 text-white"
+          aria-hidden
+        />
+        <span>
+          CN Quy Nhơn: số 30B Tăng Bạt Hổ, Phường Quy Nhơn, Gia Lai
+        </span>
+      </li>
+      <li className="flex gap-2">
+        <MapPinIcon
+          className="mt-0.5 size-5 shrink-0 text-white"
+          aria-hidden
+        />
+        <span>
+          CN Đồng Nai: Quốc lộ 13, Phường Bình Long, Tỉnh Đồng Nai
+        </span>
+      </li>
     </ul>
   </section>
 );
@@ -126,22 +187,42 @@ const CopyrightAndSocial = () => (
       Copyright © 2020 Thanh Sen Group. All rights reserved
     </p>
     <ul className="flex flex-wrap gap-3">
-      {FOOTER_SOCIAL_LINKS.map((item) => {
-        const isExternal = item.href.startsWith("http");
-        return (
-          <li key={item.label}>
-            <a
-              href={item.href}
-              target={isExternal ? "_blank" : undefined}
-              rel={isExternal ? "noopener noreferrer" : undefined}
-              aria-label={item.label}
-              className={`flex size-10 items-center justify-center rounded-full bg-white/10 text-white transition-opacity hover:opacity-90 ${linkFocus}`}
-            >
-              <SocialIcon label={item.label} />
-            </a>
-          </li>
-        );
-      })}
+      <li>
+        <a
+          href={HASH_LINK}
+          aria-label="Instagram"
+          className={`flex size-10 items-center justify-center rounded-full bg-white/10 text-white transition-opacity hover:opacity-90 ${linkFocus}`}
+        >
+          <InstagramIcon className={socialIconClass} />
+        </a>
+      </li>
+      <li>
+        <a
+          href={HASH_LINK}
+          aria-label="Website"
+          className={`flex size-10 items-center justify-center rounded-full bg-white/10 text-white transition-opacity hover:opacity-90 ${linkFocus}`}
+        >
+          <GlobeAltIcon className={socialIconClass} />
+        </a>
+      </li>
+      <li>
+        <a
+          href={HASH_LINK}
+          aria-label="X (Twitter)"
+          className={`flex size-10 items-center justify-center rounded-full bg-white/10 text-white transition-opacity hover:opacity-90 ${linkFocus}`}
+        >
+          <XIcon className={socialIconClass} />
+        </a>
+      </li>
+      <li>
+        <a
+          href={HASH_LINK}
+          aria-label="YouTube"
+          className={`flex size-10 items-center justify-center rounded-full bg-white/10 text-white transition-opacity hover:opacity-90 ${linkFocus}`}
+        >
+          <YouTubeIcon className={socialIconClass} />
+        </a>
+      </li>
     </ul>
   </div>
 );
@@ -155,7 +236,7 @@ export const SiteFooter = () => (
       <div className="grid grid-cols-1 gap-10 lg:grid-cols-3 lg:gap-8 lg:items-start">
         <div className="flex flex-col gap-4">
           <Link
-            href="/"
+            href={PAGE_HOME}
             className={`relative block h-16 w-16 shrink-0 sm:h-[72px] sm:w-[72px] ${linkFocus}`}
           >
             <Image
