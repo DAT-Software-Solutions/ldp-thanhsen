@@ -24,7 +24,7 @@ export const PageHero = ({
 }: PageHeroProps) => (
   <section
     aria-labelledby={headingId}
-    className="relative min-h-[220px] w-full overflow-hidden sm:min-h-[280px] lg:min-h-[320px]"
+    className="relative h-[166px] w-full shrink-0 overflow-hidden lg:h-[292px]"
   >
     <Image
       src={PAGE_HERO_BACKGROUND_IMAGE_SRC}
@@ -34,17 +34,17 @@ export const PageHero = ({
       className="object-cover"
       sizes="100vw"
     />
-    <div className="absolute inset-0 bg-black/55" aria-hidden />
-    <div className="relative z-10 flex flex-col items-center justify-center px-4 py-14 text-center sm:py-16 lg:py-20">
+    <div className="absolute inset-0 bg-black/15" aria-hidden />
+    <div className="relative z-10 flex h-full min-h-0 flex-col items-center justify-center px-4 py-4 text-center lg:py-8">
       <h1
         id={headingId}
-        className="font-serif text-mobile-heading-1 font-bold text-white sm:text-heading-3 lg:text-heading-2"
+        className="font-serif text-[22px] font-bold leading-snug text-white sm:text-mobile-heading-1 sm:leading-tight lg:text-heading-3 lg:leading-tight xl:text-heading-2"
       >
         {title}
       </h1>
       <nav
         aria-label="Breadcrumb"
-        className="mt-3 text-mobile-body-2 text-white/95 sm:text-body-3"
+        className="mt-1.5 text-mobile-body-3 text-white/95 sm:mt-3 sm:text-mobile-body-2 lg:text-body-3"
       >
         {breadcrumbItems.map((item, index) => {
           const isLast = index === breadcrumbItems.length - 1;
@@ -58,7 +58,10 @@ export const PageHero = ({
               {isLast ? (
                 <span className="text-footer-gold">{item.label}</span>
               ) : item.href ? (
-                <Link href={item.href} className="transition-opacity hover:opacity-90">
+                <Link
+                  href={item.href}
+                  className="transition-opacity hover:opacity-90"
+                >
                   {item.label}
                 </Link>
               ) : (
