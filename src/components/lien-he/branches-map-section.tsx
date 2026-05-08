@@ -5,7 +5,7 @@ import { CONTACT_MAP_EMBED_URL } from "./contact-urls";
 export const BranchesMapSection = () => (
   <section
     aria-labelledby="branches-heading"
-    className="bg-[#F8F9FA] text-neutral-900"
+    className="bg-surface-muted text-neutral-900"
   >
     <div className="custom-container px-4 py-12 sm:px-6 lg:py-16">
       <header className="mx-auto max-w-2xl text-center">

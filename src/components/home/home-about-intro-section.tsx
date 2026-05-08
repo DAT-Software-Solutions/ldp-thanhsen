@@ -16,7 +16,7 @@ const roundedFigure = "overflow-hidden rounded-xl sm:rounded-2xl";
 export const HomeAboutIntroSection = () => (
   <section
     aria-labelledby="home-about-intro-heading"
-    className="bg-[#F8F9FA] py-12 sm:py-14 lg:py-20"
+    className="bg-surface-muted py-12 sm:py-14 lg:py-20"
   >
     <div className="custom-container px-4 sm:px-6">
       <div className="flex flex-col gap-8 lg:grid lg:grid-cols-2 lg:items-center lg:gap-12 xl:gap-16">
