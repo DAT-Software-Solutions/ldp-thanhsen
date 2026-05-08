@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 
 import { HeroThanhSen } from "@/components/home/hero-thanh-sen";
+import { HomeAboutIntroSection } from "@/components/home/home-about-intro-section";
+import { HomePressSection } from "@/components/home/home-press-section";
+import { HomeWhyChooseSection } from "@/components/home/home-why-choose-section";
 import { ServicesSection } from "@/components/home/services-section";
 import { defaultDescription, siteName } from "@/lib/site-seo";
 
@@ -22,6 +25,9 @@ export default function Home() {
     <>
       <HeroThanhSen />
       <ServicesSection />
+      <HomeAboutIntroSection />
+      <HomeWhyChooseSection />
+      <HomePressSection />
     </>
   );
 }

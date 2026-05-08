@@ -96,3 +96,27 @@ body {
 .gioi-thieu-team-swiper .swiper-pagination-bullet-active {
   background: var(--primary);
 }
+
+/* Swiper — section báo chí trang chủ */
+.home-press-swiper .swiper-pagination {
+  position: relative;
+  margin-top: 1.25rem;
+}
+
+@media (min-width: 1024px) {
+  .home-press-swiper .swiper-pagination {
+    margin-top: 1.5rem;
+  }
+}
+
+.home-press-swiper .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  margin: 0 5px !important;
+  background: #dec8c8;
+  opacity: 1;
+}
+
+.home-press-swiper .swiper-pagination-bullet-active {
+  background: var(--primary);
+}
