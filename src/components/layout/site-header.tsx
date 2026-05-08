@@ -40,7 +40,7 @@ const HeaderCtaLink = ({
   onNavigate?: () => void;
 }) => (
   <Link href={CTA_HREF} className={className} onClick={onNavigate}>
-    <span className="font-body-medium uppercase text-mobile-body-2">
+    <span className="font-medium uppercase text-mobile-body-2">
       Liên hệ nhận tư vấn
     </span>
   </Link>
@@ -134,10 +134,10 @@ export const SiteHeader = () => {
   return (
     <>
       <header ref={headerRef} className="relative z-50 bg-primary">
-        <div className="flex h-16 shrink-0 items-center gap-3 border-b border-white/10 px-4 py-3 md:h-[82px] md:px-0 md:py-4 custom-container">
+        <div className="flex h-16 shrink-0 items-center gap-3 border-b border-white/10 px-4 py-3 md:h-20.5 md:px-0 md:py-4 custom-container">
           <Link
             href={PAGE_HOME}
-            className="relative block h-10 w-[45px] shrink-0 md:h-[50px] md:w-[56px]"
+            className="relative block h-10 w-11.25 shrink-0 md:h-12.5 md:w-14"
             onClick={closeMobile}
           >
             <Image
@@ -156,17 +156,17 @@ export const SiteHeader = () => {
               linkClassName={desktopLinkClass}
             />
 
-            <HeaderCtaLink className="rounded-lg bg-white px-4 py-2 text-center text-[10px] font-semibold tracking-tight text-primary transition-opacity hover:opacity-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:text-xs" />
+            <HeaderCtaLink className="rounded-md bg-white px-4 py-2 text-center text-[10px] font-semibold tracking-tight text-primary transition-opacity hover:opacity-95 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-white sm:text-xs" />
           </div>
 
           <div className="ml-auto flex shrink-0 items-center gap-2 md:hidden">
             <HeaderCtaLink
               onNavigate={closeMobile}
-              className="flex h-8 w-[177px] shrink-0 items-center justify-center rounded-lg bg-white text-center text-[9px] font-semibold tracking-tight text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:text-[10px]"
+              className="flex h-8 w-44.25 shrink-0 items-center justify-center rounded-md bg-white text-center text-[9px] font-semibold tracking-tight text-primary focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-white sm:text-[10px]"
             />
             <button
               type="button"
-              className="-mr-2 flex size-10 items-center justify-center rounded-sm p-2 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              className="-mr-2 flex size-10 items-center justify-center rounded-sm p-2 text-white focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-white"
               aria-expanded={mobileOpen}
               aria-controls="mobile-menu"
               aria-label={mobileOpen ? "Đóng menu" : "Mở menu"}
