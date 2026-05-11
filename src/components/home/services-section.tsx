@@ -5,6 +5,7 @@ import {
     PencilSquareIcon,
     ScaleIcon,
 } from "@heroicons/react/24/outline";
+import { FiFeather } from "react-icons/fi";
 import Link from "next/link";
 import type { ComponentType, SVGProps } from "react";
 
@@ -21,7 +22,7 @@ type ServiceIconKey =
 const cardFocus =
     "rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary";
 
-const iconClass = "size-7 text-primary";
+export const iconClass = "size-7 text-primary";
 
 const SERVICE_ICONS: Record<
     ServiceIconKey,
@@ -46,7 +47,7 @@ const ServiceCardInner = ({
         <>
             <div className='flex-1 flex flex-col gap-y-3'>
                 <div className='relative h-14'>
-                    <div className='absolute top-1.5 left-3.5 w-12.5 h-12.25 rounded-sm rounded-tl-2xl rounded-br-2xl shadow bg-rose-100 p-2.5'></div>
+                    <div className='absolute top-1.5 left-3 w-12.5 h-12.25 rounded-sm rounded-tl-2xl rounded-br-2xl bg-rose-100 p-2.5'></div>
                     <Icon
                         className={clsx(
                             iconClass,
@@ -77,7 +78,7 @@ const ServiceCard = ({
     iconKey: ServiceIconKey;
     title: string;
 }) => {
-    const className = `flex flex-col h-full min-h-60 rounded-lg bg-white px-4 py-6 shadow transition-shadow hover:shadow-md ${cardFocus}`;
+    const className = `flex flex-col h-full md:min-h-60 min-h-42 rounded-lg bg-white px-4 py-6 shadow-md transition-shadow hover:shadow-md ${cardFocus}`;
 
     if (href.startsWith("/")) {
         return (
@@ -100,10 +101,10 @@ export const ServicesSection = () => (
             <header className='flex flex-col gap-y-2 mx-auto max-w-2xl items-center text-center'>
                 <h2
                     id='services-heading'
-                    className='font-serif text-heading-2 lg:text-heading-2 font-bold text-neutral-black'>
+                    className='font-serif text-mobile-heading-2 md:text-heading-2 font-bold text-neutral-black'>
                     Dịch vụ của <span className='text-primary'>chúng tôi</span>
                 </h2>
-                <p className='font-sans w-full text-neutral-600 font-regular text-body-1'>
+                <p className='font-sans w-full text-neutral-600 font-normal md:text-body-1 text-mobile-body-1'>
                     Thành Sen Group luôn sẵn sàng đem lại các dịch vụ pháp lý
                     chất lượng cao tới quý khách hàng
                 </p>

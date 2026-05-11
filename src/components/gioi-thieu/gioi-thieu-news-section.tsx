@@ -19,10 +19,10 @@ export const GioiThieuNewsSection = () => (
             <header className='mb-8 text-center lg:mb-10 lg:text-left'>
                 <h2
                     id='gioi-thieu-news-heading'
-                    className=' text-mobile-heading-2 font-semibold text-[#2D3436] sm:text-heading-3 lg:text-heading-2'>
+                    className='font-serif text-mobile-heading-2 font-semibold text-neutral-black sm:text-heading-3 lg:text-heading-2'>
                     Tin tức <span className='text-primary'>mới nhất</span>
                 </h2>
-                <p className='mx-auto mt-3 max-w-2xl text-mobile-body-1 text-[#666666] sm:text-body-2 lg:mx-0'>
+                <p className='font-sans mx-auto mt-3 max-w-2xl text-mobile-body-1 text-[#717171] sm:text-body-1 md:font-normal font-medium lg:mx-0'>
                     Cập nhật các thông tin mới nhất về luật pháp từ chúng tôi
                 </p>
             </header>
@@ -33,7 +33,7 @@ export const GioiThieuNewsSection = () => (
                         <Link
                             href={HASH_LINK}
                             className={`${cardShell} ${cardFocus} block`}>
-                            <div className='relative aspect-[5/3] w-full shrink-0 overflow-hidden bg-neutral-200'>
+                            <div className='relative aspect-5/3 w-full shrink-0 overflow-hidden bg-[#F5F7FA]'>
                                 <Image
                                     src={src}
                                     alt='Minh họa tin tức'
@@ -43,10 +43,10 @@ export const GioiThieuNewsSection = () => (
                                 />
                             </div>
                             <div className='flex flex-1 flex-col gap-2 p-3 sm:p-4 lg:p-5'>
-                                <h3 className=' text-mobile-heading-4 font-bold leading-snug text-[#2D3436] sm:text-heading-4'>
+                                <h3 className='font-serif text-mobile-heading-4 font-bold leading-snug text-neutral-black sm:text-heading-4'>
                                     Tiêu đề 1
                                 </h3>
-                                <p className='line-clamp-3 text-mobile-body-2 leading-snug text-[#666666] sm:text-body-3 sm:leading-normal'>
+                                <p className='font-sans line-clamp-3 text-mobile-body-2 leading-snug text-[#717171] sm:text-body-3 sm:leading-normal'>
                                     Our membership management software provides
                                     full automation of membership renewals and
                                     payments

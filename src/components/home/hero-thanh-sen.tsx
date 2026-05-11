@@ -14,15 +14,15 @@ export const HeroThanhSen = () => (
         className='bg-surface-muted text-[#2D3436]'>
         <div className='custom-container px-4 py-12 sm:px-6 sm:py-12 lg:py-16'>
             <div className='flex md:flex-row flex-col gap-x-20 gap-y-8'>
-                <div className='w-154.75 shrink-0 flex flex-col gap-y-6 items-center text-center lg:items-start lg:text-left'>
-                    <div className='flex flex-col gap-y-3'>
+                <div className='md:w-154.75 shrink-0 flex flex-col gap-y-6 items-center text-center lg:items-start lg:text-left'>
+                    <div className='flex flex-col gap-y-2'>
                         <h1
                             id='hero-heading'
-                            className='font-serif text-heading-1 uppercase font-bold'>
+                            className='font-serif md:text-heading-1 text-mobile-heading-1 uppercase font-bold'>
                             <span className='text-[#2D3436]'>Thành Sen </span>
                             <span className='text-primary'>Group</span>
                         </h1>
-                        <p className='max-w-xl text-sm text-neutral-700 sm:text-base'>
+                        <p className='font-sans md:max-w-xl max-w-full md:text-body-2 text-mobile-body-1 text-neutral-black sm:text-base'>
                             Là đơn vị tiên phong trong lĩnh vực pháp lý tại Việt
                             Nam, Thành Sen Group cam kết mang đến giải pháp toàn
                             diện, bảo vệ tối đa quyền lợi của khách hàng bằng sự
@@ -32,12 +32,12 @@ export const HeroThanhSen = () => (
                     <div className='flex w-full justify-center gap-3 sm:w-auto lg:justify-start'>
                         <Link
                             href={CTA_HREF}
-                            className={`inline-flex w-full min-w-35 items-center justify-center rounded-sm bg-primary px-5 py-3 body-1 font-medium text-white transition-opacity hover:opacity-95 sm:w-auto ${btnFocus}`}>
+                            className={`font-sans inline-flex w-full md:min-w-46.5 items-center justify-center rounded-sm bg-primary px-5 py-3 md:text-body-2 text-mobile-body-1 font-medium text-white transition-opacity hover:opacity-95 sm:w-auto ${btnFocus}`}>
                             Liên hệ ngay
                         </Link>
                         <a
                             href={ZALO_CHAT_HREF}
-                            className={`inline-flex w-full min-w-35 items-center justify-center rounded-sm border border-primary bg-transparent px-5 py-3 body-1 font-medium text-primary transition-opacity hover:opacity-90 sm:w-auto ${btnFocus}`}>
+                            className={`font-sans inline-flex w-full md:min-w-40.25 h-14 items-center justify-center rounded-sm border border-primary bg-transparent px-5 py-3 md:text-body-2 text-mobile-body-1 font-medium text-primary transition-opacity hover:opacity-90 sm:w-auto ${btnFocus}`}>
                             Tư vấn qua Zalo
                         </a>
                     </div>

@@ -20,7 +20,8 @@ import {
 const linkFocus =
     "rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white";
 
-const sectionTitle = "font-serif text-lg font-semibold text-footer-gold";
+const sectionTitle =
+    "font-serif text-mobile-heading-4 font-semibold text-white sm:text-heading-4";
 
 const InstagramIcon = (props: SVGProps<SVGSVGElement>) => (
     <svg viewBox='0 0 24 24' fill='currentColor' aria-hidden {...props}>
@@ -49,36 +50,42 @@ const ExploreLinks = () => (
             <li>
                 <Link
                     href={PAGE_GIOI_THIEU}
-                    className={`transition-opacity hover:opacity-80 ${linkFocus}`}>
+                    className={`font-sans sm:text-body-3 text-mobile-body-2 transition-opacity hover:opacity-80 ${linkFocus}`}>
                     Giới thiệu
                 </Link>
             </li>
             <li>
-                <a href={HASH_LINK} className={`${linkFocus} hover:opacity-80`}>
+                <a
+                    href={HASH_LINK}
+                    className={`${linkFocus} font-sans sm:text-body-3 text-mobile-body-2  hover:opacity-80`}>
                     Tin tức
                 </a>
             </li>
             <li>
                 <Link
                     href={PAGE_LIEN_HE}
-                    className={`transition-opacity hover:opacity-80 ${linkFocus}`}>
+                    className={`transition-opacity hover:opacity-80 font-sans sm:text-body-3 text-mobile-body-2 ${linkFocus}`}>
                     Liên hệ
                 </Link>
             </li>
             <li>
                 <Link
                     href={PAGE_DICH_VU}
-                    className={`transition-opacity hover:opacity-80 ${linkFocus}`}>
+                    className={`transition-opacity hover:opacity-80 font-sans sm:text-body-3 text-mobile-body-2 ${linkFocus}`}>
                     Dịch vụ
                 </Link>
             </li>
             <li>
-                <a href={HASH_LINK} className={`${linkFocus} hover:opacity-80`}>
+                <a
+                    href={HASH_LINK}
+                    className={`${linkFocus} font-sans sm:text-body-3 text-mobile-body-2hover:opacity-80`}>
                     Thẩm định giá
                 </a>
             </li>
             <li>
-                <a href={HASH_LINK} className={`${linkFocus} hover:opacity-80`}>
+                <a
+                    href={HASH_LINK}
+                    className={`${linkFocus} font-sans sm:text-body-3 text-mobile-body-2 hover:opacity-80`}>
                     Thừa phát lại
                 </a>
             </li>
@@ -95,7 +102,7 @@ const ContactBlock = () => (
                     className='mt-0.5 size-5 shrink-0 text-white'
                     aria-hidden
                 />
-                <span>
+                <span className='font-sans sm:text-body-3 text-mobile-body-2'>
                     Hotline:{" "}
                     <a
                         href={SITE_TEL_HREF}
@@ -109,7 +116,9 @@ const ContactBlock = () => (
                     className='mt-0.5 size-5 shrink-0 text-white'
                     aria-hidden
                 />
-                <span>Giờ làm việc: 08:00 - 17:00 từ thứ 2 đến thứ 6</span>
+                <span className='font-sans sm:text-body-3 text-mobile-body-2 '>
+                    Giờ làm việc: 08:00 - 17:00 từ thứ 2 đến thứ 6
+                </span>
             </li>
         </ul>
     </section>
@@ -181,7 +190,7 @@ const BranchesBlock = () => (
 
 const CopyrightAndSocial = () => (
     <div className='flex flex-col gap-4'>
-        <p className='text-xs text-white/90 sm:text-sm'>
+        <p className='sm:text-body-3 text-mobile-body-2 font-normal text-[#F5F7FA]'>
             Copyright © 2020 Thanh Sen Group. All rights reserved
         </p>
         <ul className='flex flex-wrap gap-3'>
@@ -237,7 +246,7 @@ export const SiteFooter = () => (
                             sizes='72px'
                         />
                     </Link>
-                    <p className=' text-2xl font-bold text-footer-gold sm:text-[1.75rem]'>
+                    <p className='font-serif text-mobile-heading-4 font-bold text-[#F9DE6F] sm:text-heading-4'>
                         Thành Sen Group
                     </p>
                     <div className='hidden lg:block'>
