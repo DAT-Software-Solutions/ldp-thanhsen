@@ -77,7 +77,20 @@ export const GioiThieuNewsSection = () => (
                         slidesPerGroup: 3,
                     },
                 }}
-                className='gioi-thieu-news-swiper pb-0!'>
+                className={clsx(
+                    "gioi-thieu-news-swiper pb-0!",
+                    "[&_.swiper-wrapper]:items-stretch",
+                    "[&_.swiper-slide]:h-auto",
+                    "[&_.swiper-pagination]:relative",
+                    "[&_.swiper-pagination]:mt-5",
+                    "lg:[&_.swiper-pagination]:mt-6",
+                    "[&_.swiper-pagination-bullet]:h-2",
+                    "[&_.swiper-pagination-bullet]:w-2",
+                    "[&_.swiper-pagination-bullet]:!mx-[5px]",
+                    "[&_.swiper-pagination-bullet]:bg-[#dec8c8]",
+                    "[&_.swiper-pagination-bullet]:opacity-100",
+                    "[&_.swiper-pagination-bullet-active]:bg-primary",
+                )}>
                 {GIOI_THIEU_NEWS_IMAGE_SRCS.map((src, index) => (
                     <SwiperSlide key={`gioi-thieu-news-${index}`}>
                         <NewsCard src={src} index={index} />

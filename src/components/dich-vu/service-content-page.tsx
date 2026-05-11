@@ -109,7 +109,12 @@ export const ServiceContentPage = ({ page }: ServiceContentPageProps) => (
                     </h1>
 
                     <div
-                        className='service-content mt-5'
+                        className={clsx(
+                            "mt-5 font-sans text-[#4d4d4d]",
+                            "[&_p]:mt-4 [&_p]:text-mobile-body-2 [&_p]:font-normal [&_p]:leading-6 sm:[&_p]:text-body-2",
+                            "[&_h2]:mt-8 [&_h2]:font-serif [&_h2]:text-mobile-heading-4 [&_h2]:font-bold [&_h2]:leading-7 [&_h2]:text-neutral-black sm:[&_h2]:text-heading-3 sm:[&_h2]:leading-9",
+                            "[&_h2:first-child]:mt-0 [&_p:first-child]:mt-0",
+                        )}
                         dangerouslySetInnerHTML={{ __html: page.content }}
                     />
 

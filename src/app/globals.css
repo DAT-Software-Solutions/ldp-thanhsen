@@ -5,7 +5,7 @@
   --foreground: #171717;
   /* Alias cho chỗ không dùng utility Tailwind (vd. CSS thuần) */
   --primary: #7b241c;
-  /* Nền section sáng (hero, block phụ) — dùng với var(--surface-muted) */
+  /* Nền section sáng (hero, block phụ) - dùng với var(--surface-muted) */
   --surface-muted: #f8f9fa;
 }
 
@@ -19,11 +19,11 @@
   --font-roboto: var(--font-roboto), Arial, Helvetica, sans-serif;
   --font-serif: serif;
 
-  /* Figma — Regular / Medium → font-body-regular (400), font-body-medium (500) */
+  /* Figma - Regular / Medium -> font-body-regular (400), font-body-medium (500) */
   --font-weight-body-regular: 400;
   --font-weight-body-medium: 500;
 
-  /* Figma typography → utilities text-mobile-* / text-heading-* / text-body-* */
+  /* Figma typography -> utilities text-mobile-* / text-heading-* / text-body-* */
   --text-mobile-heading-1: 32px;
   --text-mobile-heading-1--line-height: 38px;
   --text-mobile-heading-2: 28px;
@@ -61,9 +61,9 @@
   --text-body-4: 12px;
   --text-body-4--line-height: 16px;
 
-  /* Figma — Colors / Neutral / Black */
+  /* Figma - Colors / Neutral / Black */
   --color-neutral-black: #263238;
-  /* Nền xám rất nhẹ — bg-surface-muted / text-surface-muted / ... */
+  /* Nền xám rất nhẹ - bg-surface-muted / text-surface-muted / ... */
   --color-surface-muted: var(--surface-muted);
 }
 
@@ -192,123 +192,5 @@ body {
   .interactive-button:active,
   .interactive-button-outline:active {
     transform: none;
-  }
-}
-
-/* Swiper — section đội ngũ trang Giới thiệu */
-.gioi-thieu-team-swiper .swiper-pagination {
-  position: relative;
-  margin-top: 1.5rem;
-}
-
-@media (min-width: 640px) {
-  .gioi-thieu-team-swiper .swiper-pagination {
-    margin-top: 1.75rem;
-  }
-}
-
-.gioi-thieu-team-swiper .swiper-pagination-bullet {
-  width: 8px;
-  height: 8px;
-  margin: 0 5px !important;
-  background: #dec8c8;
-  opacity: 1;
-}
-
-.gioi-thieu-team-swiper .swiper-pagination-bullet-active {
-  background: var(--primary);
-}
-
-/* Swiper — section báo chí trang chủ */
-.home-press-swiper .swiper-pagination {
-  position: relative;
-  margin-top: 1.25rem;
-}
-
-@media (min-width: 1024px) {
-  .home-press-swiper .swiper-pagination {
-    margin-top: 1.5rem;
-  }
-}
-
-.home-press-swiper .swiper-pagination-bullet {
-  width: 8px;
-  height: 8px;
-  margin: 0 5px !important;
-  background: #dec8c8;
-  opacity: 1;
-}
-
-.home-press-swiper .swiper-pagination-bullet-active {
-  background: var(--primary);
-}
-
-/* Swiper — section tin tức trang Giới thiệu */
-.gioi-thieu-news-swiper .swiper-wrapper {
-  align-items: stretch;
-}
-
-.gioi-thieu-news-swiper .swiper-slide {
-  height: auto;
-}
-
-.gioi-thieu-news-swiper .swiper-pagination {
-  position: relative;
-  margin-top: 1.25rem;
-}
-
-@media (min-width: 1024px) {
-  .gioi-thieu-news-swiper .swiper-pagination {
-    margin-top: 1.5rem;
-  }
-}
-
-.gioi-thieu-news-swiper .swiper-pagination-bullet {
-  width: 8px;
-  height: 8px;
-  margin: 0 5px !important;
-  background: #dec8c8;
-  opacity: 1;
-}
-
-.gioi-thieu-news-swiper .swiper-pagination-bullet-active {
-  background: var(--primary);
-}
-
-.service-content {
-  color: #4d4d4d;
-  font-family: var(--font-open-sans), Arial, Helvetica, sans-serif;
-}
-
-.service-content p {
-  margin-top: 1rem;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 24px;
-}
-
-.service-content h2 {
-  margin-top: 2rem;
-  color: var(--color-neutral-black);
-  font-family: serif;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 28px;
-}
-
-.service-content h2:first-child,
-.service-content p:first-child {
-  margin-top: 0;
-}
-
-@media (min-width: 640px) {
-  .service-content p {
-    font-size: 16px;
-    line-height: 24px;
-  }
-
-  .service-content h2 {
-    font-size: 28px;
-    line-height: 36px;
   }
 }

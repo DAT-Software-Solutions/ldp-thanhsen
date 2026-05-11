@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import clsx from "clsx";
 import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -66,7 +67,18 @@ export const GioiThieuTeamSection = () => (
                             slidesPerGroup: 4,
                         },
                     }}
-                    className='gioi-thieu-team-swiper pb-0!'>
+                    className={clsx(
+                        "gioi-thieu-team-swiper pb-0!",
+                        "[&_.swiper-pagination]:relative",
+                        "[&_.swiper-pagination]:mt-6",
+                        "sm:[&_.swiper-pagination]:mt-7",
+                        "[&_.swiper-pagination-bullet]:h-2",
+                        "[&_.swiper-pagination-bullet]:w-2",
+                        "[&_.swiper-pagination-bullet]:!mx-[5px]",
+                        "[&_.swiper-pagination-bullet]:bg-[#dec8c8]",
+                        "[&_.swiper-pagination-bullet]:opacity-100",
+                        "[&_.swiper-pagination-bullet-active]:bg-primary",
+                    )}>
                     <SwiperSlide>
                         <TeamMemberCard />
                     </SwiperSlide>

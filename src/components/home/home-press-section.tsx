@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import clsx from "clsx";
 import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -82,7 +83,18 @@ export const HomePressSection = () => (
                     spaceBetween={12}
                     slidesPerView={1}
                     pagination={{ clickable: true }}
-                    className='home-press-swiper pb-0!'>
+                    className={clsx(
+                        "home-press-swiper pb-0!",
+                        "[&_.swiper-pagination]:relative",
+                        "[&_.swiper-pagination]:mt-5",
+                        "lg:[&_.swiper-pagination]:mt-6",
+                        "[&_.swiper-pagination-bullet]:h-2",
+                        "[&_.swiper-pagination-bullet]:w-2",
+                        "[&_.swiper-pagination-bullet]:!mx-[5px]",
+                        "[&_.swiper-pagination-bullet]:bg-[#dec8c8]",
+                        "[&_.swiper-pagination-bullet]:opacity-100",
+                        "[&_.swiper-pagination-bullet-active]:bg-primary",
+                    )}>
                     <SwiperSlide>
                         <PressFeaturedSlide />
                     </SwiperSlide>
