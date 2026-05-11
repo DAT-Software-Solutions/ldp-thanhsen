@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import clsx from "clsx";
 import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -20,10 +21,10 @@ const TeamMemberCard = () => (
                 sizes='(max-width: 639px) 88vw, (max-width: 1023px) 45vw, 22vw'
             />
         </div>
-        <h3 className='mt-4 font-serif text-mobile-heading-4 font-bold text-[#2D3436] sm:mt-5 sm:text-heading-4'>
+        <h3 className='mt-4 font-serif text-mobile-heading-4 font-semibold text-neutral-black sm:mt-5 sm:text-heading-4'>
             Lê Minh Hải
         </h3>
-        <p className='mt-1 text-mobile-body-2 text-[#666666] sm:text-body-3'>
+        <p className='font-sans mt-1 text-mobile-body-2 font-normal text-[#4D4D4D] sm:text-body-2'>
             Luật sư
         </p>
     </article>
@@ -32,8 +33,8 @@ const TeamMemberCard = () => (
 export const GioiThieuTeamSection = () => (
     <section className='bg-[#F5F6F7] py-12 sm:py-14 lg:py-20'>
         <div className='custom-container px-4 sm:px-6'>
-            <header className='mx-auto max-w-3xl text-center'>
-                <h2 className=' text-mobile-heading-3 font-normal leading-snug text-[#2D3436] sm:text-heading-3 sm:leading-[1.2] lg:text-heading-2'>
+            <header className='flex flex-col gap-y-4 mx-auto max-w-3xl text-center'>
+                <h2 className='font-serif text-mobile-heading-2 font-bold leading-snug text-neutral-black sm:leading-[1.2] sm:text-heading-2'>
                     <span className='block sm:inline'>
                         Đội ngũ luật sư tại{" "}
                     </span>
@@ -41,7 +42,7 @@ export const GioiThieuTeamSection = () => (
                         Thành Sen Group
                     </span>
                 </h2>
-                <p className='mx-auto mt-4 max-w-2xl text-mobile-body-1 leading-snug text-[#555555] sm:mt-5 sm:text-body-2 sm:leading-normal'>
+                <p className='font-sans mx-auto max-w-2xl text-mobile-body-1 leading-snug text-[#717171] sm:text-body-1 font-normal'>
                     Chúng tôi cung cấp một đội ngũ có chuyên môn sâu và kinh
                     nghiệm thực tiễn phong phú
                 </p>
@@ -66,7 +67,18 @@ export const GioiThieuTeamSection = () => (
                             slidesPerGroup: 4,
                         },
                     }}
-                    className='gioi-thieu-team-swiper pb-0!'>
+                    className={clsx(
+                        "gioi-thieu-team-swiper pb-0!",
+                        "[&_.swiper-pagination]:relative",
+                        "[&_.swiper-pagination]:mt-6",
+                        "sm:[&_.swiper-pagination]:mt-7",
+                        "[&_.swiper-pagination-bullet]:h-2",
+                        "[&_.swiper-pagination-bullet]:w-2",
+                        "[&_.swiper-pagination-bullet]:!mx-[5px]",
+                        "[&_.swiper-pagination-bullet]:bg-[#dec8c8]",
+                        "[&_.swiper-pagination-bullet]:opacity-100",
+                        "[&_.swiper-pagination-bullet-active]:bg-primary",
+                    )}>
                     <SwiperSlide>
                         <TeamMemberCard />
                     </SwiperSlide>

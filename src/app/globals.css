@@ -5,7 +5,7 @@
   --foreground: #171717;
   /* Alias cho chỗ không dùng utility Tailwind (vd. CSS thuần) */
   --primary: #7b241c;
-  /* Nền section sáng (hero, block phụ) — dùng với var(--surface-muted) */
+  /* Nền section sáng (hero, block phụ) - dùng với var(--surface-muted) */
   --surface-muted: #f8f9fa;
 }
 
@@ -19,11 +19,11 @@
   --font-roboto: var(--font-roboto), Arial, Helvetica, sans-serif;
   --font-serif: serif;
 
-  /* Figma — Regular / Medium → font-body-regular (400), font-body-medium (500) */
+  /* Figma - Regular / Medium -> font-body-regular (400), font-body-medium (500) */
   --font-weight-body-regular: 400;
   --font-weight-body-medium: 500;
 
-  /* Figma typography → utilities text-mobile-* / text-heading-* / text-body-* */
+  /* Figma typography -> utilities text-mobile-* / text-heading-* / text-body-* */
   --text-mobile-heading-1: 32px;
   --text-mobile-heading-1--line-height: 38px;
   --text-mobile-heading-2: 28px;
@@ -61,9 +61,9 @@
   --text-body-4: 12px;
   --text-body-4--line-height: 16px;
 
-  /* Figma — Colors / Neutral / Black */
+  /* Figma - Colors / Neutral / Black */
   --color-neutral-black: #263238;
-  /* Nền xám rất nhẹ — bg-surface-muted / text-surface-muted / ... */
+  /* Nền xám rất nhẹ - bg-surface-muted / text-surface-muted / ... */
   --color-surface-muted: var(--surface-muted);
 }
 
@@ -77,50 +77,120 @@ body {
   @apply mx-auto max-w-[1200px];
 }
 
-/* Swiper — section đội ngũ trang Giới thiệu */
-.gioi-thieu-team-swiper .swiper-pagination {
+.interactive-card,
+.interactive-button,
+.interactive-button-outline {
   position: relative;
-  margin-top: 1.5rem;
+  isolation: isolate;
+  overflow: hidden;
+  outline: none;
+  transition:
+    transform 240ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 240ms ease,
+    border-color 240ms ease,
+    background-color 240ms ease,
+    color 240ms ease,
+    opacity 240ms ease;
 }
 
-@media (min-width: 640px) {
-  .gioi-thieu-team-swiper .swiper-pagination {
-    margin-top: 1.75rem;
-  }
+.interactive-card::after,
+.interactive-button::after,
+.interactive-button-outline::after {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  content: "";
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 240ms ease;
 }
 
-.gioi-thieu-team-swiper .swiper-pagination-bullet {
-  width: 8px;
-  height: 8px;
-  margin: 0 5px !important;
-  background: #dec8c8;
+.interactive-card::after {
+  border: 1px solid rgb(123 36 28 / 0.28);
+  box-shadow:
+    0 0 0 4px rgb(123 36 28 / 0.1),
+    0 18px 42px rgb(38 50 56 / 0.14);
+}
+
+.interactive-card img {
+  transition: transform 420ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.interactive-card:hover,
+.interactive-card:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 44px rgb(38 50 56 / 0.16);
+}
+
+.interactive-card:hover::after,
+.interactive-card:focus-visible::after,
+.interactive-button:hover::after,
+.interactive-button:focus-visible::after,
+.interactive-button-outline:hover::after,
+.interactive-button-outline:focus-visible::after {
   opacity: 1;
 }
 
-.gioi-thieu-team-swiper .swiper-pagination-bullet-active {
-  background: var(--primary);
+.interactive-card:hover img,
+.interactive-card:focus-visible img {
+  transform: scale(1.035);
 }
 
-/* Swiper — section báo chí trang chủ */
-.home-press-swiper .swiper-pagination {
-  position: relative;
-  margin-top: 1.25rem;
+.interactive-button::after {
+  background:
+    linear-gradient(110deg, transparent 0%, rgb(255 255 255 / 0.28) 42%, transparent 62%),
+    radial-gradient(circle at 50% 0%, rgb(255 255 255 / 0.2), transparent 58%);
+  transform: translateX(-18%);
 }
 
-@media (min-width: 1024px) {
-  .home-press-swiper .swiper-pagination {
-    margin-top: 1.5rem;
+.interactive-button-outline::after {
+  background: linear-gradient(135deg, rgb(123 36 28 / 0.1), rgb(249 222 111 / 0.18));
+}
+
+.interactive-button:hover,
+.interactive-button:focus-visible,
+.interactive-button-outline:hover,
+.interactive-button-outline:focus-visible {
+  transform: translateY(-2px);
+  box-shadow:
+    0 10px 24px rgb(123 36 28 / 0.22),
+    0 0 0 4px rgb(123 36 28 / 0.1);
+}
+
+.interactive-button:focus-visible,
+.interactive-button-outline:focus-visible {
+  outline: 2px solid rgb(123 36 28 / 0.78);
+  outline-offset: 4px;
+}
+
+.interactive-button:active,
+.interactive-button-outline:active {
+  transform: translateY(0) scale(0.985);
+  box-shadow: 0 5px 14px rgb(123 36 28 / 0.16);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .interactive-card,
+  .interactive-card::after,
+  .interactive-card img,
+  .interactive-button,
+  .interactive-button::after,
+  .interactive-button-outline,
+  .interactive-button-outline::after {
+    transition: none;
   }
-}
 
-.home-press-swiper .swiper-pagination-bullet {
-  width: 8px;
-  height: 8px;
-  margin: 0 5px !important;
-  background: #dec8c8;
-  opacity: 1;
-}
-
-.home-press-swiper .swiper-pagination-bullet-active {
-  background: var(--primary);
+  .interactive-card:hover,
+  .interactive-card:focus-visible,
+  .interactive-card:hover img,
+  .interactive-card:focus-visible img,
+  .interactive-button:hover,
+  .interactive-button:focus-visible,
+  .interactive-button-outline:hover,
+  .interactive-button-outline:focus-visible,
+  .interactive-button:active,
+  .interactive-button-outline:active {
+    transform: none;
+  }
 }

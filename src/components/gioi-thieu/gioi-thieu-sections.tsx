@@ -5,13 +5,15 @@ import {
     GIOI_THIEU_MISSION_IMAGE_SRC,
     GIOI_THIEU_QUOTE_IMAGE_SRC,
 } from "./gioi-thieu-urls";
+import clsx from "clsx";
 
 const sectionShell = "bg-white";
 const proseTitle =
-    "font-serif text-mobile-heading-3 font-bold text-[#2D3436] sm:text-heading-3";
-const proseBody = "mt-4 text-mobile-body-1 text-[#555555] sm:text-body-2";
+    "font-serif text-mobile-heading-3 font-bold text-neutral-black sm:text-heading-2";
+const proseBody =
+    "text-mobile-body-1 text-[#717171] font-normal sm:text-body-2";
 
-const roundedMedia = "overflow-hidden rounded-[14px] sm:rounded-2xl";
+const roundedMedia = "overflow-hidden rounded-xl";
 
 const ImageTextRow = ({
     imageSrc,
@@ -37,8 +39,8 @@ const ImageTextRow = ({
                         sizes='(max-width: 1024px) 100vw, 50vw'
                     />
                 </div>
-                <div className='text-left'>
-                    <h2 className={proseTitle}>{title}</h2>
+                <div className='text-left flex flex-col gap-y-4'>
+                    <h2 className={clsx(proseTitle)}>{title}</h2>
                     <p className={proseBody}>{body}</p>
                 </div>
             </div>
@@ -47,11 +49,9 @@ const ImageTextRow = ({
 );
 
 const QuoteOverlapSection = () => (
-    <section
-        className={`relative overflow-hidden py-10 sm:py-12 lg:h-[528px] lg:min-h-0 lg:py-0 bg-surface-muted`}>
-        <div className='custom-container relative z-0 px-4 sm:px-6 lg:h-full lg:min-h-0'>
-            <div
-                className={`relative z-0 mx-auto aspect-16/11 w-full max-w-2xl overflow-hidden sm:mx-6 max-lg:-mb-2 ${roundedMedia} lg:absolute lg:right-0 lg:top-0 lg:mx-0 lg:mb-0 lg:h-[528px] lg:w-[806px] lg:max-w-none lg:rounded-none lg:rounded-l-2xl`}>
+    <section className='relative overflow-hidden bg-surface-muted'>
+        <div className='custom-container relative px-4 sm:px-6 lg:grid lg:grid-cols-2 lg:items-stretch lg:px-0'>
+            <div className='relative aspect-16/11 w-full overflow-hidden rounded-t-xl lg:order-2 lg:h-132 lg:rounded-none'>
                 <Image
                     src={GIOI_THIEU_QUOTE_IMAGE_SRC}
                     alt='Lãnh đạo Thành Sen Group trong môi trường làm việc chuyên nghiệp'
@@ -60,14 +60,16 @@ const QuoteOverlapSection = () => (
                     sizes='(max-width: 1023px) 100vw, 806px'
                 />
             </div>
-            <div className='relative z-10 flex min-h-0 lg:h-full lg:items-center lg:overflow-hidden lg:py-0'>
-                <div className='mx-auto w-full max-w-xl max-lg:-mt-12 max-lg:px-0.5 sm:max-lg:-mt-14 lg:mx-0 lg:max-w-[min(100%,30rem)] xl:max-w-xl'>
-                    <figure className='rounded-[14px] bg-white p-6 shadow-[0_12px_40px_rgba(0,0,0,0.12)] sm:rounded-2xl sm:p-8 lg:p-10'>
-                        <blockquote className=' text-mobile-heading-3 font-bold text-[#2D3436] sm:text-[26px] lg:text-heading-3'>
+
+            <div className='relative z-10 -mt-18 pb-10 lg:order-1 lg:left-20 lg:mt-0 lg:flex lg:items-center lg:py-0'>
+                <div className='sm:w-full w-[90%] mx-auto lg:max-w-xl'>
+                    <figure className='flex min-h-60 flex-col justify-between rounded-xl bg-white p-6 shadow-[0_12px_40px_rgba(0,0,0,0.12)] sm:p-8 lg:h-100'>
+                        <blockquote className={clsx(proseTitle)}>
                             “Thành Sen luôn giữ chữ tín hàng đầu, bảo vệ chữ tín
                             như bảo vệ chính mình”
                         </blockquote>
-                        <figcaption className='mt-5 text-mobile-body-2 text-[#666666] sm:text-body-3'>
+
+                        <figcaption className={clsx(proseBody)}>
                             Luật sư Lê Minh Hải – Chủ tịch HĐQT - TGĐ Thành Sen
                             Group
                         </figcaption>

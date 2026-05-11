@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Fragment } from "react";
 
 import { PAGE_HERO_BACKGROUND_IMAGE_SRC } from "./page-hero-urls";
 
@@ -24,7 +23,7 @@ export const PageHero = ({
 }: PageHeroProps) => (
     <section
         aria-labelledby={headingId}
-        className='relative h-[166px] w-full shrink-0 overflow-hidden lg:h-[292px]'>
+        className='relative h-41.5 w-full shrink-0 overflow-hidden lg:h-73'>
         <Image
             src={PAGE_HERO_BACKGROUND_IMAGE_SRC}
             alt='Phông nền kệ sách pháp lý'
@@ -37,7 +36,7 @@ export const PageHero = ({
         <div className='relative z-10 flex h-full min-h-0 flex-col items-center justify-center px-4 py-4 text-center lg:py-8'>
             <h1
                 id={headingId}
-                className=' text-[22px] font-bold leading-snug text-white sm:text-mobile-heading-1 sm:leading-tight lg:text-heading-3 lg:leading-tight xl:text-heading-2'>
+                className='font-serif sm:text-heading-1 font-bold leading-snug text-white text-mobile-heading-1 sm:leading-tight lg:leading-tight'>
                 {title}
             </h1>
             <nav
@@ -46,7 +45,7 @@ export const PageHero = ({
                 {breadcrumbItems.map((item, index) => {
                     const isLast = index === breadcrumbItems.length - 1;
                     return (
-                        <Fragment key={`${item.label}-${index}`}>
+                        <p key={`${item.label}-${index}`} className="inline-flex font-sans sm:text-body-2 text-mobile-body-2 font-medium">
                             {index > 0 ? (
                                 <span
                                     className='mx-1.5 text-white/80'
@@ -55,7 +54,7 @@ export const PageHero = ({
                                 </span>
                             ) : null}
                             {isLast ? (
-                                <span className='text-footer-gold'>
+                                <span className='text-[#F9DE6F]'>
                                     {item.label}
                                 </span>
                             ) : item.href ? (
@@ -67,7 +66,7 @@ export const PageHero = ({
                             ) : (
                                 <span>{item.label}</span>
                             )}
-                        </Fragment>
+                        </p>
                     );
                 })}
             </nav>

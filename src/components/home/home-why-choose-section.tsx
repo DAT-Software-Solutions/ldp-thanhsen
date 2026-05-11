@@ -5,12 +5,9 @@ import {
     TrophyIcon,
     UsersIcon,
 } from "@heroicons/react/24/outline";
+import clsx from "clsx";
 import type { ComponentType, SVGProps } from "react";
-
-const iconBox =
-    "flex size-11 shrink-0 items-center justify-center rounded-lg border border-primary bg-[#fdecec] sm:size-12";
-
-const iconGlyph = "size-6 text-primary";
+import { iconClass } from "./services-section";
 
 const FeatureRow = ({
     icon: Icon,
@@ -22,14 +19,21 @@ const FeatureRow = ({
     body: string;
 }) => (
     <li className='flex gap-4 py-7 first:pt-0 last:pb-0 sm:gap-5 sm:py-8 lg:py-9'>
-        <div className={iconBox}>
-            <Icon className={iconGlyph} aria-hidden />
+        <div className='relative h-14 w-16.25 shrink-0'>
+            <div className='absolute top-1.5 left-3 w-12.5 h-12.25 rounded-sm rounded-tl-2xl rounded-br-2xl bg-rose-100 p-2.5'></div>
+            <Icon
+                className={clsx(
+                    iconClass,
+                    "absolute z-50 h-10 w-10 font-light",
+                )}
+                aria-hidden
+            />
         </div>
-        <div className='min-w-0'>
-            <h3 className='text-mobile-heading-4 font-bold leading-snug text-neutral-black sm:text-heading-4'>
+        <div className='min-w-0 '>
+            <h3 className='font-serif text-mobile-heading-4 font-bold leading-snug text-neutral-black sm:text-heading-4'>
                 {title}
             </h3>
-            <p className='mt-2 text-mobile-body-2 leading-relaxed text-[#666666] sm:text-body-3 sm:leading-normal'>
+            <p className='mt-2 font-sans font-normal text-mobile-body-2 leading-relaxed text-[#717171] sm:text-body-3 sm:leading-normal'>
                 {body}
             </p>
         </div>
@@ -41,20 +45,20 @@ export const HomeWhyChooseSection = () => (
         aria-labelledby='home-why-choose-heading'
         className='bg-white py-12 sm:py-14 lg:py-20'>
         <div className='custom-container px-4 sm:px-6'>
-            <header className='mx-auto max-w-2xl text-center'>
+            <header className='flex flex-col gap-y-2 mx-auto max-w-2xl text-center'>
                 <h2
                     id='home-why-choose-heading'
-                    className=' text-mobile-heading-2 font-bold text-[#2D3436] sm:text-heading-3 lg:text-heading-2'>
+                    className='font-serif text-mobile-heading-2 font-bold text-neutral-black sm:text-heading-3 lg:text-heading-2'>
                     Vì sao chọn{" "}
-                    <span className='text-primary'>Thành Sen Group</span>?
+                    <span className='text-primary'>Thành Sen Group?</span>
                 </h2>
-                <p className='mt-3 text-mobile-body-1 text-[#666666] sm:text-body-2'>
+                <p className='font-sans text-mobile-body-1 text-[#717171] sm:text-body-1'>
                     Những giá trị tạo nên sự khác biệt
                 </p>
             </header>
 
             <div className='mt-10 lg:mt-12'>
-                <ul className='divide-y divide-[#e8e0e0] lg:hidden'>
+                <ul className='divide-y divide-[#7A2828] lg:hidden'>
                     <FeatureRow
                         icon={AcademicCapIcon}
                         title='Năng lực chuyên môn vững vàng'
@@ -83,7 +87,7 @@ export const HomeWhyChooseSection = () => (
                 </ul>
 
                 <div className='hidden lg:flex lg:items-stretch lg:gap-0'>
-                    <ul className='min-w-0 flex-1 divide-y divide-[#e8e0e0] lg:pr-12'>
+                    <ul className='min-w-0 flex-1 divide-y divide-[#7A2828] lg:pr-12'>
                         <FeatureRow
                             icon={AcademicCapIcon}
                             title='Năng lực chuyên môn vững vàng'
@@ -102,11 +106,11 @@ export const HomeWhyChooseSection = () => (
                     </ul>
 
                     <div
-                        className='w-px shrink-0 self-stretch bg-[#e8e0e0]'
+                        className='w-px shrink-0 self-stretch bg-[#7A2828]'
                         aria-hidden
                     />
 
-                    <ul className='flex min-w-0 flex-1 flex-col justify-center divide-y divide-[#e8e0e0] lg:pl-12'>
+                    <ul className='flex min-w-0 flex-1 flex-col justify-center divide-y divide-[#7A2828] lg:pl-12'>
                         <FeatureRow
                             icon={ClipboardDocumentCheckIcon}
                             title='Tính minh bạch và chuẩn mực pháp lý'
