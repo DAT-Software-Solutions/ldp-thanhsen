@@ -14,10 +14,12 @@ import {
 
 import {
     CTA_HREF,
-    HASH_LINK,
     PAGE_GIOI_THIEU,
     PAGE_HOME,
     PAGE_LIEN_HE,
+    PAGE_LUAT_SU,
+    PAGE_THAM_DINH_GIA,
+    PAGE_THUA_PHAT_LAI,
 } from "./site-urls";
 
 const linkFocus =
@@ -26,9 +28,9 @@ const linkFocus =
 /** Thứ tự menu giống bản thiết kế — `href` lấy từ `site-urls`. */
 const MAIN_NAV_ITEMS = [
     { href: PAGE_GIOI_THIEU, label: "Giới thiệu" },
-    { href: HASH_LINK, label: "Tư vấn pháp luật" },
-    { href: HASH_LINK, label: "Thẩm định giá" },
-    { href: HASH_LINK, label: "Thừa phát lại" },
+    { href: PAGE_LUAT_SU, label: "Tư vấn pháp luật" },
+    { href: PAGE_THAM_DINH_GIA, label: "Thẩm định giá" },
+    { href: PAGE_THUA_PHAT_LAI, label: "Thừa phát lại" },
     { href: PAGE_LIEN_HE, label: "Liên hệ" },
 ] as const;
 

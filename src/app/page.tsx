@@ -11,7 +11,13 @@ import {
 import { defaultDescription, siteName } from "@/lib/site-seo";
 import { GioiThieuNewsSection } from "@/components/gioi-thieu/gioi-thieu-news-section";
 import { BranchesMapSection } from "@/components/lien-he/branches-map-section";
-import { HASH_LINK, PAGE_DICH_VU } from "@/components/layout/site-urls";
+import {
+    PAGE_DAU_GIA,
+    PAGE_DICH_VU,
+    PAGE_THAM_DINH_GIA,
+    PAGE_THUA_PHAT_LAI,
+    PAGE_TRONG_TAI_THUONG_MAI,
+} from "@/components/layout/site-urls";
 
 const homeTitle = `${siteName} — Tư vấn pháp lý toàn diện tại Việt Nam`;
 
@@ -22,22 +28,22 @@ const services: ServiceCardProps[] = [
         title: "Dịch vụ",
     },
     {
-        href: HASH_LINK,
+        href: PAGE_THUA_PHAT_LAI,
         iconKey: "bailiff",
         title: "Thừa phát lại",
     },
     {
-        href: HASH_LINK,
+        href: PAGE_TRONG_TAI_THUONG_MAI,
         iconKey: "arbitration",
         title: "Trọng tài thương mại",
     },
     {
-        href: HASH_LINK,
+        href: PAGE_THAM_DINH_GIA,
         iconKey: "valuation",
         title: "Thẩm định giá",
     },
     {
-        href: HASH_LINK,
+        href: PAGE_DAU_GIA,
         iconKey: "auction",
         title: "Đấu giá",
     },

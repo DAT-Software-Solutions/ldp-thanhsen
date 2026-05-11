@@ -124,3 +124,41 @@ body {
 .home-press-swiper .swiper-pagination-bullet-active {
   background: var(--primary);
 }
+
+.service-content {
+  color: #4d4d4d;
+  font-family: var(--font-open-sans), Arial, Helvetica, sans-serif;
+}
+
+.service-content p {
+  margin-top: 1rem;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.service-content h2 {
+  margin-top: 2rem;
+  color: var(--color-neutral-black);
+  font-family: serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+}
+
+.service-content h2:first-child,
+.service-content p:first-child {
+  margin-top: 0;
+}
+
+@media (min-width: 640px) {
+  .service-content p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .service-content h2 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+}

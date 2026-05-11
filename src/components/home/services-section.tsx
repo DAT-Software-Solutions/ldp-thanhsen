@@ -8,7 +8,6 @@ import {
 import Link from "next/link";
 import type { ComponentType, SVGProps } from "react";
 
-import { HASH_LINK, PAGE_DICH_VU } from "@/components/layout/site-urls";
 import clsx from "clsx";
 
 export type ServiceCardProps = {

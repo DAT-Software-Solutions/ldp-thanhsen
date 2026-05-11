@@ -14,6 +14,8 @@ import {
     PAGE_GIOI_THIEU,
     PAGE_HOME,
     PAGE_LIEN_HE,
+    PAGE_THAM_DINH_GIA,
+    PAGE_THUA_PHAT_LAI,
     SITE_TEL_HREF,
 } from "./site-urls";
 
@@ -76,18 +78,18 @@ const ExploreLinks = () => (
                 </Link>
             </li>
             <li>
-                <a
-                    href={HASH_LINK}
-                    className={`${linkFocus} font-sans sm:text-body-3 text-mobile-body-2hover:opacity-80`}>
+                <Link
+                    href={PAGE_THAM_DINH_GIA}
+                    className={`${linkFocus} font-sans sm:text-body-3 text-mobile-body-2 hover:opacity-80`}>
                     Thẩm định giá
-                </a>
+                </Link>
             </li>
             <li>
-                <a
-                    href={HASH_LINK}
+                <Link
+                    href={PAGE_THUA_PHAT_LAI}
                     className={`${linkFocus} font-sans sm:text-body-3 text-mobile-body-2 hover:opacity-80`}>
                     Thừa phát lại
-                </a>
+                </Link>
             </li>
         </ul>
     </nav>

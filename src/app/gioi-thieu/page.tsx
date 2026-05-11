@@ -10,7 +10,13 @@ import {
 } from "@/components/home/services-section";
 import { GioiThieuCtaSection } from "@/components/gioi-thieu/gioi-thieu-cta-section";
 import { GioiThieuTeamSection } from "@/components/gioi-thieu/gioi-thieu-team-section";
-import { HASH_LINK, PAGE_DICH_VU } from "@/components/layout/site-urls";
+import {
+    PAGE_DAU_GIA,
+    PAGE_DICH_VU,
+    PAGE_THAM_DINH_GIA,
+    PAGE_THUA_PHAT_LAI,
+    PAGE_TRONG_TAI_THUONG_MAI,
+} from "@/components/layout/site-urls";
 
 const services: ServiceCardProps[] = [
     {
@@ -21,28 +27,28 @@ const services: ServiceCardProps[] = [
             "Thành Sen Group cung cấp dịch vụ pháp lý toàn diện, bao gồm tư vấn, đại diện và tham gia tố tụng trong các lĩnh vực dân sự, hình sự, đất đai, kinh doanh thương mại.",
     },
     {
-        href: HASH_LINK,
+        href: PAGE_THUA_PHAT_LAI,
         iconKey: "bailiff",
         title: "Thừa phát lại",
         content:
             "Thành Sen Group cung cấp các dịch vụ hỗ trợ tư pháp như lập vi bằng, tống đạt văn bản, xác minh điều kiện thi hành án và tổ chức thi hành án theo quy định pháp luật.",
     },
     {
-        href: HASH_LINK,
+        href: PAGE_TRONG_TAI_THUONG_MAI,
         iconKey: "arbitration",
         title: "Trọng tài thương mại",
         content:
             "Thành Sen Group phối hợp với Trung tâm Trọng tài Quốc tế BigBoss (BBIAC) để cung cấp dịch vụ giải quyết tranh chấp nhanh chóng, linh hoạt và hiệu quả ngoài Tòa án.",
     },
     {
-        href: HASH_LINK,
+        href: PAGE_THAM_DINH_GIA,
         iconKey: "valuation",
         title: "Thẩm định giá",
         content:
             "Thành Sen Group cung cấp dịch vụ xác định giá trị tài sản một cách khách quan, chính xác và phù hợp với quy định pháp luật.",
     },
     {
-        href: HASH_LINK,
+        href: PAGE_DAU_GIA,
         iconKey: "auction",
         title: "Đấu giá",
         content:
