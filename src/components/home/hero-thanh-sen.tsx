@@ -4,6 +4,7 @@ import Link from "next/link";
 import { CTA_HREF } from "@/components/layout/site-urls";
 
 import { HERO_ILLUSTRATION_SRC, ZALO_CHAT_HREF } from "./home-urls";
+import clsx from "clsx";
 
 const btnFocus =
     "rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary";
@@ -32,12 +33,15 @@ export const HeroThanhSen = () => (
                     <div className='flex w-full justify-center gap-3 sm:w-auto lg:justify-start'>
                         <Link
                             href={CTA_HREF}
-                            className={`font-sans inline-flex w-full md:min-w-46.5 items-center justify-center rounded-sm bg-primary px-5 py-3 md:text-body-2 text-mobile-body-1 font-medium text-white transition-opacity hover:opacity-95 sm:w-auto ${btnFocus}`}>
+                            className={`interactive-button font-sans inline-flex w-full md:min-w-46.5 items-center justify-center rounded-sm bg-primary px-5 py-3 md:text-body-2 text-mobile-body-1 font-medium text-white sm:w-auto ${btnFocus}`}>
                             Liên hệ ngay
                         </Link>
                         <a
                             href={ZALO_CHAT_HREF}
-                            className={`font-sans inline-flex w-full md:min-w-40.25 h-14 items-center justify-center rounded-sm border border-primary bg-transparent px-5 py-3 md:text-body-2 text-mobile-body-1 font-medium text-primary transition-opacity hover:opacity-90 sm:w-auto ${btnFocus}`}>
+                            className={clsx(
+                                `interactive-button-outline font-sans inline-flex w-full md:min-w-40.25 h-14 items-center justify-center rounded-sm border border-primary bg-transparent px-5 py-3 md:text-body-2 text-mobile-body-1 font-medium text-primary sm:w-auto`,
+                                btnFocus,
+                            )}>
                             Tư vấn qua Zalo
                         </a>
                     </div>

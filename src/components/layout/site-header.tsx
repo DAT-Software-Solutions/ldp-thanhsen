@@ -158,13 +158,13 @@ export const SiteHeader = () => {
                             linkClassName={desktopLinkClass}
                         />
 
-                        <HeaderCtaLink className='rounded-md bg-white px-4 py-2 text-center sm:text-body-2 text-mobile-body-2  font-medium tracking-tight text-primary transition-opacity hover:opacity-95 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-white sm:text-x' />
+                        <HeaderCtaLink className='interactive-button rounded-md bg-white px-4 py-2 text-center sm:text-body-2 text-mobile-body-2  font-medium tracking-tight text-primary focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-white sm:text-x' />
                     </div>
 
                     <div className='ml-auto flex shrink-0 items-center gap-2 md:hidden'>
                         <HeaderCtaLink
                             onNavigate={closeMobile}
-                            className='flex h-8 w-44.25 shrink-0 items-center justify-center rounded-md bg-white text-center text-[9px] font-semibold tracking-tight text-primary focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-white sm:text-[10px]'
+                            className='interactive-button flex h-8 w-44.25 shrink-0 items-center justify-center rounded-md bg-white text-center text-[9px] font-semibold tracking-tight text-primary focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-white sm:text-[10px]'
                         />
                         <button
                             type='button'

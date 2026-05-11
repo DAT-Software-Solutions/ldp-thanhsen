@@ -94,7 +94,10 @@ const ServiceCard = ({
     title: string;
     content?: string;
 }) => {
-    const className = `flex flex-col h-full md:min-h-60 min-h-42 rounded-lg bg-white px-4 py-6 shadow-md transition-shadow hover:shadow-md ${cardFocus}`;
+    const className = clsx(
+        "interactive-card flex flex-col h-full md:min-h-60 min-h-42 rounded-lg bg-white px-4 py-6 shadow-md",
+        cardFocus,
+    );
 
     if (href.startsWith("/")) {
         return (

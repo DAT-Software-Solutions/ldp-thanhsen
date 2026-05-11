@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Fragment } from "react";
 
 import { PAGE_HERO_BACKGROUND_IMAGE_SRC } from "./page-hero-urls";
 

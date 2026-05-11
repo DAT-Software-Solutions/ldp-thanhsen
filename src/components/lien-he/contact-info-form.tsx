@@ -134,7 +134,7 @@ export const ContactInfoForm = () => {
                             </div>
                             <button
                                 type='submit'
-                                className={`font-sans mt-2 inline-flex max-w-40 items-center justify-center rounded-md bg-primary px-6 py-3 sm:text-body-2 text-mobile-body-2 font-medium text-white transition-opacity hover:opacity-95 sm:w-auto ${btnFocus}`}>
+                                className={`interactive-button font-sans mt-2 inline-flex max-w-40 items-center justify-center rounded-md bg-primary px-6 py-3 sm:text-body-2 text-mobile-body-2 font-medium text-white sm:w-auto ${btnFocus}`}>
                                 Gửi tin nhắn
                             </button>
                         </form>

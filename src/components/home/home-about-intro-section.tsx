@@ -12,7 +12,7 @@ const btnFocus =
     "rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary";
 
 const roundedFigure = "overflow-hidden rounded-xl sm:rounded-2xl";
-
+ 
 export const HomeAboutIntroSection = () => (
     <section
         aria-labelledby='home-about-intro-heading'
@@ -36,7 +36,7 @@ export const HomeAboutIntroSection = () => (
                     </p>
                     <Link
                         href={PAGE_GIOI_THIEU}
-                        className={`mt-6 inline-flex min-h-14 min-w-43.25 items-center justify-center rounded-lg bg-primary px-6 py-3 md:text-body-2 text-mobile-body-1 font-medium text-white transition-opacity hover:opacity-95 sm:mt-8 sm:text-base ${btnFocus}`}>
+                        className={`interactive-button mt-6 inline-flex min-h-14 min-w-43.25 items-center justify-center rounded-lg bg-primary px-6 py-3 md:text-body-2 text-mobile-body-1 font-medium text-white sm:mt-8 sm:text-base ${btnFocus}`}>
                         Tìm hiểu thêm
                     </Link>
                 </div>

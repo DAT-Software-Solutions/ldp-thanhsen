@@ -18,7 +18,7 @@ const btnOutlineFocus =
 const PressFeaturedSlide = () => (
     <article className='overflow-hidden rounded-2xl bg-white shadow-[0_10px_40px_rgba(0,0,0,0.08)] ring-1 ring-neutral-200/70'>
         <div className='flex flex-col lg:min-h-[min(22rem,52vh)] lg:flex-row lg:items-stretch'>
-            <div className='relative aspect-16/10 w-full shrink-0 bg-neutral-200 lg:order-2 lg:aspect-auto lg:h-auto lg:min-h-[280px] lg:w-[55%] lg:flex-none'>
+            <div className='relative aspect-16/10 w-full shrink-0 bg-neutral-200 lg:order-2 lg:aspect-auto lg:h-auto lg:min-h-70 lg:w-[55%] lg:flex-none'>
                 <Image
                     src={HOME_PRESS_FEATURED_IMAGE_SRC}
                     alt='Lễ khai trương văn phòng Thành Sen Group'
@@ -42,7 +42,7 @@ const PressFeaturedSlide = () => (
                 <div className='pt-1'>
                     <Link
                         href={HASH_LINK}
-                        className={`font-sans inline-flex min-h-10 items-center justify-center rounded-lg border border-primary px-5 py-2.5 font-medium text-primary transition-opacity hover:opacity-85 sm:text-body-2 text-mobile-body-1 ${btnOutlineFocus}`}>
+                        className={`interactive-button-outline font-sans inline-flex min-h-10 items-center justify-center rounded-lg border border-primary px-5 py-2.5 font-medium text-primary sm:text-body-2 text-mobile-body-1 ${btnOutlineFocus}`}>
                         Xem bài viết
                     </Link>
                 </div>
@@ -79,7 +79,7 @@ export const HomePressSection = () => (
             <div className='mx-auto mt-10 max-w-5xl lg:mt-12'>
                 <Swiper
                     modules={[Pagination]}
-                    spaceBetween={0}
+                    spaceBetween={12}
                     slidesPerView={1}
                     pagination={{ clickable: true }}
                     className='home-press-swiper pb-0!'>

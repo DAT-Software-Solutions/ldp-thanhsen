@@ -23,7 +23,7 @@ export const GioiThieuCtaSection = () => (
                     </h2>
                     <Link
                         href={CTA_HREF}
-                        className={`font-sans mt-6 inline-flex min-h-11 items-center justify-center rounded-lg bg-primary px-6 py-3 font-medium text-white transition-opacity hover:opacity-95 sm:min-h-12 sm:text-body-2 ${btnFocus}`}>
+                        className={`interactive-button font-sans mt-6 inline-flex min-h-11 items-center justify-center rounded-lg bg-primary px-6 py-3 font-medium text-white sm:min-h-12 sm:text-body-2 ${btnFocus}`}>
                         Tìm hiểu thêm
                     </Link>
                 </div>
