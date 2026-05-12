@@ -15,14 +15,13 @@ const btnFocus =
 export const ContactInfoForm = () => {
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        // TODO: nối Server Action hoặc API gửi form khi có yêu cầu.
     };
 
     return (
         <section
             aria-labelledby='contact-info-heading'
             className='bg-background text-neutral-900'>
-            <div className='custom-container px-4 py-12 sm:px-6 sm:py-14 lg:py-16'>
+            <div className='custom-container px-4 py-12 sm:px-0 sm:py-16'>
                 <div className='grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-12 lg:gap-x-14'>
                     <div>
                         <h2
