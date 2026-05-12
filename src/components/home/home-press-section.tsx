@@ -85,9 +85,13 @@ export const HomePressSection = () => (
                     pagination={{ clickable: true }}
                     className={clsx(
                         "home-press-swiper pb-0!",
-                        "[&_.swiper-pagination]:relative",
-                        "[&_.swiper-pagination]:mt-20",
-                        "lg:[&_.swiper-pagination]:mt-20",
+                        "[&_.swiper-pagination]:!static",
+                        "[&_.swiper-pagination]:!bottom-auto",
+                        "[&_.swiper-pagination]:!top-auto",
+                        "[&_.swiper-pagination]:flex",
+                        "[&_.swiper-pagination]:h-14",
+                        "[&_.swiper-pagination]:items-center",
+                        "[&_.swiper-pagination]:justify-center",
                         "[&_.swiper-pagination-bullet]:h-2",
                         "[&_.swiper-pagination-bullet]:w-2",
                         "[&_.swiper-pagination-bullet]:!mx-[5px]",
