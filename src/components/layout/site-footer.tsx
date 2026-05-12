@@ -98,7 +98,7 @@ const ExploreLinks = () => (
 const ContactBlock = () => (
     <section aria-label='Liên hệ' className='mt-8 lg:mt-10'>
         <h2 className={sectionTitle}>Liên hệ</h2>
-        <ul className='mt-3 flex flex-col gap-3 text-sm text-white sm:text-base'>
+        <ul className='mt-3 flex flex-col gap-3 text-white'>
             <li className='flex gap-2'>
                 <PhoneIcon
                     className='mt-0.5 size-5 shrink-0 text-white'
@@ -129,7 +129,7 @@ const ContactBlock = () => (
 const BranchesBlock = () => (
     <section aria-label='Các chi nhánh'>
         <h2 className={sectionTitle}>Các chi nhánh</h2>
-        <ul className='mt-3 flex flex-col gap-3 text-sm text-white sm:text-base'>
+        <ul className='mt-3 flex flex-col gap-3 text-white sm:text-body-3 text-mobile-body-2'>
             <li className='flex gap-2'>
                 <MapPinIcon
                     className='mt-0.5 size-5 shrink-0 text-white'
@@ -192,7 +192,7 @@ const BranchesBlock = () => (
 
 const CopyrightAndSocial = () => (
     <div className='flex flex-col gap-4'>
-        <p className='sm:text-body-3 text-mobile-body-2 font-normal text-[#F5F7FA]'>
+        <p className='font-sans sm:text-body-3 text-mobile-body-2 font-normal text-[#F5F7FA]'>
             Copyright © 2020 Thanh Sen Group. All rights reserved
         </p>
         <ul className='flex flex-wrap gap-3'>
@@ -234,12 +234,12 @@ const CopyrightAndSocial = () => (
 
 export const SiteFooter = () => (
     <footer aria-label='Chân trang' className='mt-auto bg-primary text-white'>
-        <div className='custom-container px-4 py-10 sm:px-6'>
+        <div className='custom-container sm:px-0 px-4 py-12 sm:py-16'>
             <div className='grid grid-cols-1 gap-10 lg:grid-cols-3 lg:gap-8 lg:items-start'>
                 <div className='flex flex-col gap-4'>
                     <Link
                         href={PAGE_HOME}
-                        className={`relative block h-16 w-16 shrink-0 sm:h-[72px] sm:w-[72px] ${linkFocus}`}>
+                        className={`relative block h-16 w-16 shrink-0 sm:h-18 sm:w-18 ${linkFocus}`}>
                         <Image
                             src='/images/logo.svg'
                             alt='Thành Sen Group'

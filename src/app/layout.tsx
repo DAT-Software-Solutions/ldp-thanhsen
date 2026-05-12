@@ -66,7 +66,7 @@ export default function RootLayout({
         <html
             lang='vi'
             className={`${inter.variable} ${playfairDisplay.variable} h-full antialiased`}>
-            <body className='flex min-h-full flex-col'>
+            <body className={`${inter.className} flex min-h-full flex-col`}>
                 <SiteHeader />
                 <main className='flex-1'>{children}</main>
                 <SiteFooter />

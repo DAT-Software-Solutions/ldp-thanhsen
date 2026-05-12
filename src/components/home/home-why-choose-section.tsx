@@ -18,7 +18,7 @@ const FeatureRow = ({
     title: string;
     body: string;
 }) => (
-    <li className='flex gap-4 py-7 first:pt-0 last:pb-0 sm:gap-5 sm:py-8 lg:py-9'>
+    <li className='flex gap-6 py-7 first:pt-0 last:pb-0 sm:gap-5 sm:py-6 sm:px-8'>
         <div className='relative h-14 w-16.25 shrink-0'>
             <div className='absolute top-1.5 left-3 w-12.5 h-12.25 rounded-sm rounded-tl-2xl rounded-br-2xl bg-rose-100 p-2.5'></div>
             <Icon
@@ -29,11 +29,11 @@ const FeatureRow = ({
                 aria-hidden
             />
         </div>
-        <div className='min-w-0 '>
+        <div className='min-w-0 flex flex-col gap-y-2'>
             <h3 className='font-serif text-mobile-heading-4 font-bold leading-snug text-neutral-black sm:text-heading-4'>
                 {title}
             </h3>
-            <p className='mt-2 font-sans font-normal text-mobile-body-2 leading-relaxed text-[#717171] sm:text-body-3 sm:leading-normal'>
+            <p className='font-sans font-normal text-mobile-body-2 leading-relaxed text-[#717171] sm:text-body-3 sm:leading-normal'>
                 {body}
             </p>
         </div>
@@ -43,8 +43,8 @@ const FeatureRow = ({
 export const HomeWhyChooseSection = () => (
     <section
         aria-labelledby='home-why-choose-heading'
-        className='bg-white py-12 sm:py-14 lg:py-20'>
-        <div className='custom-container px-4 sm:px-0'>
+        className='bg-white py-12 sm:py-16'>
+        <div className='custom-container px-4 sm:px-0 flex flex-col gap-y-8'>
             <header className='flex flex-col gap-y-2 mx-auto max-w-2xl text-center'>
                 <h2
                     id='home-why-choose-heading'
@@ -57,7 +57,7 @@ export const HomeWhyChooseSection = () => (
                 </p>
             </header>
 
-            <div className='mt-10 lg:mt-12'>
+            <div className=''>
                 <ul className='divide-y divide-[#7A2828] lg:hidden'>
                     <FeatureRow
                         icon={AcademicCapIcon}
