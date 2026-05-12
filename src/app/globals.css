@@ -15,8 +15,8 @@
     /* Giá trị literal để Tailwind emit đúng token trong @layer theme :root,:host */
     --color-primary: #7b241c;
     --color-footer-gold: #d4af37;
-    --font-sans: var(--font-inter), Arial, sans-serif;
-    --font-serif: var(--font-playfair-display), Georgia, serif;
+    --font-sans: var(--font-inter);
+    --font-serif: var(--font-playfair-display);
 
     /* Figma - Regular / Medium -> font-body-regular (400), font-body-medium (500) */
     --font-weight-body-regular: 400;
