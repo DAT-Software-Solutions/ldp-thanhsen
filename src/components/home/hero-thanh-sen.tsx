@@ -13,10 +13,10 @@ export const HeroThanhSen = () => (
     <section
         aria-labelledby='hero-heading'
         className='bg-surface-muted text-[#2D3436]'>
-        <div className='custom-container px-4 py-12 sm:px-6 sm:py-12 lg:py-16'>
+        <div className='custom-container px-4 sm:px-0 py-12 lg:py-24'>
             <div className='flex md:flex-row flex-col gap-x-20 gap-y-8'>
-                <div className='md:w-154.75 shrink-0 flex flex-col gap-y-6 items-center text-center lg:items-start lg:text-left'>
-                    <div className='flex flex-col gap-y-2'>
+                <div className='md:w-154.75 shrink-0 flex flex-col gap-y-8 items-center text-center lg:items-start lg:text-left'>
+                    <div className='flex flex-col gap-y-6 sm:gap-y-4'>
                         <h1
                             id='hero-heading'
                             className='font-serif md:text-heading-1 text-mobile-heading-1 uppercase font-bold'>

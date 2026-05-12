@@ -46,8 +46,8 @@ const NewsCard = ({ src, index }: { src: string; index: number }) => (
 export const GioiThieuNewsSection = () => (
     <section
         aria-labelledby='gioi-thieu-news-heading'
-        className='bg-white py-12 sm:py-14 lg:py-20'>
-        <div className='custom-container px-4 sm:px-6'>
+        className='bg-white py-12 sm:py-16'>
+        <div className='custom-container'>
             <header className='mb-8 text-center lg:mb-10 lg:text-left'>
                 <h2
                     id='gioi-thieu-news-heading'
@@ -82,8 +82,8 @@ export const GioiThieuNewsSection = () => (
                     "[&_.swiper-wrapper]:items-stretch",
                     "[&_.swiper-slide]:h-auto",
                     "[&_.swiper-pagination]:relative",
-                    "[&_.swiper-pagination]:mt-5",
-                    "lg:[&_.swiper-pagination]:mt-6",
+                    "[&_.swiper-pagination]:mt-20",
+                    "lg:[&_.swiper-pagination]:mt-20",
                     "[&_.swiper-pagination-bullet]:h-2",
                     "[&_.swiper-pagination-bullet]:w-2",
                     "[&_.swiper-pagination-bullet]:!mx-[5px]",

@@ -70,8 +70,8 @@ export const GioiThieuTeamSection = () => (
                     className={clsx(
                         "gioi-thieu-team-swiper pb-0!",
                         "[&_.swiper-pagination]:relative",
-                        "[&_.swiper-pagination]:mt-6",
-                        "sm:[&_.swiper-pagination]:mt-7",
+                        "[&_.swiper-pagination]:mt-20",
+                        "sm:[&_.swiper-pagination]:mt-20",
                         "[&_.swiper-pagination-bullet]:h-2",
                         "[&_.swiper-pagination-bullet]:w-2",
                         "[&_.swiper-pagination-bullet]:!mx-[5px]",
