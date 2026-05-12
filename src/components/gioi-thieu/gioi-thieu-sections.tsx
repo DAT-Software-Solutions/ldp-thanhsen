@@ -28,9 +28,9 @@ const ImageTextRow = ({
 }) => (
     <section className={`${sectionShell} py-12 sm:py-16`}>
         <div className='custom-container px-4 sm:px-0'>
-            <div className='grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-12 xl:gap-16'>
+            <div className='grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-12 xl:gap-16'>
                 <div
-                    className={`relative aspect-4/3 w-full max-lg:mx-auto max-lg:max-w-2xl ${roundedMedia}`}>
+                    className={`relative aspect-4/3 w-full max-md:mx-auto max-md:max-w-2xl ${roundedMedia}`}>
                     <Image
                         src={imageSrc}
                         alt={imageAlt}
@@ -50,8 +50,8 @@ const ImageTextRow = ({
 
 const QuoteOverlapSection = () => (
     <section className='relative overflow-hidden bg-surface-muted'>
-        <div className='custom-container relative px-4 sm:px-6 lg:grid lg:grid-cols-2 lg:items-stretch lg:px-0'>
-            <div className='relative aspect-16/11 w-full overflow-hidden rounded-t-xl lg:order-2 lg:h-132 lg:rounded-none'>
+        <div className='custom-container relative px-4 md:px-0 md:flex md:items-center'>
+            <div className='relative aspect-16/11 w-full overflow-hidden md:order-2 md:h-132 md:w-201.5 rounded-none'>
                 <Image
                     src={GIOI_THIEU_QUOTE_IMAGE_SRC}
                     alt='Lãnh đạo Thành Sen Group trong môi trường làm việc chuyên nghiệp'
@@ -61,9 +61,9 @@ const QuoteOverlapSection = () => (
                 />
             </div>
 
-            <div className='relative z-10 -mt-18 pb-10 lg:order-1 lg:left-20 lg:mt-0 lg:flex lg:items-center lg:py-0'>
-                <div className='sm:w-full w-[90%] mx-auto lg:max-w-xl'>
-                    <figure className='flex min-h-60 flex-col justify-between rounded-xl bg-white p-6 shadow-[0_12px_40px_rgba(0,0,0,0.12)] sm:p-8 lg:h-100'>
+            <div className='relative z-10 -mt-18 pb-10 md:order-1 md:mt-0 md:flex md:flex-1 md:items-center md:py-0'>
+                <div className='w-[90%] mx-auto md:absolute md:w-140'>
+                    <figure className='flex min-h-60 flex-col justify-between rounded-xl bg-white p-6 shadow-[0_12px_40px_rgba(0,0,0,0.12)] md:p-8 md:h-100'>
                         <blockquote className={clsx(proseTitle)}>
                             “Thành Sen luôn giữ chữ tín hàng đầu, bảo vệ chữ tín
                             như bảo vệ chính mình”

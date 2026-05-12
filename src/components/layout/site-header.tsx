@@ -154,11 +154,11 @@ export const SiteHeader = () => {
 
                     <div className='ml-auto hidden items-center gap-6 md:flex lg:gap-8'>
                         <MainNavLinks
-                            className='flex min-w-0 items-center gap-6 text-sm font-medium text-white lg:gap-8'
+                            className='flex min-w-0 items-center gap-6 sm:text-body-2 text-mobile-body-2 font-normal text-white lg:gap-8'
                             linkClassName={desktopLinkClass}
                         />
 
-                        <HeaderCtaLink className='interactive-button rounded-md bg-white px-4 py-2 text-center sm:text-body-2 text-mobile-body-2  font-medium tracking-tight text-primary focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-white sm:text-x' />
+                        <HeaderCtaLink className='interactive-button rounded-md bg-white px-4 py-2 text-center sm:text-body-2 text-mobile-body-2  font-normal tracking-tight text-primary focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-white' />
                     </div>
 
                     <div className='ml-auto flex shrink-0 items-center gap-2 md:hidden'>

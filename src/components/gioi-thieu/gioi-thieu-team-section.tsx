@@ -12,7 +12,7 @@ import { GIOI_THIEU_TEAM_CARD_IMAGE_SRC } from "./gioi-thieu-urls";
 
 const TeamMemberCard = () => (
     <article className='flex flex-col items-center text-center'>
-        <div className='relative aspect-3/4 w-full overflow-hidden rounded-[14px] sm:rounded-2xl'>
+        <div className='relative aspect-3/4 w-full overflow-hidden rounded-xl'>
             <Image
                 src={GIOI_THIEU_TEAM_CARD_IMAGE_SRC}
                 alt='Luật sư Lê Minh Hải — Thành Sen Group'
@@ -32,7 +32,7 @@ const TeamMemberCard = () => (
 
 export const GioiThieuTeamSection = () => (
     <section className='bg-[#F5F6F7] py-12 sm:py-16'>
-        <div className='custom-container px-4 sm:px-0'>
+        <div className='custom-container px-4 sm:px-0 flex flex-col gap-y-8'>
             <header className='flex flex-col gap-y-4 mx-auto max-w-3xl text-center'>
                 <h2 className='font-serif text-mobile-heading-2 font-bold leading-snug text-neutral-black sm:leading-[1.2] sm:text-heading-2'>
                     <span className='block sm:inline'>
@@ -48,10 +48,10 @@ export const GioiThieuTeamSection = () => (
                 </p>
             </header>
 
-            <div className='mt-10 sm:mt-12 lg:mt-14'>
+            <div className='max-w-full'>
                 <Swiper
                     modules={[Pagination]}
-                    spaceBetween={16}
+                    spaceBetween={24}
                     slidesPerView={1}
                     slidesPerGroup={1}
                     pagination={{ clickable: true }}
