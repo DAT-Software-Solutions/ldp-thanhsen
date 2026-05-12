@@ -31,8 +31,8 @@ const TeamMemberCard = () => (
 );
 
 export const GioiThieuTeamSection = () => (
-    <section className='bg-[#F5F6F7] py-12 sm:py-14 lg:py-20'>
-        <div className='custom-container px-4 sm:px-6'>
+    <section className='bg-[#F5F6F7] py-12 sm:py-16'>
+        <div className='custom-container px-4 sm:px-0'>
             <header className='flex flex-col gap-y-4 mx-auto max-w-3xl text-center'>
                 <h2 className='font-serif text-mobile-heading-2 font-bold leading-snug text-neutral-black sm:leading-[1.2] sm:text-heading-2'>
                     <span className='block sm:inline'>

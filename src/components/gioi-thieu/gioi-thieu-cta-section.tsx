@@ -12,7 +12,7 @@ export const GioiThieuCtaSection = () => (
     <section
         aria-labelledby='gioi-thieu-cta-heading'
         className='bg-surface-muted text-[#2D3436]'>
-        <div className='custom-container px-4 py-12 sm:px-6 sm:py-14 lg:py-16'>
+        <div className='custom-container px-4 py-12 sm:px-0 sm:py-16'>
             <div className='grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-12 xl:gap-16'>
                 <div className='flex flex-col items-start text-left'>
                     <h2

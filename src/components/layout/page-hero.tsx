@@ -23,7 +23,7 @@ export const PageHero = ({
 }: PageHeroProps) => (
     <section
         aria-labelledby={headingId}
-        className='relative h-41.5 w-full shrink-0 overflow-hidden lg:h-73'>
+        className='relative h-41.5 w-full shrink-0 overflow-hidden sm:h-73'>
         <Image
             src={PAGE_HERO_BACKGROUND_IMAGE_SRC}
             alt='Phông nền kệ sách pháp lý'
@@ -33,7 +33,7 @@ export const PageHero = ({
             sizes='100vw'
         />
         <div className='absolute inset-0 bg-black/15' aria-hidden />
-        <div className='relative z-10 flex h-full min-h-0 flex-col items-center justify-center px-4 py-4 text-center lg:py-8'>
+        <div className='relative z-10 flex h-full min-h-0 flex-col items-center justify-center text-center  sm:py-24 py-12'>
             <h1
                 id={headingId}
                 className='font-serif sm:text-heading-1 font-bold leading-snug text-white text-mobile-heading-1 sm:leading-tight lg:leading-tight'>
@@ -45,7 +45,9 @@ export const PageHero = ({
                 {breadcrumbItems.map((item, index) => {
                     const isLast = index === breadcrumbItems.length - 1;
                     return (
-                        <p key={`${item.label}-${index}`} className="inline-flex font-sans sm:text-body-2 text-mobile-body-2 font-medium">
+                        <p
+                            key={`${item.label}-${index}`}
+                            className='inline-flex font-sans sm:text-body-2 text-mobile-body-2 font-medium'>
                             {index > 0 ? (
                                 <span
                                     className='mx-1.5 text-white/80'

@@ -3,39 +3,39 @@
 import Image from "next/image";
 import Link from "next/link";
 import clsx from "clsx";
-import { Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-
-import "swiper/css";
-import "swiper/css/pagination";
 
 import { HASH_LINK } from "@/components/layout/site-urls";
 
 import { GIOI_THIEU_NEWS_IMAGE_SRCS } from "./gioi-thieu-urls";
 
 const cardShell =
-    "group flex h-full flex-col overflow-hidden rounded-xl border border-transparent bg-[#f4f6f9] shadow-sm ring-1 ring-neutral-200/60 transition-[border-color,box-shadow] duration-300 ease-out hover:border-primary/30 hover:shadow-lg hover:ring-neutral-200/80";
+    "group relative flex h-full flex-col rounded-xl bg-[#f4f6f9] transition-colors duration-300 ease-out";
 
 const cardFocus =
-    "rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-500";
+    "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-500";
 
 const NewsCard = ({ src, index }: { src: string; index: number }) => {
     return (
         <Link href={HASH_LINK} className={clsx(cardShell, cardFocus)}>
-            <div className='relative aspect-5/3 w-full shrink-0 overflow-hidden bg-[#F5F7FA]'>
-                <Image
-                    src={src}
-                    alt='Minh họa tin tức'
-                    fill
-                    className='object-cover transition-transform duration-500 ease-out group-hover:scale-[1.035]'
-                    sizes='(max-width: 639px) 86vw, (max-width: 1023px) 45vw, 33vw'
-                    priority={index < 2}
-                />
+            <span className='pointer-events-none absolute inset-0 z-10 rounded-xl border border-transparent transition-colors duration-300 group-hover:border-primary/30' />
+
+            <div className='relative aspect-5/3 w-full shrink-0 overflow-hidden rounded-t-xl bg-[#f4f6f9]'>
+                <div className='absolute inset-0 transition-transform duration-500 ease-out group-hover:scale-[1.035]'>
+                    <Image
+                        src={src}
+                        alt='Minh họa tin tức'
+                        fill
+                        className='object-cover'
+                        priority={index < 2}
+                    />
+                </div>
             </div>
-            <div className='flex min-h-33 flex-1 flex-col gap-2 p-3 sm:min-h-37 sm:p-4 lg:p-5'>
+
+            <div className='relative z-0 flex min-h-33 flex-1 flex-col gap-2 p-3 sm:min-h-37 sm:p-4 lg:p-5'>
                 <h3 className='font-serif text-mobile-heading-4 font-bold leading-snug text-neutral-black sm:text-heading-4'>
                     Tiêu đề 1
                 </h3>
+
                 <p className='font-sans line-clamp-3 text-mobile-body-2 leading-snug text-[#717171] sm:text-body-3 sm:leading-normal'>
                     Our membership management software provides full automation
                     of membership renewals and payments
@@ -63,9 +63,9 @@ export const GioiThieuNewsSection = () => (
 
             <div className='grid grid-cols-2 sm:grid-cols-3 sm:gap-8 gap-4'>
                 {GIOI_THIEU_NEWS_IMAGE_SRCS.map((src, index) => (
-                    <SwiperSlide key={`gioi-thieu-news-${index}`}>
+                    <div key={`gioi-thieu-news-${index}`}>
                         <NewsCard src={src} index={index} />
-                    </SwiperSlide>
+                    </div>
                 ))}
             </div>
         </div>

@@ -110,8 +110,8 @@ export const BranchesMapSection = () => {
                 </header>
 
                 <div className='mt-10 overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-neutral-200/80 lg:mt-12'>
-                    <div className='grid grid-cols-1 lg:grid-cols-2 lg:items-stretch'>
-                        <div className='border-b border-neutral-100 p-6 sm:p-8 lg:border-b-0 lg:border-r lg:border-neutral-100'>
+                    <div className='grid grid-cols-1 lg:grid-cols-2 lg:items-stretch gap-x-0 sm:gap-x-20'>
+                        <div className='p-6 sm:p-8'>
                             <div className='flex flex-col gap-y-4 sm:gap-y-8'>
                                 {branchGroups.map((group) => (
                                     <div key={group.title}>

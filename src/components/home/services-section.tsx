@@ -44,41 +44,58 @@ const ServiceCardInner = ({
     iconKey,
     title,
     content,
+    revealContentOnHover = false,
 }: {
     iconKey: ServiceIconKey;
     title: string;
     content?: string;
+    revealContentOnHover?: boolean;
 }) => {
     const Icon = SERVICE_ICONS[iconKey];
     return (
-        <div className='flex-1 flex flex-col gap-y-6'>
-            <div className='relative h-14'>
-                <div className='absolute top-1.5 left-3 w-12.5 h-12.25 rounded-sm rounded-tl-2xl rounded-br-2xl bg-rose-100 p-2.5'></div>
-                <Icon
-                    className={clsx(
-                        iconClass,
-                        "absolute z-50 h-10 w-10 font-light",
-                    )}
-                    aria-hidden
-                />
+        <div
+            className={clsx(
+                "flex flex-1 flex-col gap-y-4",
+                revealContentOnHover && "relative h-full",
+            )}>
+            <div
+                className={clsx(
+                    "flex flex-col gap-y-6 transition-transform duration-500 ease-out",
+                    revealContentOnHover &&
+                        "group-hover:-translate-y-28 group-focus-visible:-translate-y-28",
+                )}>
+                <div className='relative h-14'>
+                    <div className='absolute top-1.5 left-3 w-12.5 h-12.25 rounded-sm rounded-tl-2xl rounded-br-2xl bg-rose-100 p-2.5'></div>
+                    <Icon
+                        className={clsx(
+                            iconClass,
+                            "absolute z-50 h-10 w-10 font-light",
+                        )}
+                        aria-hidden
+                    />
+                </div>
+                <h4 className='font-serif text-heading-4 font-semibold text-neutral-black'>
+                    {title}
+                </h4>
             </div>
-            <h4 className='font-serif text-heading-4 font-semibold text-neutral-black'>
-                {title}
-            </h4>
 
             <div
                 className={clsx(
-                    "flex flex-col gap-y-6",
-                    !content && "mt-auto",
-                )}>
-                <div className='h-1 w-10 rounded-full bg-primary' aria-hidden />
-
-                {content && (
-                    <p className='font-sans sm:text-body-2 text-mobile-body-2 text-[#4D4D4D] font-normal'>
-                        {content}
-                    </p>
+                    "h-1 w-10 rounded-full bg-primary not-last:duration-300 ease-out mt-auto group-hover:opacity-0 group-focus-visible:opacity-0",
                 )}
-            </div>
+                aria-hidden
+            />
+
+            {content && (
+                <p
+                    className={clsx(
+                        "font-sans text-mobile-body-2 font-normal text-[#4D4D4D] sm:text-body-2",
+                        revealContentOnHover &&
+                            "absolute inset-x-0 top-3 max-h-64 translate-y-76 overflow-hidden transition-transform duration-500 ease-out group-hover:translate-y-0 group-focus-visible:translate-y-0",
+                    )}>
+                    {content}
+                </p>
+            )}
         </div>
     );
 };
@@ -88,14 +105,17 @@ const ServiceCard = ({
     iconKey,
     title,
     content,
+    revealContentOnHover = false,
 }: {
     href: string;
     iconKey: ServiceIconKey;
     title: string;
     content?: string;
+    revealContentOnHover?: boolean;
 }) => {
     const className = clsx(
-        "interactive-card flex flex-col h-full md:min-h-60 min-h-42 rounded-lg bg-white px-4 py-6 shadow-md",
+        "interactive-card group flex flex-col self-start rounded-lg bg-white px-4 py-6 shadow-md transition-[transform,box-shadow,border-color] duration-500 ease-out",
+        revealContentOnHover && "h-64 overflow-hidden",
         cardFocus,
     );
 
@@ -106,6 +126,7 @@ const ServiceCard = ({
                     iconKey={iconKey}
                     title={title}
                     content={content}
+                    revealContentOnHover={revealContentOnHover}
                 />
             </Link>
         );
@@ -117,6 +138,7 @@ const ServiceCard = ({
                 iconKey={iconKey}
                 title={title}
                 content={content}
+                revealContentOnHover={revealContentOnHover}
             />
         </a>
     );
@@ -124,8 +146,10 @@ const ServiceCard = ({
 
 export const ServicesSection = ({
     services,
+    revealContentOnHover = false,
 }: {
     services: ServiceCardProps[];
+    revealContentOnHover?: boolean;
 }) => (
     <section aria-labelledby='services-heading' className='bg-white'>
         <div className='custom-container px-4 sm:px-0 py-12 lg:py-16 flex flex-col gap-y-8'>
@@ -141,7 +165,7 @@ export const ServicesSection = ({
                 </p>
             </header>
 
-            <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5'>
+            <div className='grid grid-cols-1 items-start gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5'>
                 {services.map((service) => (
                     <ServiceCard
                         key={service.title}
@@ -149,6 +173,7 @@ export const ServicesSection = ({
                         iconKey={service.iconKey}
                         title={service.title}
                         content={service.content}
+                        revealContentOnHover={revealContentOnHover}
                     />
                 ))}
             </div>

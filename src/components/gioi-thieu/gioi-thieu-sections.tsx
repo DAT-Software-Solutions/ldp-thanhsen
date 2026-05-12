@@ -26,8 +26,8 @@ const ImageTextRow = ({
     title: string;
     body: string;
 }) => (
-    <section className={`${sectionShell} py-12 sm:py-14 lg:py-20`}>
-        <div className='custom-container px-4 sm:px-6'>
+    <section className={`${sectionShell} py-12 sm:py-16`}>
+        <div className='custom-container px-4 sm:px-0'>
             <div className='grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-12 xl:gap-16'>
                 <div
                     className={`relative aspect-4/3 w-full max-lg:mx-auto max-lg:max-w-2xl ${roundedMedia}`}>
