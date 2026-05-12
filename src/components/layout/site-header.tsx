@@ -1,7 +1,7 @@
 "use client";
 
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { AnimatePresence, m, useReducedMotion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -192,7 +192,7 @@ export const SiteHeader = () => {
             <AnimatePresence onExitComplete={handleMobileExitComplete}>
                 {mobileOpen ? (
                     <>
-                        <motion.button
+                        <m.button
                             key='mobile-backdrop'
                             type='button'
                             tabIndex={-1}
@@ -205,7 +205,7 @@ export const SiteHeader = () => {
                             onClick={closeMobile}
                         />
 
-                        <motion.div
+                        <m.div
                             key='mobile-menu-panel'
                             id='mobile-menu'
                             role='dialog'
@@ -222,7 +222,7 @@ export const SiteHeader = () => {
                                 linkClassName={mobileLinkClass}
                                 onNavigate={closeMobile}
                             />
-                        </motion.div>
+                        </m.div>
                     </>
                 ) : null}
             </AnimatePresence>
