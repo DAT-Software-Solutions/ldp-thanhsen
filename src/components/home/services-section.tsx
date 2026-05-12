@@ -10,6 +10,14 @@ import type { ComponentType, SVGProps } from "react";
 
 import clsx from "clsx";
 
+import {
+    Reveal,
+    RevealItem,
+    RevealList,
+} from "@/components/motion/landing-motion";
+
+import styles from "./services-section.module.css";
+
 export type ServiceCardProps = {
     href: string;
     iconKey: ServiceIconKey;
@@ -44,54 +52,35 @@ const ServiceCardInner = ({
     iconKey,
     title,
     content,
-    revealContentOnHover = false,
 }: {
     iconKey: ServiceIconKey;
     title: string;
     content?: string;
-    revealContentOnHover?: boolean;
 }) => {
     const Icon = SERVICE_ICONS[iconKey];
     return (
-        <div
-            className={clsx(
-                "flex flex-1 flex-col gap-y-4",
-                revealContentOnHover && "relative h-full",
-            )}>
-            <div
-                className={clsx(
-                    "flex flex-col gap-y-6 transition-transform duration-500 ease-out",
-                    revealContentOnHover &&
-                        "group-hover:-translate-y-28 group-focus-visible:-translate-y-28",
-                )}>
-                <div className='relative h-14'>
-                    <div className='absolute top-1.5 left-3 w-12.5 h-12.25 rounded-sm rounded-tl-2xl rounded-br-2xl bg-rose-100 p-2.5'></div>
-                    <Icon
-                        className={clsx(
-                            iconClass,
-                            "absolute z-50 h-10 w-10 font-light",
-                        )}
-                        aria-hidden
-                    />
+        <div className={styles.cardInner}>
+            <div className={styles.summary}>
+                <div className={styles.iconWrap}>
+                    <div className={styles.iconBackplate} aria-hidden />
+                    <Icon className={styles.icon} aria-hidden />
                 </div>
-                <h4 className='font-serif text-heading-4 font-semibold text-neutral-black'>
+                <h4
+                    className={clsx(
+                        styles.title,
+                        "font-serif text-heading-4 font-semibold",
+                    )}>
                     {title}
                 </h4>
             </div>
 
-            <div
-                className={clsx(
-                    "h-1 w-10 rounded-full bg-primary not-last:duration-300 ease-out mt-auto group-hover:opacity-0 group-focus-visible:opacity-0",
-                )}
-                aria-hidden
-            />
+            <div className={styles.underline} aria-hidden />
 
             {content && (
                 <p
                     className={clsx(
-                        "font-sans text-mobile-body-2 font-normal text-[#4D4D4D] sm:text-body-2",
-                        revealContentOnHover &&
-                            "absolute inset-x-0 top-3 max-h-64 translate-y-76 overflow-hidden transition-transform duration-500 ease-out group-hover:translate-y-0 group-focus-visible:translate-y-0",
+                        styles.content,
+                        "font-sans text-mobile-body-2 font-normal sm:text-body-2",
                     )}>
                     {content}
                 </p>
@@ -114,8 +103,8 @@ const ServiceCard = ({
     revealContentOnHover?: boolean;
 }) => {
     const className = clsx(
-        "interactive-card group flex flex-col self-start rounded-lg bg-white px-4 py-6 shadow-md transition-[transform,box-shadow,border-color] duration-500 ease-out",
-        revealContentOnHover && "h-64 overflow-hidden",
+        styles.card,
+        revealContentOnHover && styles.reveal,
         cardFocus,
     );
 
@@ -126,7 +115,6 @@ const ServiceCard = ({
                     iconKey={iconKey}
                     title={title}
                     content={content}
-                    revealContentOnHover={revealContentOnHover}
                 />
             </Link>
         );
@@ -138,7 +126,6 @@ const ServiceCard = ({
                 iconKey={iconKey}
                 title={title}
                 content={content}
-                revealContentOnHover={revealContentOnHover}
             />
         </a>
     );
@@ -153,7 +140,9 @@ export const ServicesSection = ({
 }) => (
     <section aria-labelledby='services-heading' className='bg-white'>
         <div className='custom-container px-4 sm:px-0 py-12 lg:py-16 flex flex-col gap-y-8'>
-            <header className='flex flex-col gap-y-2 mx-auto max-w-2xl items-center text-center'>
+            <Reveal
+                as='header'
+                className='flex flex-col gap-y-2 mx-auto max-w-2xl items-center text-center'>
                 <h2
                     id='services-heading'
                     className='font-serif text-mobile-heading-2 md:text-heading-2 font-bold text-neutral-black'>
@@ -163,20 +152,21 @@ export const ServicesSection = ({
                     Thành Sen Group luôn sẵn sàng đem lại các dịch vụ pháp lý
                     chất lượng cao tới quý khách hàng
                 </p>
-            </header>
+            </Reveal>
 
-            <div className='grid grid-cols-1 items-start gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5'>
+            <RevealList className='grid grid-cols-1 items-start gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5'>
                 {services.map((service) => (
-                    <ServiceCard
-                        key={service.title}
-                        href={service.href}
-                        iconKey={service.iconKey}
-                        title={service.title}
-                        content={service.content}
-                        revealContentOnHover={revealContentOnHover}
-                    />
+                    <RevealItem key={service.title} className='h-full'>
+                        <ServiceCard
+                            href={service.href}
+                            iconKey={service.iconKey}
+                            title={service.title}
+                            content={service.content}
+                            revealContentOnHover={revealContentOnHover}
+                        />
+                    </RevealItem>
                 ))}
-            </div>
+            </RevealList>
         </div>
     </section>
 );

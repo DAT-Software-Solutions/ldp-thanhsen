@@ -8,6 +8,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 
+import { SOFT_IMAGE_PLACEHOLDER } from "@/components/layout/image-placeholders";
+import { Reveal } from "@/components/motion/landing-motion";
+
 import { GIOI_THIEU_TEAM_CARD_IMAGE_SRC } from "./gioi-thieu-urls";
 
 const TeamMemberCard = () => (
@@ -19,6 +22,9 @@ const TeamMemberCard = () => (
                 fill
                 className='object-cover'
                 sizes='(max-width: 639px) 88vw, (max-width: 1023px) 45vw, 22vw'
+                loading='lazy'
+                placeholder={SOFT_IMAGE_PLACEHOLDER}
+                decoding='async'
             />
         </div>
         <h3 className='mt-4 font-serif text-mobile-heading-4 font-semibold text-neutral-black sm:mt-5 sm:text-heading-4'>
@@ -33,7 +39,9 @@ const TeamMemberCard = () => (
 export const GioiThieuTeamSection = () => (
     <section className='bg-[#F5F6F7] py-12 sm:py-16'>
         <div className='custom-container px-4 sm:px-0 flex flex-col gap-y-8'>
-            <header className='flex flex-col gap-y-4 mx-auto max-w-3xl text-center'>
+            <Reveal
+                as='header'
+                className='flex flex-col gap-y-4 mx-auto max-w-3xl text-center'>
                 <h2 className='font-serif text-mobile-heading-2 font-bold leading-snug text-neutral-black sm:leading-[1.2] sm:text-heading-2'>
                     <span className='block sm:inline'>
                         Đội ngũ luật sư tại{" "}
@@ -46,9 +54,9 @@ export const GioiThieuTeamSection = () => (
                     Chúng tôi cung cấp một đội ngũ có chuyên môn sâu và kinh
                     nghiệm thực tiễn phong phú
                 </p>
-            </header>
+            </Reveal>
 
-            <div className='max-w-full'>
+            <Reveal className='max-w-full'>
                 <Swiper
                     modules={[Pagination]}
                     spaceBetween={24}
@@ -69,16 +77,16 @@ export const GioiThieuTeamSection = () => (
                     }}
                     className={clsx(
                         "gioi-thieu-team-swiper pb-0!",
-                        "[&_.swiper-pagination]:!static",
-                        "[&_.swiper-pagination]:!bottom-auto",
-                        "[&_.swiper-pagination]:!top-auto",
+                        "[&_.swiper-pagination]:static!",
+                        "[&_.swiper-pagination]:!bottom-auto!",
+                        "[&_.swiper-pagination]:!top-auto!",
                         "[&_.swiper-pagination]:flex",
                         "[&_.swiper-pagination]:h-14",
                         "[&_.swiper-pagination]:items-center",
                         "[&_.swiper-pagination]:justify-center",
                         "[&_.swiper-pagination-bullet]:h-2",
                         "[&_.swiper-pagination-bullet]:w-2",
-                        "[&_.swiper-pagination-bullet]:!mx-[5px]",
+                        "[&_.swiper-pagination-bullet]:mx-1.25!",
                         "[&_.swiper-pagination-bullet]:bg-[#dec8c8]",
                         "[&_.swiper-pagination-bullet]:opacity-100",
                         "[&_.swiper-pagination-bullet-active]:bg-primary",
@@ -108,7 +116,7 @@ export const GioiThieuTeamSection = () => (
                         <TeamMemberCard />
                     </SwiperSlide>
                 </Swiper>
-            </div>
+            </Reveal>
         </div>
     </section>
 );

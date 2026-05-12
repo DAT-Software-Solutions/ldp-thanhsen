@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { Reveal } from "@/components/motion/landing-motion";
+
 import { PAGE_HERO_BACKGROUND_IMAGE_SRC } from "./page-hero-urls";
 
 export type PageHeroBreadcrumbItem = {
@@ -28,12 +30,12 @@ export const PageHero = ({
             src={PAGE_HERO_BACKGROUND_IMAGE_SRC}
             alt='Phông nền kệ sách pháp lý'
             fill
-            priority
+            preload
             className='object-cover'
             sizes='100vw'
         />
         <div className='absolute inset-0 bg-black/15' aria-hidden />
-        <div className='relative z-10 flex h-full min-h-0 flex-col items-center justify-center text-center  sm:py-24 py-12'>
+        <Reveal className='relative z-10 flex h-full min-h-0 flex-col items-center justify-center text-center  sm:py-24 py-12'>
             <h1
                 id={headingId}
                 className='font-serif sm:text-heading-1 font-bold leading-snug text-white text-mobile-heading-1 sm:leading-tight lg:leading-tight'>
@@ -72,6 +74,6 @@ export const PageHero = ({
                     );
                 })}
             </nav>
-        </div>
+        </Reveal>
     </section>
 );

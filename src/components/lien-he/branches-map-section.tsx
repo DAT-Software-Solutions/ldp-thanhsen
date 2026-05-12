@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { MapPinIcon } from "@heroicons/react/24/outline";
 import clsx from "clsx";
+import { Reveal } from "@/components/motion/landing-motion";
 
 type Branch = {
     id: string;
@@ -96,7 +97,9 @@ export const BranchesMapSection = () => {
             aria-labelledby='branches-heading'
             className='bg-surface-muted text-neutral-900'>
             <div className='custom-container py-12 sm:py-16 px-4 sm:px-0'>
-                <header className='flex flex-col gap-y-2 mx-auto max-w-2xl text-center'>
+                <Reveal
+                    as='header'
+                    className='flex flex-col gap-y-2 mx-auto max-w-2xl text-center'>
                     <h2
                         id='branches-heading'
                         className='font-serif text-mobile-heading-2 font-semibold text-neutral-black sm:text-heading-3 md:text-heading-2'>
@@ -107,9 +110,9 @@ export const BranchesMapSection = () => {
                         Mạng lưới văn phòng rộng khắp cả nước, đáp ứng nhu cầu
                         pháp lý nhanh chóng ở mọi khu vực
                     </p>
-                </header>
+                </Reveal>
 
-                <div className='mt-10 overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-neutral-200/80 lg:mt-12'>
+                <Reveal className='mt-10 overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-neutral-200/80 lg:mt-12'>
                     <div className='grid grid-cols-1 lg:grid-cols-2 lg:items-stretch gap-x-0 sm:gap-x-20'>
                         <div className='p-6 sm:p-8'>
                             <div className='flex flex-col gap-y-4 sm:gap-y-8'>
@@ -181,7 +184,7 @@ export const BranchesMapSection = () => {
                             />
                         </div>
                     </div>
-                </div>
+                </Reveal>
             </div>
         </section>
     );

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 
 import { SiteFooter, SiteHeader } from "@/components/layout";
+import { LandingMotionProvider } from "@/components/motion/landing-motion";
 import {
     defaultDescription,
     defaultOgImagePath,
@@ -67,9 +68,11 @@ export default function RootLayout({
             lang='vi'
             className={`${inter.variable} ${playfairDisplay.variable} h-full antialiased`}>
             <body className={`${inter.className} flex min-h-full flex-col`}>
-                <SiteHeader />
-                <main className='flex-1'>{children}</main>
-                <SiteFooter />
+                <LandingMotionProvider>
+                    <SiteHeader />
+                    <main className='flex-1'>{children}</main>
+                    <SiteFooter />
+                </LandingMotionProvider>
             </body>
         </html>
     );

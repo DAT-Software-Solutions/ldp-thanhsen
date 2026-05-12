@@ -78,7 +78,7 @@ export default function GioiThieuPage() {
             <GioiThieuHero />
             <GioiThieuSections />
             <GioiThieuTeamSection />
-            <ServicesSection services={services} />
+            <ServicesSection services={services} revealContentOnHover />
             <GioiThieuCtaSection />
             <GioiThieuNewsSection />
         </>
