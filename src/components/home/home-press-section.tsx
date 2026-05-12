@@ -17,7 +17,7 @@ const btnOutlineFocus =
     "rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary";
 
 const PressFeaturedSlide = () => (
-    <article className='overflow-hidden rounded-2xl bg-white shadow-[0_10px_40px_rgba(0,0,0,0.08)] ring-1 ring-neutral-200/70'>
+    <article className='overflow-hidden rounded-xl bg-white ring-1 ring-neutral-200/70'>
         <div className='flex flex-col lg:min-h-[min(22rem,52vh)] lg:flex-row lg:items-stretch'>
             <div className='relative aspect-16/10 w-full shrink-0 bg-neutral-200 lg:order-2 lg:aspect-auto lg:h-auto lg:min-h-70 lg:w-[55%] lg:flex-none'>
                 <Image
@@ -55,8 +55,8 @@ const PressFeaturedSlide = () => (
 export const HomePressSection = () => (
     <section
         aria-labelledby='home-press-heading'
-        className='bg-[#F5F6F7] py-12 sm:py-14 lg:py-20'>
-        <div className='custom-container px-4 sm:px-6'>
+        className='bg-[#F5F6F7] py-12 sm:py-16'>
+        <div className='custom-container flex flex-col gap-y-8'>
             <header className='flex flex-col gap-y-2 mx-auto max-w-3xl text-center'>
                 <h2
                     id='home-press-heading'
@@ -77,7 +77,7 @@ export const HomePressSection = () => (
                 </p>
             </header>
 
-            <div className='mx-auto mt-10 max-w-5xl lg:mt-12'>
+            <div className='mx-auto max-w-full'>
                 <Swiper
                     modules={[Pagination]}
                     spaceBetween={12}
@@ -86,8 +86,8 @@ export const HomePressSection = () => (
                     className={clsx(
                         "home-press-swiper pb-0!",
                         "[&_.swiper-pagination]:relative",
-                        "[&_.swiper-pagination]:mt-5",
-                        "lg:[&_.swiper-pagination]:mt-6",
+                        "[&_.swiper-pagination]:mt-20",
+                        "lg:[&_.swiper-pagination]:mt-20",
                         "[&_.swiper-pagination-bullet]:h-2",
                         "[&_.swiper-pagination-bullet]:w-2",
                         "[&_.swiper-pagination-bullet]:!mx-[5px]",

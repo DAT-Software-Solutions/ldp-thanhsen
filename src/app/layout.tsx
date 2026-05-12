@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Open_Sans, Roboto } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 
 import { SiteFooter, SiteHeader } from "@/components/layout";
 import {
@@ -11,14 +11,15 @@ import {
 } from "@/lib/site-seo";
 import "./globals.css";
 
-const openSans = Open_Sans({
+const inter = Inter({
     subsets: ["latin", "vietnamese"],
-    variable: "--font-open-sans",
+    variable: "--font-inter",
 });
 
-const roboto = Roboto({
+const playfairDisplay = Playfair_Display({
     subsets: ["latin", "vietnamese"],
-    variable: "--font-roboto",
+    variable: "--font-playfair-display",
+    weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -64,7 +65,7 @@ export default function RootLayout({
     return (
         <html
             lang='vi'
-            className={`${openSans.variable} ${roboto.variable} h-full antialiased`}>
+            className={`${inter.variable} ${playfairDisplay.variable} h-full antialiased`}>
             <body className='flex min-h-full flex-col'>
                 <SiteHeader />
                 <main className='flex-1'>{children}</main>

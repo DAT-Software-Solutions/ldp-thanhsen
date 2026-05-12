@@ -1,4 +1,4 @@
-import {
+﻿import {
     AcademicCapIcon,
     ClipboardDocumentCheckIcon,
     HeartIcon,
@@ -44,7 +44,7 @@ export const HomeWhyChooseSection = () => (
     <section
         aria-labelledby='home-why-choose-heading'
         className='bg-white py-12 sm:py-14 lg:py-20'>
-        <div className='custom-container px-4 sm:px-6'>
+        <div className='custom-container px-4 sm:px-0'>
             <header className='flex flex-col gap-y-2 mx-auto max-w-2xl text-center'>
                 <h2
                     id='home-why-choose-heading'

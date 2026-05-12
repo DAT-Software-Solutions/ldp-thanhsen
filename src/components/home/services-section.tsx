@@ -128,7 +128,7 @@ export const ServicesSection = ({
     services: ServiceCardProps[];
 }) => (
     <section aria-labelledby='services-heading' className='bg-white'>
-        <div className='custom-container px-4 py-12 sm:px-6 lg:py-16'>
+        <div className='custom-container px-4 sm:px-0 py-12 lg:py-16 flex flex-col gap-y-8'>
             <header className='flex flex-col gap-y-2 mx-auto max-w-2xl items-center text-center'>
                 <h2
                     id='services-heading'
@@ -141,7 +141,7 @@ export const ServicesSection = ({
                 </p>
             </header>
 
-            <div className='mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-3 lg:grid-cols-3 xl:grid-cols-5'>
+            <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5'>
                 {services.map((service) => (
                     <ServiceCard
                         key={service.title}

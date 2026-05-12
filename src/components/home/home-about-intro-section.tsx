@@ -17,7 +17,7 @@ export const HomeAboutIntroSection = () => (
     <section
         aria-labelledby='home-about-intro-heading'
         className='bg-surface-muted py-12 sm:py-14 lg:py-20'>
-        <div className='custom-container px-4 sm:px-6'>
+        <div className='custom-container px-4 sm:px-0'>
             <div className='flex flex-col gap-8 lg:grid lg:grid-cols-2 lg:items-center lg:gap-12 xl:gap-16'>
                 <div className='flex flex-col gap-y-2 items-start text-left lg:py-4'>
                     <h2
