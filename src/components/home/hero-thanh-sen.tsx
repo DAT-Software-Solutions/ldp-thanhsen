@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { CTA_HREF } from "@/components/layout/site-urls";
+import { Reveal } from "@/components/motion/landing-motion";
 
 import { HERO_ILLUSTRATION_SRC, ZALO_CHAT_HREF } from "./home-urls";
 import clsx from "clsx";
@@ -15,7 +16,7 @@ export const HeroThanhSen = () => (
         className='bg-surface-muted text-[#2D3436]'>
         <div className='custom-container px-4 sm:px-0 py-12 lg:py-24'>
             <div className='flex md:flex-row flex-col gap-x-20 gap-y-8'>
-                <div className='md:w-154.75 shrink-0 flex flex-col gap-y-8 items-center text-center lg:items-start lg:text-left'>
+                <Reveal className='md:w-154.75 shrink-0 flex flex-col gap-y-8 items-center text-center lg:items-start lg:text-left'>
                     <div className='flex flex-col gap-y-6 sm:gap-y-4'>
                         <h1
                             id='hero-heading'
@@ -45,20 +46,24 @@ export const HeroThanhSen = () => (
                             Tư vấn qua Zalo
                         </a>
                     </div>
-                </div>
+                </Reveal>
 
                 <div className='flex-1 flex justify-center lg:justify-end'>
-                    <div className='relative w-full max-w-[min(100%,28rem)] lg:max-w-lg'>
+                    <Reveal
+                        className='relative w-full max-w-[min(100%,28rem)] lg:max-w-lg'
+                        delay={0.08}>
                         <Image
                             src={HERO_ILLUSTRATION_SRC}
                             alt='Minh họa cân công lý, sách luật và búa gỗ'
                             width={501}
                             height={376}
-                            priority
+                            preload
+                            unoptimized
+                            decoding='async'
                             sizes='(max-width: 1024px) 100vw, 50vw'
                             className='h-auto w-full object-contain'
                         />
-                    </div>
+                    </Reveal>
                 </div>
             </div>
         </div>

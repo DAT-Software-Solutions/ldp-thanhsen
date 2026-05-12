@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { SOFT_IMAGE_PLACEHOLDER } from "@/components/layout/image-placeholders";
 import { PAGE_GIOI_THIEU } from "@/components/layout/site-urls";
+import { Reveal } from "@/components/motion/landing-motion";
 
 import {
     HOME_ABOUT_IMAGE_SRC_DESKTOP,
@@ -19,7 +21,7 @@ export const HomeAboutIntroSection = () => (
         className='bg-surface-muted py-12 sm:py-16'>
         <div className='custom-container px-4 sm:px-0'>
             <div className='flex flex-col gap-8 lg:grid lg:grid-cols-2 lg:items-center sm:gap-x-20'>
-                <div className='relative w-full'>
+                <Reveal className='relative w-full'>
                     <div
                         className={`relative aspect-4/3 w-full lg:hidden ${roundedFigure}`}>
                         <Image
@@ -28,6 +30,8 @@ export const HomeAboutIntroSection = () => (
                             fill
                             className='object-cover'
                             sizes='100vw'
+                            placeholder={SOFT_IMAGE_PLACEHOLDER}
+                            decoding='async'
                         />
                     </div>
                     <div
@@ -38,10 +42,12 @@ export const HomeAboutIntroSection = () => (
                             fill
                             className='object-cover'
                             sizes='(min-width: 1024px) 50vw, 100vw'
+                            placeholder={SOFT_IMAGE_PLACEHOLDER}
+                            decoding='async'
                         />
                     </div>
-                </div>
-                <div className='flex flex-col gap-y-8'>
+                </Reveal>
+                <Reveal className='flex flex-col gap-y-8' delay={0.08}>
                     <div className='flex flex-col gap-y-6 sm:gap-y-4 items-start text-left'>
                         <h2
                             id='home-about-intro-heading'
@@ -63,7 +69,7 @@ export const HomeAboutIntroSection = () => (
                         className={`interactive-button inline-flex min-h-14 min-w-43.25 items-center justify-center rounded-lg bg-primary px-6 py-3 md:text-body-2 text-mobile-body-1 font-medium text-white sm:text-base ${btnFocus}`}>
                         Tìm hiểu thêm
                     </Link>
-                </div>
+                </Reveal>
             </div>
         </div>
     </section>

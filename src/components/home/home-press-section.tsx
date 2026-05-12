@@ -9,7 +9,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 
+import { SOFT_IMAGE_PLACEHOLDER } from "@/components/layout/image-placeholders";
 import { HASH_LINK } from "@/components/layout/site-urls";
+import { Reveal } from "@/components/motion/landing-motion";
 
 import { HOME_PRESS_FEATURED_IMAGE_SRC } from "./home-urls";
 
@@ -17,7 +19,9 @@ const btnOutlineFocus =
     "rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary";
 
 const PressFeaturedSlide = () => (
-    <article className='overflow-hidden rounded-xl bg-white ring-1 ring-neutral-200/70'>
+    <Reveal
+        as='article'
+        className='overflow-hidden rounded-xl bg-white ring-1 ring-neutral-200/70'>
         <div className='flex flex-col lg:min-h-[min(22rem,52vh)] sm:flex-row lg:items-stretch gap-x-0 sm:gap-x-20 '>
             <div className='relative aspect-16/10 w-full shrink-0 bg-neutral-200 lg:order-2 lg:aspect-auto lg:h-auto lg:min-h-70 lg:w-[55%] lg:flex-none'>
                 <Image
@@ -26,6 +30,8 @@ const PressFeaturedSlide = () => (
                     fill
                     className='object-cover'
                     sizes='(max-width: 1023px) 100vw, 50vw'
+                    placeholder={SOFT_IMAGE_PLACEHOLDER}
+                    decoding='async'
                 />
             </div>
 
@@ -49,7 +55,7 @@ const PressFeaturedSlide = () => (
                 </Link>
             </div>
         </div>
-    </article>
+    </Reveal>
 );
 
 export const HomePressSection = () => (
@@ -57,7 +63,9 @@ export const HomePressSection = () => (
         aria-labelledby='home-press-heading'
         className='bg-[#F5F6F7] py-12 sm:py-16'>
         <div className='custom-container flex flex-col gap-y-8 px-4 sm:px-0'>
-            <header className='flex flex-col gap-y-2 mx-auto max-w-3xl text-center'>
+            <Reveal
+                as='header'
+                className='flex flex-col gap-y-2 mx-auto max-w-3xl text-center'>
                 <h2
                     id='home-press-heading'
                     className='font-serif text-mobile-heading-2 font-semibold leading-snug text-neutral-black sm:text-heading-3 md:text-heading-2'>
@@ -75,7 +83,7 @@ export const HomePressSection = () => (
                 <p className='font-sans mx-auto max-w-xl text-mobile-body-1 text-[#717171] sm:text-body-2'>
                     Góc nhìn từ báo chí về chúng tôi
                 </p>
-            </header>
+            </Reveal>
 
             <div className='mx-auto max-w-full'>
                 <Swiper
@@ -85,12 +93,16 @@ export const HomePressSection = () => (
                     pagination={{ clickable: true }}
                     className={clsx(
                         "home-press-swiper pb-0!",
-                        "[&_.swiper-pagination]:relative",
-                        "[&_.swiper-pagination]:mt-20",
-                        "lg:[&_.swiper-pagination]:mt-20",
+                        "[&_.swiper-pagination]:static!",
+                        "[&_.swiper-pagination]:!bottom-auto!",
+                        "[&_.swiper-pagination]:top-auto!",
+                        "[&_.swiper-pagination]:flex",
+                        "[&_.swiper-pagination]:h-14",
+                        "[&_.swiper-pagination]:items-center",
+                        "[&_.swiper-pagination]:justify-center",
                         "[&_.swiper-pagination-bullet]:h-2",
                         "[&_.swiper-pagination-bullet]:w-2",
-                        "[&_.swiper-pagination-bullet]:!mx-[5px]",
+                        "[&_.swiper-pagination-bullet]:mx-1.25!",
                         "[&_.swiper-pagination-bullet]:bg-[#dec8c8]",
                         "[&_.swiper-pagination-bullet]:opacity-100",
                         "[&_.swiper-pagination-bullet-active]:bg-primary",

@@ -4,7 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 import clsx from "clsx";
 
+import { SOFT_IMAGE_PLACEHOLDER } from "@/components/layout/image-placeholders";
 import { HASH_LINK } from "@/components/layout/site-urls";
+import {
+    Reveal,
+    RevealItem,
+    RevealList,
+} from "@/components/motion/landing-motion";
 
 import { GIOI_THIEU_NEWS_IMAGE_SRCS } from "./gioi-thieu-urls";
 
@@ -14,7 +20,7 @@ const cardShell =
 const cardFocus =
     "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-500";
 
-const NewsCard = ({ src, index }: { src: string; index: number }) => {
+const NewsCard = ({ src }: { src: string }) => {
     return (
         <Link href={HASH_LINK} className={clsx(cardShell, cardFocus)}>
             <span className='pointer-events-none absolute inset-0 z-10 rounded-xl border border-transparent transition-colors duration-300 group-hover:border-primary/30' />
@@ -26,7 +32,10 @@ const NewsCard = ({ src, index }: { src: string; index: number }) => {
                         alt='Minh họa tin tức'
                         fill
                         className='object-cover'
-                        priority={index < 2}
+                        sizes='(max-width: 640px) 50vw, 33vw'
+                        loading='lazy'
+                        placeholder={SOFT_IMAGE_PLACEHOLDER}
+                        decoding='async'
                     />
                 </div>
             </div>
@@ -50,7 +59,9 @@ export const GioiThieuNewsSection = () => (
         aria-labelledby='gioi-thieu-news-heading'
         className='bg-white py-12 sm:py-16 px-4 sm:px-0'>
         <div className='custom-container flex flex-col gap-y-8'>
-            <header className='text-center sm:text-left flex flex-col gap-y-2'>
+            <Reveal
+                as='header'
+                className='text-center sm:text-left flex flex-col gap-y-2'>
                 <h2
                     id='gioi-thieu-news-heading'
                     className='font-serif text-mobile-heading-2 font-semibold text-neutral-black sm:text-heading-3 lg:text-heading-2'>
@@ -59,15 +70,15 @@ export const GioiThieuNewsSection = () => (
                 <p className='font-sans mx-auto max-w-2xl text-mobile-body-1 font-medium text-[#717171] sm:text-body-1 md:font-normal lg:mx-0'>
                     Cập nhật các thông tin mới nhất về luật pháp từ chúng tôi
                 </p>
-            </header>
+            </Reveal>
 
-            <div className='grid grid-cols-2 sm:grid-cols-3 sm:gap-8 gap-4'>
+            <RevealList className='grid grid-cols-2 sm:grid-cols-3 sm:gap-8 gap-4'>
                 {GIOI_THIEU_NEWS_IMAGE_SRCS.map((src, index) => (
-                    <div key={`gioi-thieu-news-${index}`}>
-                        <NewsCard src={src} index={index} />
-                    </div>
+                    <RevealItem key={`gioi-thieu-news-${index}`}>
+                        <NewsCard src={src} />
+                    </RevealItem>
                 ))}
-            </div>
+            </RevealList>
         </div>
     </section>
 );

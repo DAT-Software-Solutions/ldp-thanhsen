@@ -7,6 +7,7 @@
 } from "@heroicons/react/24/outline";
 import clsx from "clsx";
 import type { ComponentType, SVGProps } from "react";
+import { Reveal } from "@/components/motion/landing-motion";
 import { iconClass } from "./services-section";
 
 const FeatureRow = ({
@@ -18,7 +19,9 @@ const FeatureRow = ({
     title: string;
     body: string;
 }) => (
-    <li className='flex gap-6 py-7 first:pt-0 last:pb-0 sm:gap-5 sm:py-6 sm:px-8'>
+    <Reveal
+        as='li'
+        className='flex gap-6 py-7 first:pt-0 last:pb-0 sm:gap-5 sm:py-6 sm:px-8'>
         <div className='relative h-14 w-16.25 shrink-0'>
             <div className='absolute top-1.5 left-3 w-12.5 h-12.25 rounded-sm rounded-tl-2xl rounded-br-2xl bg-rose-100 p-2.5'></div>
             <Icon
@@ -37,7 +40,7 @@ const FeatureRow = ({
                 {body}
             </p>
         </div>
-    </li>
+    </Reveal>
 );
 
 export const HomeWhyChooseSection = () => (
@@ -45,7 +48,9 @@ export const HomeWhyChooseSection = () => (
         aria-labelledby='home-why-choose-heading'
         className='bg-white py-12 sm:py-16'>
         <div className='custom-container px-4 sm:px-0 flex flex-col gap-y-8'>
-            <header className='flex flex-col gap-y-2 mx-auto max-w-2xl text-center'>
+            <Reveal
+                as='header'
+                className='flex flex-col gap-y-2 mx-auto max-w-2xl text-center'>
                 <h2
                     id='home-why-choose-heading'
                     className='font-serif text-mobile-heading-2 font-bold text-neutral-black sm:text-heading-3 lg:text-heading-2'>
@@ -55,7 +60,7 @@ export const HomeWhyChooseSection = () => (
                 <p className='font-sans text-mobile-body-1 text-[#717171] sm:text-body-1'>
                     Những giá trị tạo nên sự khác biệt
                 </p>
-            </header>
+            </Reveal>
 
             <div className=''>
                 <ul className='divide-y divide-[#7A2828] lg:hidden'>
