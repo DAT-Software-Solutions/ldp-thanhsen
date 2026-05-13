@@ -31,8 +31,6 @@ const servicePages: ServicePage[] = [
         id: 1,
         title: "Luật sư",
         slug: "luat-su",
-        parentTitle: "Tư vấn pháp luật",
-        parentSlug: "tu-van-phap-luat",
         category: "legal-consulting",
         description:
             "Thanh Sen Group cung cấp dịch vụ pháp lý toàn diện, bao gồm tư vấn, đại diện và tham gia tố tụng trong các lĩnh vực dân sự, hình sự, đất đai, kinh doanh thương mại.",
@@ -72,8 +70,6 @@ const servicePages: ServicePage[] = [
         id: 2,
         title: "Trọng tài thương mại",
         slug: "trong-tai-thuong-mai",
-        parentTitle: "Tư vấn pháp luật",
-        parentSlug: "tu-van-phap-luat",
         category: "legal-consulting",
         description:
             "Dịch vụ hỗ trợ giải quyết tranh chấp kinh doanh bằng trọng tài thương mại, từ tư vấn điều khoản trọng tài đến tham gia tố tụng trọng tài.",
@@ -174,14 +170,12 @@ const servicePages: ServicePage[] = [
 
 export const serviceNavGroups: ServiceNavGroup[] = [
     {
-        title: "Tư vấn pháp luật",
-        children: servicePages
-            .filter((page) => page.category === "legal-consulting")
-            .map((page) => ({
-                title: page.title,
-                slug: page.slug,
-                href: `/dich-vu/${page.parentSlug}/${page.slug}`,
-            })),
+        title: "Luật sư",
+        href: "/dich-vu/luat-su",
+    },
+    {
+        title: "Trọng tài thương mại",
+        href: "/dich-vu/trong-tai-thuong-mai",
     },
     {
         title: "Thẩm định giá",

@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 
 import { ServiceContentPage } from "@/components/dich-vu/service-content-page";
 import { PageHero } from "@/components/layout/page-hero";
-import { PAGE_DICH_VU, PAGE_HOME } from "@/components/layout/site-urls";
+import { PAGE_HOME } from "@/components/layout/site-urls";
 import { siteName } from "@/lib/site-seo";
 import {
     getServicePageByRoute,
@@ -84,8 +84,6 @@ export default async function ServiceDetailPage({
                 title={page.title}
                 breadcrumbItems={[
                     { label: "Trang chủ", href: PAGE_HOME },
-                    { label: "Dịch vụ", href: PAGE_DICH_VU },
-                    ...(page.parentTitle ? [{ label: page.parentTitle }] : []),
                     { label: page.title },
                 ]}
             />

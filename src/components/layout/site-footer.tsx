@@ -10,10 +10,10 @@ import type { SVGProps } from "react";
 
 import {
     HASH_LINK,
-    PAGE_DICH_VU,
     PAGE_GIOI_THIEU,
     PAGE_HOME,
     PAGE_LIEN_HE,
+    PAGE_LUAT_SU,
     PAGE_THAM_DINH_GIA,
     PAGE_THUA_PHAT_LAI,
     SITE_TEL_HREF,
@@ -72,9 +72,9 @@ const ExploreLinks = () => (
             </li>
             <li>
                 <Link
-                    href={PAGE_DICH_VU}
+                    href={PAGE_LUAT_SU}
                     className={`transition-opacity hover:opacity-80 font-sans sm:text-body-3 text-mobile-body-2 ${linkFocus}`}>
-                    Dịch vụ
+                    Luật sư
                 </Link>
             </li>
             <li>
