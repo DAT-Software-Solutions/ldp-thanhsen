@@ -13,7 +13,7 @@ import { GioiThieuNewsSection } from "@/components/gioi-thieu/gioi-thieu-news-se
 import { BranchesMapSection } from "@/components/lien-he/branches-map-section";
 import {
     PAGE_DAU_GIA,
-    PAGE_DICH_VU,
+    PAGE_LUAT_SU,
     PAGE_THAM_DINH_GIA,
     PAGE_THUA_PHAT_LAI,
     PAGE_TRONG_TAI_THUONG_MAI,
@@ -23,9 +23,9 @@ const homeTitle = `${siteName} — Tư vấn pháp lý toàn diện tại Việt
 
 const services: ServiceCardProps[] = [
     {
-        href: PAGE_DICH_VU,
+        href: PAGE_LUAT_SU,
         iconKey: "lawyer",
-        title: "Dịch vụ",
+        title: "Luật sư",
         content:
             "Thành Sen Group cung cấp dịch vụ pháp lý toàn diện, bao gồm tư vấn, đại diện và tham gia tố tụng trong các lĩnh vực dân sự, hình sự, đất đai, kinh doanh thương mại.",
     },

@@ -28,7 +28,7 @@ const linkFocus =
 /** Thứ tự menu giống bản thiết kế — `href` lấy từ `site-urls`. */
 const MAIN_NAV_ITEMS = [
     { href: PAGE_GIOI_THIEU, label: "Giới thiệu" },
-    { href: PAGE_LUAT_SU, label: "Tư vấn pháp luật" },
+    { href: PAGE_LUAT_SU, label: "Luật sư" },
     { href: PAGE_THAM_DINH_GIA, label: "Thẩm định giá" },
     { href: PAGE_THUA_PHAT_LAI, label: "Thừa phát lại" },
     { href: PAGE_LIEN_HE, label: "Liên hệ" },
