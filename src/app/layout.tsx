@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 
-import { SiteFooter, SiteHeader } from "@/components/layout";
+import {
+    BackToTopButton,
+    FloatingContactButtons,
+    SiteFooter,
+    SiteHeader,
+} from "@/components/layout";
 import { LandingMotionProvider } from "@/components/motion/landing-motion";
 import {
     defaultDescription,
@@ -67,11 +72,14 @@ export default function RootLayout({
         <html
             lang='vi'
             className={`${inter.variable} ${playfairDisplay.variable} h-full antialiased`}>
-            <body className={`${inter.className} flex min-h-full flex-col`}>
+            <body
+                className={`${inter.className} flex min-h-full flex-col pb-17 sm:pb-0`}>
                 <LandingMotionProvider>
                     <SiteHeader />
                     <main className='flex-1'>{children}</main>
                     <SiteFooter />
+                    <FloatingContactButtons />
+                    <BackToTopButton />
                 </LandingMotionProvider>
             </body>
         </html>

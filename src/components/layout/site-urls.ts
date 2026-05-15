@@ -15,3 +15,4 @@ export const PAGE_DAU_GIA = "/dich-vu/dau-gia";
 export const CTA_HREF = PAGE_LIEN_HE;
 
 export const SITE_TEL_HREF = "tel:0913294683";
+export const ZALO_CHAT_HREF = "https://zalo.me/0913294683";

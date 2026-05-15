@@ -9,7 +9,7 @@ import {
     ServicesSection,
 } from "@/components/home/services-section";
 import { GioiThieuCtaSection } from "@/components/gioi-thieu/gioi-thieu-cta-section";
-import { GioiThieuTeamSection } from "@/components/gioi-thieu/gioi-thieu-team-section";
+import { GioiThieuWorkspaceSection } from "@/components/gioi-thieu/gioi-thieu-workspace-section";
 import {
     PAGE_DAU_GIA,
     PAGE_LUAT_SU,
@@ -77,9 +77,13 @@ export default function GioiThieuPage() {
         <>
             <GioiThieuHero />
             <GioiThieuSections />
-            <GioiThieuTeamSection />
-            <ServicesSection services={services} revealContentOnHover />
-            <GioiThieuCtaSection />
+            <ServicesSection
+                services={services}
+                revealContentOnHover
+                background='bg-surface-muted'
+            />
+            <GioiThieuWorkspaceSection />
+            <GioiThieuCtaSection image='/images/gioi-thieu-cta-illustration-1.png' />
             <GioiThieuNewsSection />
         </>
     );

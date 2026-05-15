@@ -45,7 +45,9 @@ const ImageTextRow = ({
                         decoding='async'
                     />
                 </Reveal>
-                <Reveal className='text-left flex flex-col gap-y-4' delay={0.08}>
+                <Reveal
+                    className='text-left flex flex-col gap-y-4'
+                    delay={0.08}>
                     <h2 className={clsx(proseTitle)}>{title}</h2>
                     <p className={proseBody}>{body}</p>
                 </Reveal>
@@ -97,14 +99,14 @@ export const GioiThieuSections = () => (
             imageSrc={GIOI_THIEU_INTRO_IMAGE_SRC}
             imageAlt='Đội ngũ Thành Sen Group'
             title='Thành Sen là đơn vị đầu tiên trong khu vực được Bộ Tài chính cấp giấy phép hoạt động trong lĩnh vực thẩm định giá'
-            body='Thành Sen Group là quần thể dịch vụ chuyên nghiệp trong lĩnh vực pháp lý và tư pháp, hướng tới các giải pháp toàn diện, uy tín và hiệu quả cho khách hàng.'
+            body='Thành Sen Group là tổ hợp dịch vụ chuyên nghiệp hoạt động trong lĩnh vực pháp lý và hỗ trợ tư pháp, với định hướng cung cấp các giải pháp toàn diện, uy tín và hiệu quả cho khách hàng cá nhân và doanh nghiệp. Trải qua quá trình xây dựng và phát triển, Thành Sen Group đã và đang từng bước khẳng định vị thế bằng việc hình thành hệ sinh thái dịch vụ chuyên nghiệp với ba mảng hoạt động cốt lõi: luật sư, thẩm định giá và thừa phát lại.'
         />
         <QuoteOverlapSection />
         <ImageTextRow
             imageSrc={GIOI_THIEU_MISSION_IMAGE_SRC}
             imageAlt='Không gian phục vụ khách hàng tại Thành Sen'
             title='Hướng đến xây dựng một địa chỉ pháp lý đảm bảo sự chuyên nghiệp – minh bạch – tận tâm.'
-            body='Thẩm định giá Thành Sen được thành lập nhằm đáp ứng nhu cầu của các cơ quan, đối tác trên địa bàn tỉnh Hà Tĩnh, góp phần minh bạch thị trường và định giá tài sản đúng giá trị.'
+            body='Sự ra đời của Thẩm định giá Thành Sen nhằm kịp thời đáp ứng nhu cầu của các cơ quan, đơn vị và đối tác trên địa bàn tỉnh Hà Tĩnh và các tỉnh lân cận. Đặc biệt, đơn vị sẽ đáp ứng nhu cầu xác định giá trị và làm minh bạch thị trường tài sản trong tiến trình hội nhập và phát triển; góp phần tích cực vào việc làm rõ giá trị tài sản của người dân, doanh nghiệp đang sở hữu và giúp khách hàng đưa ra các quyết định sáng suốt để đảm bảo quyền lợi.'
         />
     </>
 );

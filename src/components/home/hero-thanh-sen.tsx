@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { CTA_HREF } from "@/components/layout/site-urls";
+import { CTA_HREF, ZALO_CHAT_HREF } from "@/components/layout/site-urls";
 import { Reveal } from "@/components/motion/landing-motion";
 
-import { HERO_ILLUSTRATION_SRC, ZALO_CHAT_HREF } from "./home-urls";
+import { HERO_ILLUSTRATION_SRC } from "./home-urls";
 import clsx from "clsx";
 
 const btnFocus =
@@ -21,8 +21,8 @@ export const HeroThanhSen = () => (
                         <h1
                             id='hero-heading'
                             className='font-serif md:text-heading-1 text-mobile-heading-1 uppercase font-bold'>
-                            <span className='text-[#2D3436]'>Thành Sen </span>
-                            <span className='text-primary'>Group</span>
+                            <span className='text-primary'>Thành Sen </span>
+                            <span className='text-[#EDD161]'>Group</span>
                         </h1>
                         <p className='font-sans md:max-w-xl max-w-full md:text-body-2 text-mobile-body-1 text-neutral-black sm:text-base'>
                             Là đơn vị tiên phong trong lĩnh vực pháp lý tại Việt

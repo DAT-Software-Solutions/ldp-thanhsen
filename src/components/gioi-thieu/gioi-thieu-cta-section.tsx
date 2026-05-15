@@ -9,7 +9,7 @@ import { GIOI_THIEU_CTA_ILLUSTRATION_SRC } from "./gioi-thieu-urls";
 const btnFocus =
     "rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary";
 
-export const GioiThieuCtaSection = () => (
+export const GioiThieuCtaSection = ({ image }: { image?: string }) => (
     <section
         aria-labelledby='gioi-thieu-cta-heading'
         className='bg-surface-muted text-[#2D3436]'>
@@ -34,15 +34,14 @@ export const GioiThieuCtaSection = () => (
                         className='relative w-full max-w-[min(100%,20rem)] sm:max-w-md lg:max-w-lg'
                         delay={0.08}>
                         <Image
-                            src={GIOI_THIEU_CTA_ILLUSTRATION_SRC}
+                            width={456}
+                            height={448}
+                            src={image || GIOI_THIEU_CTA_ILLUSTRATION_SRC}
                             alt='Minh họa sách luật và búa gỗ tòa'
-                            width={501}
-                            height={376}
                             unoptimized
                             loading='lazy'
                             decoding='async'
-                            className='h-auto w-full object-contain'
-                            sizes='(max-width: 1023px) 90vw, 40vw'
+                            className='w-114 h-auto object-contain'
                         />
                     </Reveal>
                 </div>

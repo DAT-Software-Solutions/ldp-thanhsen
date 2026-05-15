@@ -1,10 +1,10 @@
 ﻿import {
-    AcademicCapIcon,
     ClipboardDocumentCheckIcon,
     HeartIcon,
-    TrophyIcon,
-    UsersIcon,
 } from "@heroicons/react/24/outline";
+import { FiAward } from "react-icons/fi";
+import { LuBrain } from "react-icons/lu";
+import { LuHandshake } from "react-icons/lu";
 import clsx from "clsx";
 import type { ComponentType, SVGProps } from "react";
 import { Reveal } from "@/components/motion/landing-motion";
@@ -27,7 +27,7 @@ const FeatureRow = ({
             <Icon
                 className={clsx(
                     iconClass,
-                    "absolute z-50 h-10 w-10 font-light",
+                    "absolute z-50 h-10 w-10 font-light thin-icon",
                 )}
                 aria-hidden
             />
@@ -63,21 +63,11 @@ export const HomeWhyChooseSection = () => (
             </Reveal>
 
             <div className=''>
-                <ul className='divide-y divide-[#7A2828] lg:hidden'>
+                <ul className='divide-y divide-primary lg:hidden'>
                     <FeatureRow
-                        icon={AcademicCapIcon}
+                        icon={LuBrain}
                         title='Năng lực chuyên môn vững vàng'
                         body='Đội ngũ luật sư, thẩm định viên và thừa phát lại có trình độ cao, giàu kinh nghiệm thực tiễn, am hiểu sâu sắc quy định pháp luật và thị trường.'
-                    />
-                    <FeatureRow
-                        icon={TrophyIcon}
-                        title='Hiệu quả và giá trị thực tiễn'
-                        body='Đảm bảo mang lại kết quả rõ ràng, khả thi và bền vững trong từng vụ việc cụ thể. Luôn hướng đến tối ưu lợi ích và giá trị thực tiễn lâu dài cho khách hàng.'
-                    />
-                    <FeatureRow
-                        icon={HeartIcon}
-                        title='Phục vụ linh hoạt, chuyên nghiệp'
-                        body='Quy trình làm việc linh hoạt, rõ ràng và tối ưu theo nhu cầu khách hàng. Đội ngũ luôn phản hồi nhanh chóng, phục vụ tận tâm và đảm bảo hiệu quả cao.'
                     />
                     <FeatureRow
                         icon={ClipboardDocumentCheckIcon}
@@ -85,46 +75,56 @@ export const HomeWhyChooseSection = () => (
                         body='Mọi hoạt động đều tuân thủ quy định pháp luật, đảm bảo tính khách quan, trung thực và độ tin cậy cao trong từng dịch vụ.'
                     />
                     <FeatureRow
-                        icon={UsersIcon}
+                        icon={FiAward}
+                        title='Hiệu quả và giá trị thực tiễn'
+                        body='Mang lại kết quả cụ thể, khả thi và bền vững cho khách hàng, Hướng tới kết quả tối ưu cho khách hàng.'
+                    />
+                    <FeatureRow
+                        icon={LuHandshake}
                         title='Uy tín và trách nhiệm'
-                        body='Chúng tôi xây dựng uy tín trên nền tảng minh bạch, chuẩn mực nghề nghiệp, đặt quyền lợi của khách hàng làm trọng tâm và bảo mật tuyệt đối thông tin.'
+                        body='Thành Sen Group xây dựng uy tín trên nền tảng minh bạch, chuẩn mực nghề nghiệp. Mỗi công việc đều được thực hiện với tinh thần trách nhiệm cao, đặt quyền lợi của khách hàng làm trọng tâm và bảo mật tuyệt đối thông tin.'
+                    />
+                    <FeatureRow
+                        icon={HeartIcon}
+                        title='Phục vụ linh hoạt, chuyên nghiệp'
+                        body='Quy trình làm việc rõ ràng, nhanh chóng, thái độ phục vụ tận tâm, đáp ứng kịp thời nhu cầu của khách hàng.'
                     />
                 </ul>
 
                 <div className='hidden lg:flex lg:items-stretch lg:gap-0'>
-                    <ul className='min-w-0 flex-1 divide-y divide-[#7A2828] lg:pr-12'>
+                    <ul className='min-w-0 flex-1 divide-y divide-primary lg:pr-12'>
                         <FeatureRow
-                            icon={AcademicCapIcon}
+                            icon={LuBrain}
                             title='Năng lực chuyên môn vững vàng'
                             body='Đội ngũ luật sư, thẩm định viên và thừa phát lại có trình độ cao, giàu kinh nghiệm thực tiễn, am hiểu sâu sắc quy định pháp luật và thị trường.'
                         />
                         <FeatureRow
-                            icon={TrophyIcon}
+                            icon={FiAward}
                             title='Hiệu quả và giá trị thực tiễn'
-                            body='Đảm bảo mang lại kết quả rõ ràng, khả thi và bền vững trong từng vụ việc cụ thể. Luôn hướng đến tối ưu lợi ích và giá trị thực tiễn lâu dài cho khách hàng.'
+                            body='Mang lại kết quả cụ thể, khả thi và bền vững cho khách hàng, Hướng tới kết quả tối ưu cho khách hàng.'
                         />
                         <FeatureRow
                             icon={HeartIcon}
                             title='Phục vụ linh hoạt, chuyên nghiệp'
-                            body='Quy trình làm việc linh hoạt, rõ ràng và tối ưu theo nhu cầu khách hàng. Đội ngũ luôn phản hồi nhanh chóng, phục vụ tận tâm và đảm bảo hiệu quả cao.'
+                            body='Quy trình làm việc rõ ràng, nhanh chóng, thái độ phục vụ tận tâm, đáp ứng kịp thời nhu cầu của khách hàng.'
                         />
                     </ul>
 
                     <div
-                        className='w-px shrink-0 self-stretch bg-[#7A2828]'
+                        className='w-[0.5px] shrink-0 self-stretch bg-primary'
                         aria-hidden
                     />
 
-                    <ul className='flex min-w-0 flex-1 flex-col justify-center divide-y divide-[#7A2828] lg:pl-12'>
+                    <ul className='flex min-w-0 flex-1 flex-col justify-center divide-y divide-primary lg:pl-12'>
                         <FeatureRow
                             icon={ClipboardDocumentCheckIcon}
                             title='Tính minh bạch và chuẩn mực pháp lý'
                             body='Mọi hoạt động đều tuân thủ quy định pháp luật, đảm bảo tính khách quan, trung thực và độ tin cậy cao trong từng dịch vụ.'
                         />
                         <FeatureRow
-                            icon={UsersIcon}
+                            icon={LuHandshake}
                             title='Uy tín và trách nhiệm'
-                            body='Chúng tôi xây dựng uy tín trên nền tảng minh bạch, chuẩn mực nghề nghiệp, đặt quyền lợi của khách hàng làm trọng tâm và bảo mật tuyệt đối thông tin.'
+                            body='Thành Sen Group xây dựng uy tín trên nền tảng minh bạch, chuẩn mực nghề nghiệp. Mỗi công việc đều được thực hiện với tinh thần trách nhiệm cao, đặt quyền lợi của khách hàng làm trọng tâm và bảo mật tuyệt đối thông tin.'
                         />
                     </ul>
                 </div>
