@@ -94,10 +94,25 @@ export const ServiceContentPage = ({ page }: ServiceContentPageProps) => (
                                 );
                             }
 
+                            if (!group.href) {
+                                return (
+                                    <span
+                                        key={group.title}
+                                        className={clsx(
+                                            "flex items-center justify-between py-2",
+                                            groupActive
+                                                ? "font-semibold text-primary"
+                                                : "text-neutral-black",
+                                        )}>
+                                        {group.title}
+                                    </span>
+                                );
+                            }
+
                             return (
                                 <Link
                                     key={group.title}
-                                    href={group.href ?? "#"}
+                                    href={group.href}
                                     aria-current={
                                         groupActive ? "page" : undefined
                                     }
@@ -120,11 +135,11 @@ export const ServiceContentPage = ({ page }: ServiceContentPageProps) => (
                     className='min-w-0'
                     delay={0.08}
                     viewportAmount={0.01}>
-                    <h1
+                    <p
                         id='service-page-heading'
                         className='font-serif text-mobile-heading-2 font-bold text-neutral-black sm:text-heading-2'>
                         {page.description}
-                    </h1>
+                    </p>
 
                     <div
                         className={clsx(

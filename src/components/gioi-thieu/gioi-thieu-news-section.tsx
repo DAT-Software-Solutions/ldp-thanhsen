@@ -5,7 +5,7 @@ import Link from "next/link";
 import clsx from "clsx";
 
 import { SOFT_IMAGE_PLACEHOLDER } from "@/components/layout/image-placeholders";
-import { HASH_LINK } from "@/components/layout/site-urls";
+import { PAGE_LUAT_SU } from "@/components/layout/site-urls";
 import {
     Reveal,
     RevealItem,
@@ -22,7 +22,7 @@ const cardFocus =
 
 const NewsCard = ({ src }: { src: string }) => {
     return (
-        <Link href={HASH_LINK} className={clsx(cardShell, cardFocus)}>
+        <Link href={PAGE_LUAT_SU} className={clsx(cardShell, cardFocus)}>
             <span className='pointer-events-none absolute inset-0 z-10 rounded-xl border border-transparent transition-colors duration-300 group-hover:border-primary/30' />
 
             <div className='relative aspect-5/3 w-full shrink-0 overflow-hidden rounded-t-xl bg-[#f4f6f9]'>
@@ -61,6 +61,7 @@ const NewsCard = ({ src }: { src: string }) => {
 
 export const GioiThieuNewsSection = () => (
     <section
+        id='tin-tuc'
         aria-labelledby='gioi-thieu-news-heading'
         className='bg-white py-12 sm:py-16 px-4 sm:px-0'>
         <div className='custom-container flex flex-col gap-y-8'>

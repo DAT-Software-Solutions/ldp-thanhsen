@@ -1,10 +1,9 @@
 /** Đường dẫn trang và liên kết (`tel:`, …) — không chứa nội dung văn bản hiển thị. */
 
-export const HASH_LINK = "#";
-
 export const PAGE_HOME = "/";
 export const PAGE_GIOI_THIEU = "/gioi-thieu";
 export const PAGE_LIEN_HE = "/lien-he";
+export const PAGE_TIN_TUC = "/#tin-tuc";
 export const PAGE_LUAT_SU = "/dich-vu/luat-su";
 export const PAGE_TRONG_TAI_THUONG_MAI = "/dich-vu/trong-tai-thuong-mai";
 export const PAGE_THUA_PHAT_LAI = "/dich-vu/thua-phat-lai";

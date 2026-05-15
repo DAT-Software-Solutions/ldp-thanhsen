@@ -8,7 +8,14 @@ import {
     ServiceCardProps,
     ServicesSection,
 } from "@/components/home/services-section";
-import { defaultDescription, siteName } from "@/lib/site-seo";
+import { JsonLd } from "@/components/seo/json-ld";
+import {
+    defaultDescription,
+    defaultOgImagePath,
+    getAbsoluteUrl,
+    siteName,
+    websiteJsonLd,
+} from "@/lib/site-seo";
 import { GioiThieuNewsSection } from "@/components/gioi-thieu/gioi-thieu-news-section";
 import { BranchesMapSection } from "@/components/lien-he/branches-map-section";
 import {
@@ -67,12 +74,35 @@ export const metadata: Metadata = {
         title: homeTitle,
         description: defaultDescription,
         url: "/",
+        images: [{ url: defaultOgImagePath, width: 1200, height: 630 }],
+    },
+    twitter: {
+        title: homeTitle,
+        description: defaultDescription,
+        images: [defaultOgImagePath],
     },
 };
 
 export default function Home() {
+    const homeJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": `${getAbsoluteUrl("/")}/#webpage`,
+        url: getAbsoluteUrl("/"),
+        name: homeTitle,
+        description: defaultDescription,
+        inLanguage: "vi",
+        isPartOf: {
+            "@id": websiteJsonLd["@id"],
+        },
+        about: {
+            "@id": `${getAbsoluteUrl("/")}/#organization`,
+        },
+    };
+
     return (
         <>
+            <JsonLd data={homeJsonLd} />
             <HeroThanhSen />
             <ServicesSection services={services} revealContentOnHover />
             <HomeAboutIntroSection />

@@ -144,7 +144,7 @@ export const SiteHeader = () => {
                         onClick={closeMobile}>
                         <Image
                             src='/images/logo.svg'
-                            alt='Thanh Sơn Group'
+                            alt='Thành Sen Group'
                             fill
                             className='object-contain object-left'
                             priority

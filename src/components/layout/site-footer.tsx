@@ -8,14 +8,15 @@ import Image from "next/image";
 import Link from "next/link";
 import type { SVGProps } from "react";
 
+import { facebookProfileUrl, primaryEmail } from "@/lib/site-seo";
 import {
-    HASH_LINK,
     PAGE_GIOI_THIEU,
     PAGE_HOME,
     PAGE_LIEN_HE,
     PAGE_LUAT_SU,
     PAGE_THAM_DINH_GIA,
     PAGE_THUA_PHAT_LAI,
+    PAGE_TIN_TUC,
     SITE_TEL_HREF,
 } from "./site-urls";
 
@@ -31,9 +32,8 @@ const MessengerIcon = (props: SVGProps<SVGSVGElement>) => (
     </svg>
 );
 
-const FACEBOOK_PROFILE_HREF =
-    "https://www.facebook.com/profile.php?id=61577345438215";
-const FOOTER_EMAIL = "thuaphatlaihatinh@gmail.com";
+const FACEBOOK_PROFILE_HREF = facebookProfileUrl;
+const FOOTER_EMAIL = primaryEmail;
 const FOOTER_EMAIL_HREF = `mailto:${FOOTER_EMAIL}`;
 const socialIconClass = "size-5";
 
@@ -49,11 +49,11 @@ const ExploreLinks = () => (
                 </Link>
             </li>
             <li>
-                <a
-                    href={HASH_LINK}
+                <Link
+                    href={PAGE_TIN_TUC}
                     className={`${linkFocus} font-sans sm:text-body-3 text-mobile-body-2  hover:opacity-80`}>
                     Tin tức
-                </a>
+                </Link>
             </li>
             <li>
                 <Link
@@ -185,7 +185,7 @@ const BranchesBlock = () => (
 const CopyrightAndSocial = () => (
     <div className='flex flex-col gap-4'>
         <p className='font-sans sm:text-body-3 text-mobile-body-2 font-normal text-[#F5F7FA]'>
-            Copyright © 2020 Thanh Sen Group. All rights reserved
+            Copyright © 2020 Thành Sen Group. All rights reserved
         </p>
         <ul className='flex flex-wrap gap-3'>
             <li>

@@ -4,7 +4,14 @@ import { notFound } from "next/navigation";
 import { ServiceContentPage } from "@/components/dich-vu/service-content-page";
 import { PageHero } from "@/components/layout/page-hero";
 import { PAGE_HOME } from "@/components/layout/site-urls";
-import { siteName } from "@/lib/site-seo";
+import { JsonLd } from "@/components/seo/json-ld";
+import {
+    defaultOgImagePath,
+    getAbsoluteUrl,
+    organizationJsonLd,
+    siteName,
+    websiteJsonLd,
+} from "@/lib/site-seo";
 import {
     getServicePageByRoute,
     getServicePageHref,
@@ -63,6 +70,12 @@ export async function generateMetadata({
             title: `${page.title} | ${siteName}`,
             description: page.description,
             url,
+            images: [{ url: defaultOgImagePath, width: 1200, height: 630 }],
+        },
+        twitter: {
+            title: `${page.title} | ${siteName}`,
+            description: page.description,
+            images: [defaultOgImagePath],
         },
     };
 }
@@ -78,8 +91,69 @@ export default async function ServiceDetailPage({
         notFound();
     }
 
+    const url = getAbsoluteUrl(getServicePageHref(page));
+    const serviceJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": `${url}/#service`,
+        name: `${page.title} | ${siteName}`,
+        description: page.description,
+        url,
+        provider: {
+            "@id": organizationJsonLd["@id"],
+        },
+        areaServed: {
+            "@type": "Country",
+            name: "Việt Nam",
+        },
+        serviceType: page.title,
+        isPartOf: {
+            "@id": websiteJsonLd["@id"],
+        },
+    };
+
+    const faqJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "@id": `${url}/#faq`,
+        mainEntity: page.faqs.map((faq) => ({
+            "@type": "Question",
+            name: faq.question,
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.answer,
+            },
+        })),
+    };
+
+    const breadcrumbJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+            {
+                "@type": "ListItem",
+                position: 1,
+                name: "Trang chủ",
+                item: getAbsoluteUrl(PAGE_HOME),
+            },
+            {
+                "@type": "ListItem",
+                position: 2,
+                name: "Dịch vụ",
+                item: getAbsoluteUrl("/dich-vu"),
+            },
+            {
+                "@type": "ListItem",
+                position: 3,
+                name: page.title,
+                item: url,
+            },
+        ],
+    };
+
     return (
         <>
+            <JsonLd data={[serviceJsonLd, faqJsonLd, breadcrumbJsonLd]} />
             <PageHero
                 title={page.title}
                 breadcrumbItems={[

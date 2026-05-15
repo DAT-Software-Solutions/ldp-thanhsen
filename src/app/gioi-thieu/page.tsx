@@ -3,7 +3,13 @@ import type { Metadata } from "next";
 import { GioiThieuHero } from "@/components/gioi-thieu/gioi-thieu-hero";
 import { GioiThieuNewsSection } from "@/components/gioi-thieu/gioi-thieu-news-section";
 import { GioiThieuSections } from "@/components/gioi-thieu/gioi-thieu-sections";
-import { siteName } from "@/lib/site-seo";
+import { JsonLd } from "@/components/seo/json-ld";
+import {
+    defaultOgImagePath,
+    getAbsoluteUrl,
+    siteName,
+    websiteJsonLd,
+} from "@/lib/site-seo";
 import {
     ServiceCardProps,
     ServicesSection,
@@ -69,12 +75,32 @@ export const metadata: Metadata = {
         title: `${pageTitle} | ${siteName}`,
         description: pageDescription,
         url: "/gioi-thieu",
+        images: [{ url: defaultOgImagePath, width: 1200, height: 630 }],
+    },
+    twitter: {
+        title: `${pageTitle} | ${siteName}`,
+        description: pageDescription,
+        images: [defaultOgImagePath],
     },
 };
 
 export default function GioiThieuPage() {
+    const aboutJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "@id": `${getAbsoluteUrl("/gioi-thieu")}/#webpage`,
+        url: getAbsoluteUrl("/gioi-thieu"),
+        name: `${pageTitle} | ${siteName}`,
+        description: pageDescription,
+        inLanguage: "vi",
+        isPartOf: {
+            "@id": websiteJsonLd["@id"],
+        },
+    };
+
     return (
         <>
+            <JsonLd data={aboutJsonLd} />
             <GioiThieuHero />
             <GioiThieuSections />
             <ServicesSection

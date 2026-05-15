@@ -1,6 +1,9 @@
 /** URL liên quan trang Liên hệ (embed, mailto). */
 
-export const CONTACT_MAILTO_URL = "mailto:sample@gmail.com";
+import { primaryEmail } from "@/lib/site-seo";
+
+export const CONTACT_EMAIL = primaryEmail;
+export const CONTACT_MAILTO_URL = `mailto:${CONTACT_EMAIL}`;
 
 /** Embed OSM — có thể thay bằng Google Maps khi có URL chính thức. */
 export const CONTACT_MAP_EMBED_URL =

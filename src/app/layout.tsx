@@ -12,9 +12,14 @@ import {
     defaultDescription,
     defaultOgImagePath,
     getSiteOrigin,
-    siteKeywords,
+    logoPath,
+    organizationJsonLd,
+    siteLanguage,
+    siteLocale,
     siteName,
+    websiteJsonLd,
 } from "@/lib/site-seo";
+import { JsonLd } from "@/components/seo/json-ld";
 import "./globals.css";
 
 const inter = Inter({
@@ -35,31 +40,59 @@ export const metadata: Metadata = {
         template: `%s | ${siteName}`,
     },
     description: defaultDescription,
-    keywords: [...siteKeywords],
     applicationName: siteName,
     authors: [{ name: siteName }],
     creator: siteName,
+    publisher: siteName,
+    category: "legal services",
+    alternates: {
+        canonical: "/",
+        languages: {
+            vi: "/",
+        },
+    },
     openGraph: {
         type: "website",
-        locale: "vi_VN",
+        locale: siteLocale,
         siteName,
         title: `${siteName} — Tư vấn pháp lý & dịch vụ pháp luật`,
         description: defaultDescription,
         url: "/",
-        images: [{ url: defaultOgImagePath, alt: siteName }],
+        images: [
+            {
+                url: defaultOgImagePath,
+                width: 1200,
+                height: 630,
+                alt: `${siteName} - Dịch vụ pháp lý toàn diện`,
+            },
+        ],
     },
     twitter: {
         card: "summary_large_image",
         title: `${siteName} — Tư vấn pháp lý & dịch vụ pháp luật`,
         description: defaultDescription,
-        images: [defaultOgImagePath],
+        images: [
+            {
+                url: defaultOgImagePath,
+                alt: `${siteName} - Dịch vụ pháp lý toàn diện`,
+            },
+        ],
     },
     robots: {
         index: true,
         follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            "max-image-preview": "large",
+            "max-snippet": -1,
+            "max-video-preview": -1,
+        },
     },
     icons: {
-        icon: defaultOgImagePath,
+        icon: "/favicon.ico",
+        shortcut: "/favicon.ico",
+        apple: logoPath,
     },
 };
 
@@ -70,10 +103,11 @@ export default function RootLayout({
 }>) {
     return (
         <html
-            lang='vi'
+            lang={siteLanguage}
             className={`${inter.variable} ${playfairDisplay.variable} h-full antialiased`}>
             <body
                 className={`${inter.className} flex min-h-full flex-col pb-17 sm:pb-0`}>
+                <JsonLd data={[organizationJsonLd, websiteJsonLd]} />
                 <LandingMotionProvider>
                     <SiteHeader />
                     <main className='flex-1'>{children}</main>

@@ -4,7 +4,7 @@ import type { FormEvent } from "react";
 
 import { SITE_TEL_HREF } from "@/components/layout/site-urls";
 
-import { CONTACT_MAILTO_URL } from "./contact-urls";
+import { CONTACT_EMAIL, CONTACT_MAILTO_URL } from "./contact-urls";
 
 const fieldFocus =
     "rounded-sm focus:border-primary focus:outline-none focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/30";
@@ -39,7 +39,7 @@ export const ContactInfoForm = () => {
                                     <a
                                         href={CONTACT_MAILTO_URL}
                                         className='decoration-neutral-400 transition-colors hover:text-primary'>
-                                        sample@gmail.com
+                                        {CONTACT_EMAIL}
                                     </a>
                                 </dd>
                             </div>
