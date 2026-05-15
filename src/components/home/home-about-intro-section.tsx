@@ -56,17 +56,20 @@ export const HomeAboutIntroSection = () => (
                             <span className='text-primary'>chúng tôi</span>
                         </h2>
                         <p className='font-sans max-w-xl text-mobile-body-1 leading-relaxed font-normal text-[#717171] sm:text-body-2'>
-                            Tiền thân của Thành Sen là hãng luật Thành Sen được
-                            thành lập vào năm 2011. Sau gần 15 năm hình thành và
-                            phát triển, hiện nay hãng luật Thành Sen đã có hàng
-                            chục chi nhánh trên toàn quốc và không ngừng phát
-                            triển nhằm đáp ứng nhu cầu về pháp lý của doanh
-                            nghiệp và người dân.
+                            Thành Sen Group là tổ hợp dịch vụ chuyên nghiệp hoạt
+                            động trong lĩnh vực pháp lý và hỗ trợ tư pháp, với
+                            định hướng cung cấp giải pháp toàn diện, uy tín và
+                            hiệu quả cho khách hàng cá nhân và doanh nghiệp.
+                            Trải qua quá trình xây dựng và phát triển, Thành Sen
+                            Group từng bước khẳng định vị thế bằng việc hình
+                            thành hệ sinh thái dịch vụ chuyên nghiệp với ba mảng
+                            hoạt động cốt lõi: luật sư, thẩm định giá và thừa
+                            phát lại.
                         </p>
                     </div>
                     <Link
                         href={PAGE_GIOI_THIEU}
-                        className={`interactive-button inline-flex min-h-14 min-w-43.25 items-center justify-center rounded-lg bg-primary px-6 py-3 md:text-body-2 text-mobile-body-1 font-medium text-white sm:text-base ${btnFocus}`}>
+                        className={`interactive-button inline-flex min-h-14 w-fit min-w-43.25 items-center justify-center rounded-md bg-primary px-6 py-3 md:text-body-2 text-mobile-body-1 font-medium text-white sm:text-base ${btnFocus}`}>
                         Tìm hiểu thêm
                     </Link>
                 </Reveal>

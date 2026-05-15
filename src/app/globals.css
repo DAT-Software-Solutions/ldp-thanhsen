@@ -4,7 +4,7 @@
     --background: #ffffff;
     --foreground: #171717;
     /* Alias cho chỗ không dùng utility Tailwind (vd. CSS thuần) */
-    --primary: #7b241c;
+    --primary: #ad0f0f;
     /* Nền section sáng (hero, block phụ) - dùng với var(--surface-muted) */
     --surface-muted: #f8f9fa;
 }
@@ -13,7 +13,7 @@
     --color-background: var(--background);
     --color-foreground: var(--foreground);
     /* Giá trị literal để Tailwind emit đúng token trong @layer theme :root,:host */
-    --color-primary: #7b241c;
+    --color-primary: #ad0f0f;
     --color-footer-gold: #d4af37;
     --font-sans: var(--font-inter);
     --font-serif: var(--font-playfair-display);
@@ -204,5 +204,48 @@ body {
     .interactive-button:active,
     .interactive-button-outline:active {
         transform: none;
+    }
+}
+
+.thin-icon,
+.thin-icon * {
+    stroke-width: 1 !important;
+}
+
+@keyframes contact-shake {
+    0%,
+    72%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    76% {
+        transform: rotate(-8deg);
+    }
+
+    80% {
+        transform: rotate(8deg);
+    }
+
+    84% {
+        transform: rotate(-6deg);
+    }
+
+    88% {
+        transform: rotate(6deg);
+    }
+
+    92% {
+        transform: rotate(-3deg);
+    }
+
+    96% {
+        transform: rotate(3deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .animate-\[contact-shake_2\.4s_ease-in-out_infinite\] {
+        animation: none;
     }
 }

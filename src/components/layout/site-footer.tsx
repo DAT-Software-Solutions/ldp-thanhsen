@@ -1,7 +1,7 @@
 import {
     ClockIcon,
-    GlobeAltIcon,
     MapPinIcon,
+    EnvelopeIcon,
     PhoneIcon,
 } from "@heroicons/react/24/outline";
 import Image from "next/image";
@@ -25,24 +25,16 @@ const linkFocus =
 const sectionTitle =
     "font-serif text-mobile-heading-4 font-semibold text-white sm:text-heading-4";
 
-const InstagramIcon = (props: SVGProps<SVGSVGElement>) => (
+const MessengerIcon = (props: SVGProps<SVGSVGElement>) => (
     <svg viewBox='0 0 24 24' fill='currentColor' aria-hidden {...props}>
-        <path d='M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Zm0 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5Zm5.25-.75a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z' />
+        <path d='M12 2C6.477 2 2 6.145 2 11.26c0 2.914 1.452 5.514 3.723 7.212V22l3.401-1.864c.908.251 1.873.386 2.876.386 5.523 0 10-4.146 10-9.261C22 6.145 17.523 2 12 2Zm.994 12.47-2.55-2.724-4.974 2.724 5.463-5.8 2.613 2.724 4.91-2.724-5.462 5.8Z' />
     </svg>
 );
 
-const XIcon = (props: SVGProps<SVGSVGElement>) => (
-    <svg viewBox='0 0 24 24' fill='currentColor' aria-hidden {...props}>
-        <path d='M14.23 4h3.15l-6.88 7.87 8.1 9.55h-6.34l-4.97-5.8-5.69 5.8H2.96l7.36-8.47L2.59 4h6.5l4.5 5.28L14.23 4ZM12.48 18.13h1.75L7.44 5.8H5.45l7.03 12.33Z' />
-    </svg>
-);
-
-const YouTubeIcon = (props: SVGProps<SVGSVGElement>) => (
-    <svg viewBox='0 0 24 24' fill='currentColor' aria-hidden {...props}>
-        <path d='M21.8 8.001a2.75 2.75 0 0 0-1.945-1.957C18.125 5.75 12 5.75 12 5.75s-6.125 0-7.855.294A2.75 2.75 0 0 0 2.2 8.05C1.9 9.8 1.9 12 1.9 12s0 2.2.3 3.999a2.75 2.75 0 0 0 1.945 1.957c1.73.294 7.855.294 7.855.294s6.125 0 7.855-.294a2.75 2.75 0 0 0 1.945-1.957c.3-1.8.3-3.999.3-3.999s0-2.2-.3-3.999ZM10.2 14.25v-4.5L15.125 12 10.2 14.25Z' />
-    </svg>
-);
-
+const FACEBOOK_PROFILE_HREF =
+    "https://www.facebook.com/profile.php?id=61577345438215";
+const FOOTER_EMAIL = "thuaphatlaihatinh@gmail.com";
+const FOOTER_EMAIL_HREF = `mailto:${FOOTER_EMAIL}`;
 const socialIconClass = "size-5";
 
 const ExploreLinks = () => (
@@ -109,7 +101,7 @@ const ContactBlock = () => (
                     <a
                         href={SITE_TEL_HREF}
                         className={`underline-offset-4 transition-opacity hover:opacity-90 ${linkFocus}`}>
-                        0913.294.683
+                        0972.88.3456 - 0913.294.683
                     </a>
                 </span>
             </li>
@@ -198,34 +190,20 @@ const CopyrightAndSocial = () => (
         <ul className='flex flex-wrap gap-3'>
             <li>
                 <a
-                    href={HASH_LINK}
-                    aria-label='Instagram'
-                    className={`flex size-10 items-center justify-center rounded-full bg-white/10 text-white transition-opacity hover:opacity-90 ${linkFocus}`}>
-                    <InstagramIcon className={socialIconClass} />
+                    href={FACEBOOK_PROFILE_HREF}
+                    target='_blank'
+                    rel='noreferrer'
+                    aria-label='Messenger'
+                    className={`flex size-10 items-center justify-center rounded-full! bg-white/10 text-white transition-opacity hover:opacity-90 ${linkFocus}`}>
+                    <MessengerIcon className={socialIconClass} />
                 </a>
             </li>
             <li>
                 <a
-                    href={HASH_LINK}
-                    aria-label='Website'
-                    className={`flex size-10 items-center justify-center rounded-full bg-white/10 text-white transition-opacity hover:opacity-90 ${linkFocus}`}>
-                    <GlobeAltIcon className={socialIconClass} />
-                </a>
-            </li>
-            <li>
-                <a
-                    href={HASH_LINK}
-                    aria-label='X (Twitter)'
-                    className={`flex size-10 items-center justify-center rounded-full bg-white/10 text-white transition-opacity hover:opacity-90 ${linkFocus}`}>
-                    <XIcon className={socialIconClass} />
-                </a>
-            </li>
-            <li>
-                <a
-                    href={HASH_LINK}
-                    aria-label='YouTube'
-                    className={`flex size-10 items-center justify-center rounded-full bg-white/10 text-white transition-opacity hover:opacity-90 ${linkFocus}`}>
-                    <YouTubeIcon className={socialIconClass} />
+                    href={FOOTER_EMAIL_HREF}
+                    aria-label={`Email ${FOOTER_EMAIL}`}
+                    className={`flex size-10 items-center justify-center rounded-full! bg-white/10 text-white transition-opacity hover:opacity-90 ${linkFocus}`}>
+                    <EnvelopeIcon className={socialIconClass} />
                 </a>
             </li>
         </ul>
