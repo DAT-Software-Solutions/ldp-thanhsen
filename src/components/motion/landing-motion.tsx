@@ -19,12 +19,14 @@ export const Reveal = ({
     className,
     ariaLabel,
     delay = 0,
+    viewportAmount,
 }: {
     as?: RevealElement;
     children: ReactNode;
     className?: string;
     ariaLabel?: string;
     delay?: number;
+    viewportAmount?: number;
 }) => {
     const shouldReduceMotion = useReducedMotion();
     const motionProps = {
@@ -32,7 +34,10 @@ export const Reveal = ({
         "aria-label": ariaLabel,
         initial: { opacity: 0, y: shouldReduceMotion ? 0 : 24 },
         whileInView: { opacity: 1, y: 0 },
-        viewport: revealViewport,
+        viewport:
+            viewportAmount === undefined
+                ? revealViewport
+                : { ...revealViewport, amount: viewportAmount },
         transition: {
             duration: shouldReduceMotion ? 0.01 : 0.55,
             delay: shouldReduceMotion ? 0 : delay,

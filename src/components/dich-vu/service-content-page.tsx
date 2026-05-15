@@ -115,7 +115,11 @@ export const ServiceContentPage = ({ page }: ServiceContentPageProps) => (
                     </nav>
                 </Reveal>
 
-                <Reveal as='article' className='min-w-0' delay={0.08}>
+                <Reveal
+                    as='article'
+                    className='min-w-0'
+                    delay={0.08}
+                    viewportAmount={0.01}>
                     <h1
                         id='service-page-heading'
                         className='font-serif text-mobile-heading-2 font-bold text-neutral-black sm:text-heading-2'>
@@ -126,6 +130,7 @@ export const ServiceContentPage = ({ page }: ServiceContentPageProps) => (
                         className={clsx(
                             "mt-5 font-sans text-[#4d4d4d]",
                             "[&_p]:mt-4 [&_p]:text-mobile-body-2 [&_p]:font-normal [&_p]:leading-6 sm:[&_p]:text-body-2",
+                            "[&_ul]:mt-4 [&_ul]:space-y-2 [&_ul]:pl-0 [&_li]:relative [&_li]:list-none [&_li]:pl-5 [&_li]:text-mobile-body-2 [&_li]:font-normal [&_li]:leading-6 [&_li]:before:absolute [&_li]:before:left-0 [&_li]:before:content-['-'] sm:[&_li]:text-body-2",
                             "[&_h2]:mt-8 [&_h2]:font-serif [&_h2]:text-mobile-heading-4 [&_h2]:font-bold [&_h2]:leading-7 [&_h2]:text-neutral-black sm:[&_h2]:text-heading-3 sm:[&_h2]:leading-9",
                             "[&_h2:first-child]:mt-0 [&_p:first-child]:mt-0",
                         )}

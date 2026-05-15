@@ -150,7 +150,7 @@ const ServiceCtaCard = () => (
                 <div className='relative h-14 w-16.25 shrink-0'>
                     <div className={styles.ctaIconBackplate} aria-hidden></div>
                     <PhoneIcon
-                        className='absolute z-50 h-10 w-10 font-light text-white thin-icon'
+                        className='absolute z-5 h-10 w-10 font-light text-white thin-icon'
                         aria-hidden
                     />
                 </div>
