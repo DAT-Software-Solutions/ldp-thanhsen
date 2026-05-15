@@ -42,12 +42,17 @@ const NewsCard = ({ src }: { src: string }) => {
 
             <div className='relative z-0 flex min-h-33 flex-1 flex-col gap-2 p-3 sm:min-h-37 sm:p-4 lg:p-5'>
                 <h3 className='font-serif text-mobile-heading-4 font-bold leading-snug text-neutral-black sm:text-heading-4'>
-                    Tiêu đề 1
+                    Vai trò của luật sư bào chữa trong vụ án hình sự
                 </h3>
 
-                <p className='font-sans line-clamp-3 text-mobile-body-2 leading-snug text-[#717171] sm:text-body-3 sm:leading-normal'>
-                    Our membership management software provides full automation
-                    of membership renewals and payments
+                <p className='font-sans line-clamp-2 text-mobile-body-2 leading-snug text-[#717171] sm:text-body-3 sm:leading-normal'>
+                    Trong lĩnh vực hình sự, đội ngũ luật sư của Thành Sen Group
+                    tham gia bào chữa cho người bị buộc tội. Với tính chất nhạy
+                    cảm và phức tạp của các vụ án hình sự, sự tham gia của luật
+                    sư ngay từ giai đoạn đầu có ý nghĩa đặc biệt quan trọng,
+                    giúp định hướng chiến lược pháp lý, thu thập và đánh giá
+                    chứng cứ, đồng thời hạn chế những rủi ro pháp lý có thể phát
+                    sinh.
                 </p>
             </div>
         </Link>

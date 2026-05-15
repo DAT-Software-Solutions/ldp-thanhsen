@@ -33,10 +33,10 @@ export const GIOI_THIEU_WORKSPACE_IMAGES = [
 
 /** Ảnh thẻ tin tức (6 ô) — thay khi có ảnh thật. */
 export const GIOI_THIEU_NEWS_IMAGE_SRCS = [
-    "/images/introduction-team.jpg",
-    "/images/quote-background.jpg",
-    "/images/mission-office.jpg",
-    "/images/contact-hero-bg.jpg",
-    "/images/mission-office.jpg",
-    "/images/quote-background.jpg",
+    "/images/news-1.png",
+    "/images/news-1.png",
+    "/images/news-1.png",
+    "/images/news-1.png",
+    "/images/news-1.png",
+    "/images/news-1.png",
 ] as const;
