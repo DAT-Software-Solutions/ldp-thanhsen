@@ -33,12 +33,12 @@ const servicePages: ServicePage[] = [
         slug: "luat-su",
         category: "legal-consulting",
         description:
-            "Thanh Sen Group cung cấp dịch vụ pháp lý toàn diện, bao gồm tư vấn, đại diện và tham gia tố tụng trong các lĩnh vực dân sự, hình sự, đất đai, kinh doanh thương mại.",
+            "Thành Sen Group cung cấp dịch vụ pháp lý toàn diện, bao gồm tư vấn, đại diện và tham gia tố tụng trong các lĩnh vực dân sự, hình sự, đất đai, kinh doanh thương mại.",
         content: `
             <p>Với đội ngũ luật sư có chuyên môn sâu, kinh nghiệm thực tiễn phong phú, Thành Sen Group không chỉ hỗ trợ khách hàng giải quyết tranh chấp mà còn đưa ra các giải pháp phòng ngừa rủi ro pháp lý hiệu quả. Mỗi vụ việc đều được nghiên cứu kỹ lưỡng, xây dựng chiến lược phù hợp nhằm bảo vệ tối đa quyền và lợi ích hợp pháp của khách hàng.</p>
 
-            <h2>1. Vai trò của luật sư bảo chữa trong vụ án hình sự?</h2>
-            <p>Trong lĩnh vực hình sự, đội ngũ luật sư của Thanh Sen Group tham gia bảo chữa cho người bị buộc tội, với tinh thần thượng tôn pháp luật và bảo vệ quyền con người. Luật sư tham gia ngay từ giai đoạn đầu của quá trình tố tụng để tiếp cận hồ sơ, gặp gỡ thân chủ, phân tích chứng cứ và xây dựng phương án bào chữa phù hợp.</p>
+            <h2>1. Vai trò của luật sư bào chữa trong vụ án hình sự?</h2>
+            <p>Trong lĩnh vực hình sự, đội ngũ luật sư của Thành Sen Group tham gia bào chữa cho người bị buộc tội, với tinh thần thượng tôn pháp luật và bảo vệ quyền con người. Luật sư tham gia ngay từ giai đoạn đầu của quá trình tố tụng để tiếp cận hồ sơ, gặp gỡ thân chủ, phân tích chứng cứ và xây dựng phương án bào chữa phù hợp.</p>
             <p>Trước hết, luật sư bào chữa là người bảo vệ quyền và lợi ích hợp pháp của bị can, bị cáo trong suốt quá trình giải quyết vụ án hình sự. Khi tham gia tố tụng, luật sư có trách nhiệm giải thích cho thân chủ hiểu rõ các quyền và nghĩa vụ của mình theo quy định pháp luật. Đồng thời, luật sư giúp bảo đảm người bị buộc tội không bị ép cung, mớm cung, dùng nhục hình hoặc bị xâm phạm các quyền cơ bản khác</p>
             <p>Ngoài ra, tại phiên tòa, luật sư bào chữa đóng vai trò quan trọng trong hoạt động tranh tụng. Luật sư tham gia xét hỏi, tranh luận với kiểm sát viên và đưa ra các lập luận pháp lý để bảo vệ cho thân chủ. Trên cơ sở các quy định của pháp luật và chứng cứ thu thập được, luật sư có thể đề nghị Hội đồng xét xử xem xét lại tội danh, mức hình phạt hoặc áp dụng các tình tiết giảm nhẹ trách nhiệm hình sự cho bị cáo. Hoạt động tranh tụng của luật sư giúp phiên tòa diễn ra dân chủ, khách quan và bảo đảm nguyên tắc công bằng trong xét xử.</p>
 
@@ -140,10 +140,10 @@ const servicePages: ServicePage[] = [
         description:
             "Dịch vụ hỗ trợ giải quyết tranh chấp kinh doanh bằng trọng tài thương mại, từ tư vấn điều khoản trọng tài đến tham gia tố tụng trọng tài.",
         content: `
-            <p>Thanh Sen Group hỗ trợ doanh nghiệp lựa chọn cơ chế trọng tài phù hợp, chuẩn bị hồ sơ tranh chấp, xây dựng chiến lược chứng cứ và tham gia quá trình tố tụng trọng tài nhằm bảo vệ quyền lợi hợp pháp của khách hàng.</p>
+            <p>Thành Sen Group hỗ trợ doanh nghiệp lựa chọn cơ chế trọng tài phù hợp, chuẩn bị hồ sơ tranh chấp, xây dựng chiến lược chứng cứ và tham gia quá trình tố tụng trọng tài nhằm bảo vệ quyền lợi hợp pháp của khách hàng.</p>
             <h2>1. Khi nào nên chọn trọng tài thương mại?</h2>
             <p>Trọng tài thương mại phù hợp với các tranh chấp phát sinh từ hoạt động kinh doanh khi các bên có thỏa thuận trọng tài hợp lệ. Cơ chế này thường được doanh nghiệp lựa chọn nhờ tính linh hoạt, bảo mật và khả năng lựa chọn trọng tài viên có chuyên môn.</p>
-            <h2>2. Thanh Sen Group hỗ trợ những gì?</h2>
+            <h2>2. Thành Sen Group hỗ trợ những gì?</h2>
             <p>Chúng tôi tư vấn hiệu lực điều khoản trọng tài, chuẩn bị đơn kiện hoặc bản tự bảo vệ, thu thập chứng cứ, tham gia phiên họp giải quyết tranh chấp và hỗ trợ thi hành phán quyết trọng tài theo quy định.</p>
         `,
         faqs: [
@@ -165,7 +165,7 @@ const servicePages: ServicePage[] = [
         description:
             "Dịch vụ lập vi bằng, tống đạt, xác minh điều kiện thi hành án và hỗ trợ thi hành án theo quy định pháp luật.",
         content: `
-            <p>Thanh Sen Group cung cấp dịch vụ thừa phát lại nhằm hỗ trợ cá nhân, tổ chức ghi nhận sự kiện pháp lý, chuyển giao văn bản và xác minh thông tin phục vụ quá trình bảo vệ quyền lợi hợp pháp.</p>
+            <p>Thành Sen Group cung cấp dịch vụ thừa phát lại nhằm hỗ trợ cá nhân, tổ chức ghi nhận sự kiện pháp lý, chuyển giao văn bản và xác minh thông tin phục vụ quá trình bảo vệ quyền lợi hợp pháp.</p>
             <h2>1. Vi bằng được dùng để làm gì?</h2>
             <p>Vi bằng ghi nhận sự kiện, hành vi có thật do Thừa phát lại trực tiếp chứng kiến. Đây là nguồn chứng cứ để Tòa án, cơ quan có thẩm quyền xem xét trong quá trình giải quyết vụ việc.</p>
             <h2>2. Khi nào cần lập vi bằng?</h2>
@@ -190,7 +190,7 @@ const servicePages: ServicePage[] = [
         description:
             "Dịch vụ xác định giá trị tài sản khách quan, chính xác, phục vụ giao dịch, tranh chấp, vay vốn, mua bán, góp vốn và quản trị tài sản.",
         content: `
-            <p>Thanh Sen Group cung cấp giải pháp thẩm định giá tài sản với quy trình làm việc minh bạch, tuân thủ tiêu chuẩn nghề nghiệp và phù hợp mục đích sử dụng kết quả của khách hàng.</p>
+            <p>Thành Sen Group cung cấp giải pháp thẩm định giá tài sản với quy trình làm việc minh bạch, tuân thủ tiêu chuẩn nghề nghiệp và phù hợp mục đích sử dụng kết quả của khách hàng.</p>
             <h2>1. Tài sản nào có thể thẩm định giá?</h2>
             <p>Chúng tôi hỗ trợ thẩm định bất động sản, máy móc thiết bị, phương tiện vận tải, hàng hóa, tài sản vô hình và các loại tài sản khác theo nhu cầu của cá nhân, doanh nghiệp.</p>
             <h2>2. Kết quả thẩm định giá dùng trong trường hợp nào?</h2>
@@ -199,7 +199,7 @@ const servicePages: ServicePage[] = [
         faqs: [
             {
                 question: "Thời gian thẩm định giá mất bao lâu?",
-                answer: "Thời gian phụ thuộc vào loại tài sản, hồ sơ pháp lý và phạm vi khảo sát. Thanh Sen Group sẽ báo tiến độ cụ thể sau khi tiếp nhận yêu cầu.",
+                answer: "Thời gian phụ thuộc vào loại tài sản, hồ sơ pháp lý và phạm vi khảo sát. Thành Sen Group sẽ báo tiến độ cụ thể sau khi tiếp nhận yêu cầu.",
             },
             {
                 question: "Cần chuẩn bị hồ sơ gì?",
@@ -215,7 +215,7 @@ const servicePages: ServicePage[] = [
         description:
             "Dịch vụ tổ chức đấu giá tài sản chuyên nghiệp, minh bạch, hỗ trợ khách hàng xây dựng phương án đấu giá và xử lý hồ sơ liên quan.",
         content: `
-            <p>Thanh Sen Group hỗ trợ khách hàng trong quá trình chuẩn bị, công bố, tổ chức và hoàn thiện thủ tục đấu giá tài sản theo hướng rõ ràng, minh bạch và tuân thủ quy định pháp luật.</p>
+            <p>Thành Sen Group hỗ trợ khách hàng trong quá trình chuẩn bị, công bố, tổ chức và hoàn thiện thủ tục đấu giá tài sản theo hướng rõ ràng, minh bạch và tuân thủ quy định pháp luật.</p>
             <h2>1. Dịch vụ đấu giá phù hợp với ai?</h2>
             <p>Dịch vụ phù hợp với tổ chức, cá nhân cần bán tài sản thông qua phương thức đấu giá, bao gồm tài sản thi hành án, tài sản bảo đảm, bất động sản, phương tiện, máy móc và các tài sản hợp pháp khác.</p>
             <h2>2. Quy trình được thực hiện ra sao?</h2>
@@ -227,7 +227,7 @@ const servicePages: ServicePage[] = [
                 answer: "Có. Việc công khai thông tin đấu giá được thực hiện theo quy định để bảo đảm minh bạch và quyền tiếp cận của người tham gia.",
             },
             {
-                question: "Thanh Sen Group có hỗ trợ sau đấu giá không?",
+                question: "Thành Sen Group có hỗ trợ sau đấu giá không?",
                 answer: "Có. Chúng tôi hỗ trợ hoàn thiện biên bản, hồ sơ kết quả và các thủ tục liên quan sau cuộc đấu giá.",
             },
         ],

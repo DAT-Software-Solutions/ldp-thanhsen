@@ -155,7 +155,7 @@ const ServiceCtaCard = () => (
                     />
                 </div>
                 <h4 className='font-serif md:text-heading-4 text-mobile-heading-4 font-semibold leading-snug text-white'>
-                    Cần được tư vấn hỗ trợ về các dịch vụ?
+                    Cần được tư vấn về các dịch vụ?
                     <br />
                     Liên hệ ngay với chúng tôi
                 </h4>
