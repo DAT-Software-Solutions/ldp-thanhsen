@@ -17,6 +17,7 @@ import {
     getServicePageHref,
     getServicePages,
 } from "@/mock/data";
+import { getServiceByHref } from "@/mock/services";
 
 type ServiceDetailPageProps = {
     params: Promise<{
@@ -61,20 +62,23 @@ export async function generateMetadata({
     }
 
     const url = getServicePageHref(page);
+    const service = getServiceByHref(url);
+    const title = service?.title ?? page.title;
+    const description = service?.content ?? page.description;
 
     return {
-        title: page.title,
-        description: page.description,
+        title,
+        description,
         alternates: { canonical: url },
         openGraph: {
-            title: `${page.title} | ${siteName}`,
-            description: page.description,
+            title: `${title} | ${siteName}`,
+            description,
             url,
             images: [{ url: defaultOgImagePath, width: 1200, height: 630 }],
         },
         twitter: {
-            title: `${page.title} | ${siteName}`,
-            description: page.description,
+            title: `${title} | ${siteName}`,
+            description,
             images: [defaultOgImagePath],
         },
     };
@@ -91,13 +95,17 @@ export default async function ServiceDetailPage({
         notFound();
     }
 
-    const url = getAbsoluteUrl(getServicePageHref(page));
+    const href = getServicePageHref(page);
+    const service = getServiceByHref(href);
+    const title = service?.title ?? page.title;
+    const description = service?.content ?? page.description;
+    const url = getAbsoluteUrl(href);
     const serviceJsonLd = {
         "@context": "https://schema.org",
         "@type": "Service",
         "@id": `${url}/#service`,
-        name: `${page.title} | ${siteName}`,
-        description: page.description,
+        name: `${title} | ${siteName}`,
+        description,
         url,
         provider: {
             "@id": organizationJsonLd["@id"],
@@ -106,7 +114,7 @@ export default async function ServiceDetailPage({
             "@type": "Country",
             name: "Việt Nam",
         },
-        serviceType: page.title,
+        serviceType: title,
         isPartOf: {
             "@id": websiteJsonLd["@id"],
         },
@@ -145,20 +153,23 @@ export default async function ServiceDetailPage({
             {
                 "@type": "ListItem",
                 position: 3,
-                name: page.title,
+                name: title,
                 item: url,
             },
         ],
     };
+    const jsonLdData = service
+        ? [serviceJsonLd, breadcrumbJsonLd]
+        : [serviceJsonLd, faqJsonLd, breadcrumbJsonLd];
 
     return (
         <>
-            <JsonLd data={[serviceJsonLd, faqJsonLd, breadcrumbJsonLd]} />
+            <JsonLd data={jsonLdData} />
             <PageHero
-                title={page.title}
+                title={title}
                 breadcrumbItems={[
                     { label: "Trang chủ", href: PAGE_HOME },
-                    { label: page.title },
+                    { label: title },
                 ]}
             />
             <ServiceContentPage page={page} />

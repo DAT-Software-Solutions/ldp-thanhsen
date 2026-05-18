@@ -16,6 +16,7 @@ import {
     type ServicePageSectionKey,
     serviceNavGroups,
 } from "@/mock/data";
+import { getServiceByHref } from "@/mock/services";
 
 type ServiceContentPageProps = {
     page: ServicePage;
@@ -29,8 +30,12 @@ const SERVICE_EXTRA_SECTIONS: Record<ServicePageSectionKey, ComponentType> = {
     news: GioiThieuNewsSection,
 };
 
-export const ServiceContentPage = ({ page }: ServiceContentPageProps) => (
-    <>
+export const ServiceContentPage = ({ page }: ServiceContentPageProps) => {
+    const service = getServiceByHref(getServicePageHref(page));
+    const summaryContent = service?.content;
+
+    return (
+        <>
         <section className='bg-white py-10 sm:py-12 lg:py-16'>
             <div className='custom-container grid gap-8 px-4 sm:px-6 lg:grid-cols-[250px_minmax(0,1fr)] lg:gap-12'>
                 <Reveal
@@ -137,49 +142,54 @@ export const ServiceContentPage = ({ page }: ServiceContentPageProps) => (
                     viewportAmount={0.01}>
                     <p
                         id='service-page-heading'
-                        className='font-serif text-mobile-heading-2 font-bold text-neutral-black sm:text-heading-2'>
-                        {page.description}
+                        className='font-sans text-mobile-body-1 font-normal leading-7 text-[#4d4d4d] sm:text-body-1'>
+                        {summaryContent ?? page.description}
                     </p>
 
-                    <div
-                        className={clsx(
-                            "mt-5 font-sans text-[#4d4d4d]",
-                            "[&_p]:mt-4 [&_p]:text-mobile-body-2 [&_p]:font-normal [&_p]:leading-6 sm:[&_p]:text-body-2",
-                            "[&_ul]:mt-4 [&_ul]:space-y-2 [&_ul]:pl-0 [&_li]:relative [&_li]:list-none [&_li]:pl-5 [&_li]:text-mobile-body-2 [&_li]:font-normal [&_li]:leading-6 [&_li]:before:absolute [&_li]:before:left-0 [&_li]:before:content-['-'] sm:[&_li]:text-body-2",
-                            "[&_h2]:mt-8 [&_h2]:font-serif [&_h2]:text-mobile-heading-4 [&_h2]:font-bold [&_h2]:leading-7 [&_h2]:text-neutral-black sm:[&_h2]:text-heading-3 sm:[&_h2]:leading-9",
-                            "[&_h2:first-child]:mt-0 [&_p:first-child]:mt-0",
-                        )}
-                        dangerouslySetInnerHTML={{ __html: page.content }}
-                    />
+                    {!summaryContent && (
+                        <div
+                            className={clsx(
+                                "mt-5 font-sans text-[#4d4d4d]",
+                                "[&_p]:mt-4 [&_p]:text-mobile-body-2 [&_p]:font-normal [&_p]:leading-6 sm:[&_p]:text-body-2",
+                                "[&_ul]:mt-4 [&_ul]:space-y-2 [&_ul]:pl-0 [&_li]:relative [&_li]:list-none [&_li]:pl-5 [&_li]:text-mobile-body-2 [&_li]:font-normal [&_li]:leading-6 [&_li]:before:absolute [&_li]:before:left-0 [&_li]:before:content-['-'] sm:[&_li]:text-body-2",
+                                "[&_h2]:mt-8 [&_h2]:font-serif [&_h2]:text-mobile-heading-4 [&_h2]:font-bold [&_h2]:leading-7 [&_h2]:text-neutral-black sm:[&_h2]:text-heading-3 sm:[&_h2]:leading-9",
+                                "[&_h2:first-child]:mt-0 [&_p:first-child]:mt-0",
+                            )}
+                            dangerouslySetInnerHTML={{ __html: page.content }}
+                        />
+                    )}
 
-                    <section
-                        aria-labelledby='service-faq-heading'
-                        className='mt-10 border-t border-neutral-200 pt-8'>
-                        <h2
-                            id='service-faq-heading'
-                            className='font-serif text-mobile-heading-4 font-semibold text-neutral-black sm:text-heading-4'>
-                            Câu hỏi thường gặp
-                        </h2>
+                    {!summaryContent && (
+                        <section
+                            aria-labelledby='service-faq-heading'
+                            className='mt-10 border-t border-neutral-200 pt-8'>
+                            <h2
+                                id='service-faq-heading'
+                                className='font-serif text-mobile-heading-4 font-semibold text-neutral-black sm:text-heading-4'>
+                                Câu hỏi thường gặp
+                            </h2>
 
-                        <RevealList className='mt-5 divide-y divide-neutral-200 border-y border-neutral-200'>
-                            {page.faqs.map((faq, index) => (
-                                <RevealItem key={`${page.slug}-faq-${index}`}>
-                                    <details className='group'>
-                                        <summary className='flex cursor-pointer list-none items-center justify-between gap-4 py-4 text-mobile-body-2 font-medium text-neutral-black transition-colors hover:text-primary sm:text-body-3'>
-                                            <span>{faq.question}</span>
-                                            <ChevronDownIcon
-                                                className='size-4 shrink-0 transition-transform group-open:rotate-180'
-                                                aria-hidden
-                                            />
-                                        </summary>
-                                        <p className='pb-4 text-mobile-body-2 leading-6 text-[#717171] sm:text-body-3'>
-                                            {faq.answer}
-                                        </p>
-                                    </details>
-                                </RevealItem>
-                            ))}
-                        </RevealList>
-                    </section>
+                            <RevealList className='mt-5 divide-y divide-neutral-200 border-y border-neutral-200'>
+                                {page.faqs.map((faq, index) => (
+                                    <RevealItem
+                                        key={`${page.slug}-faq-${index}`}>
+                                        <details className='group'>
+                                            <summary className='flex cursor-pointer list-none items-center justify-between gap-4 py-4 text-mobile-body-2 font-medium text-neutral-black transition-colors hover:text-primary sm:text-body-3'>
+                                                <span>{faq.question}</span>
+                                                <ChevronDownIcon
+                                                    className='size-4 shrink-0 transition-transform group-open:rotate-180'
+                                                    aria-hidden
+                                                />
+                                            </summary>
+                                            <p className='pb-4 text-mobile-body-2 leading-6 text-[#717171] sm:text-body-3'>
+                                                {faq.answer}
+                                            </p>
+                                        </details>
+                                    </RevealItem>
+                                ))}
+                            </RevealList>
+                        </section>
+                    )}
                 </Reveal>
             </div>
         </section>
@@ -188,5 +198,6 @@ export const ServiceContentPage = ({ page }: ServiceContentPageProps) => (
             const Section = SERVICE_EXTRA_SECTIONS[section];
             return <Section key={`${page.slug}-${section}`} />;
         })}
-    </>
-);
+        </>
+    );
+};
