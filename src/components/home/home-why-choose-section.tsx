@@ -27,7 +27,7 @@ const FeatureRow = ({
             <Icon
                 className={clsx(
                     iconClass,
-                    "absolute z-5 h-10 w-10 font-light thin-icon",
+                    "absolute z-5 h-10 w-10 font-light thin-icon text-primary",
                 )}
                 aria-hidden
             />
