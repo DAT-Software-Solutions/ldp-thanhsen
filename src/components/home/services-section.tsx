@@ -1,3 +1,5 @@
+"use client";
+
 import {
     AcademicCapIcon,
     CurrencyDollarIcon,
@@ -8,6 +10,7 @@ import {
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import type { ComponentType, SVGProps } from "react";
+import { useState } from "react";
 
 import clsx from "clsx";
 
@@ -49,6 +52,8 @@ const SERVICE_ICONS: Record<
     valuation: CurrencyDollarIcon,
     auction: DocumentTextIcon,
 };
+
+const INITIAL_SERVICE_COUNT = 6;
 
 const ServiceCardInner = ({
     iconKey,
@@ -177,39 +182,61 @@ export const ServicesSection = ({
     services: ServiceCardProps[];
     revealContentOnHover?: boolean;
     background?: "bg-white" | "bg-surface-muted";
-}) => (
-    <section aria-labelledby='services-heading' className={clsx(background)}>
-        <div className='custom-container px-4 sm:px-0 py-12 lg:py-16 flex flex-col gap-y-8'>
-            <Reveal
-                as='header'
-                className='flex flex-col gap-y-2 mx-auto max-w-2xl items-center text-center'>
-                <h2
-                    id='services-heading'
-                    className='font-serif text-mobile-heading-2 md:text-heading-2 font-bold text-neutral-black'>
-                    Dịch vụ của <span className='text-primary'>chúng tôi</span>
-                </h2>
-                <p className='font-sans w-full text-neutral-600 font-normal md:text-body-1 text-mobile-body-1'>
-                    Thành Sen Group luôn sẵn sàng đem lại các dịch vụ pháp lý
-                    chất lượng cao tới quý khách hàng
-                </p>
-            </Reveal>
+}) => {
+    const [showAll, setShowAll] = useState(false);
+    const hasMoreServices = services.length > INITIAL_SERVICE_COUNT;
+    const visibleServices = showAll
+        ? services
+        : services.slice(0, INITIAL_SERVICE_COUNT);
 
-            <RevealList className='grid grid-cols-1 items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-3'>
-                {services.map((service) => (
-                    <RevealItem key={service.title} className='h-full'>
-                        <ServiceCard
-                            href={service.href}
-                            iconKey={service.iconKey}
-                            title={service.title}
-                            content={service.content}
-                            revealContentOnHover={revealContentOnHover}
-                        />
+    return (
+        <section
+            aria-labelledby='services-heading'
+            className={clsx(background)}>
+            <div className='custom-container px-4 sm:px-0 py-12 lg:py-16 flex flex-col gap-y-8'>
+                <Reveal
+                    as='header'
+                    className='flex flex-col gap-y-2 mx-auto max-w-2xl items-center text-center'>
+                    <h2
+                        id='services-heading'
+                        className='font-serif text-mobile-heading-2 md:text-heading-2 font-bold text-neutral-black'>
+                        Dịch vụ của{" "}
+                        <span className='text-primary'>chúng tôi</span>
+                    </h2>
+                    <p className='font-sans w-full text-neutral-600 font-normal md:text-body-1 text-mobile-body-1'>
+                        Thành Sen Group luôn sẵn sàng đem lại các dịch vụ pháp
+                        lý chất lượng cao tới quý khách hàng
+                    </p>
+                </Reveal>
+
+                <RevealList className='grid grid-cols-1 items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-3'>
+                    {visibleServices.map((service) => (
+                        <RevealItem key={service.title} className='h-full'>
+                            <ServiceCard
+                                href={service.href}
+                                iconKey={service.iconKey}
+                                title={service.title}
+                                content={service.content}
+                                revealContentOnHover={revealContentOnHover}
+                            />
+                        </RevealItem>
+                    ))}
+                    <RevealItem className='h-full'>
+                        <ServiceCtaCard />
                     </RevealItem>
-                ))}
-                <RevealItem className='h-full'>
-                    <ServiceCtaCard />
-                </RevealItem>
-            </RevealList>
-        </div>
-    </section>
-);
+                </RevealList>
+
+                {hasMoreServices && !showAll && (
+                    <div className='flex justify-center'>
+                        <button
+                            type='button'
+                            onClick={() => setShowAll(true)}
+                            className='inline-flex min-h-11 items-center justify-center rounded px-6 py-3 font-sans text-mobile-body-2 font-semibold text-primary ring-1 ring-primary/30 transition-colors hover:bg-primary hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary sm:text-body-3'>
+                            Xem thêm
+                        </button>
+                    </div>
+                )}
+            </div>
+        </section>
+    );
+};
