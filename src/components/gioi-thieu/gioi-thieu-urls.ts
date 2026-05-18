@@ -36,10 +36,11 @@ export const GIOI_THIEU_WORKSPACE_IMAGES = [
 
 /** Ảnh thẻ tin tức (6 ô) — thay khi có ảnh thật. */
 export const GIOI_THIEU_NEWS_IMAGE_SRCS = [
-    "/images/news-1.png",
-    "/images/news-1.png",
-    "/images/news-1.png",
-    "/images/news-1.png",
-    "/images/news-1.png",
-    "/images/news-1.png",
+    "/images/news-chung-thu-tham-dinh-gia-co-duoc-su-dung-tai-TA-khong.png",
+    "/images/news-luat-su-ho-tro-gi-trong-tranh-chap-hop-dng.png",
+    "/images/news-quy-trinh-tham-dinh-gia.png",
+    "/images/news-sau-khi-trung-dau-gia-bao-lau-duoc-len-tai-san.png",
+    "/images/news-thong-tin-khach-hang-co-duoc-bao-mat-khong.png",
+    "/images/news-vai-tro-cua-luat-su-bao-chua-trong-va-hinh-sinh.png",
+    "/images/news-vi-sao-nen-chon-giai-quyet-tranh-chap-bang-trong-tai-thuong-mai.png",
 ] as const;

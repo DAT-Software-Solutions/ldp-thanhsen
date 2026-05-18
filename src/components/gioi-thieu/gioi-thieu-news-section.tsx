@@ -37,8 +37,7 @@ export default function NewsCard({ item }: CardProps) {
                         src={item.image}
                         alt={item.title}
                         fill
-                        className='object-cover'
-                        sizes='(max-width: 640px) 50vw, 33vw'
+                        className='md:w-90.75 md:h-47.5'
                         loading='lazy'
                         placeholder={SOFT_IMAGE_PLACEHOLDER}
                         decoding='async'
