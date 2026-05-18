@@ -142,7 +142,7 @@ export const ServiceContentPage = ({ page }: ServiceContentPageProps) => {
                     viewportAmount={0.01}>
                     <p
                         id='service-page-heading'
-                        className='font-sans text-mobile-body-1 font-normal leading-7 text-[#4d4d4d] sm:text-body-1'>
+                        className='font-sans text-mobile-body-2 font-normal leading-6 text-[#4d4d4d] sm:text-body-2'>
                         {summaryContent ?? page.description}
                     </p>
 

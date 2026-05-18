@@ -237,32 +237,30 @@ const servicePages: ServicePage[] = [
 export const serviceNavGroups: ServiceNavGroup[] = [
     {
         title: "Luật sư",
-        href: "/dich-vu/luat-su",
+        href: "/luat-su",
     },
     {
         title: "Trọng tài thương mại",
-        href: "/dich-vu/trong-tai-thuong-mai",
+        href: "/trong-tai-thuong-mai",
     },
     {
         title: "Thẩm định giá",
-        href: "/dich-vu/tham-dinh-gia",
+        href: "/tham-dinh-gia",
     },
     {
         title: "Thừa phát lại",
-        href: "/dich-vu/thua-phat-lai",
+        href: "/thua-phat-lai",
     },
     {
         title: "Đấu giá",
-        href: "/dich-vu/dau-gia",
+        href: "/dau-gia",
     },
 ];
 
 export const getServicePages = () => servicePages;
 
 export const getServicePageHref = (page: ServicePage) =>
-    page.parentSlug
-        ? `/dich-vu/${page.parentSlug}/${page.slug}`
-        : `/dich-vu/${page.slug}`;
+    page.parentSlug ? `/${page.parentSlug}/${page.slug}` : `/${page.slug}`;
 
 export const getServicePageByRoute = ({
     parentSlug,
