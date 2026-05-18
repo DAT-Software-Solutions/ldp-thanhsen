@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 
 import { defaultOgImagePath, getAbsoluteUrl } from "@/lib/site-seo";
 import { getServicePageHref, getServicePages } from "@/mock/data";
+import { getNewsHref, newsData } from "@/mock/news";
 
 const lastModified = new Date("2026-05-15T00:00:00.000Z");
 
@@ -49,5 +50,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
         }),
     );
 
-    return [...staticRoutes, ...serviceRoutes];
+    const newsRoutes: MetadataRoute.Sitemap = newsData.map((item) => ({
+        url: getAbsoluteUrl(getNewsHref(item)),
+        lastModified,
+        changeFrequency: "monthly",
+        priority: 0.7,
+        images: [getAbsoluteUrl(item.image)],
+    }));
+
+    return [...staticRoutes, ...serviceRoutes, ...newsRoutes];
 }
