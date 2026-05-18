@@ -4,11 +4,7 @@ import Link from "next/link";
 
 import { SOFT_IMAGE_PLACEHOLDER } from "@/components/layout/image-placeholders";
 import { Reveal } from "@/components/motion/landing-motion";
-import {
-    getNewsHref,
-    newsData,
-    type NewsItem,
-} from "@/mock/news";
+import { getNewsHref, newsData, type NewsItem } from "@/mock/news";
 
 type NewsContentPageProps = {
     item: NewsItem;
@@ -70,8 +66,6 @@ export const NewsContentPage = ({ item }: NewsContentPageProps) => {
                             src={item.image}
                             alt={item.title}
                             fill
-                            className='object-cover'
-                            sizes='(max-width: 1024px) 100vw, 760px'
                             placeholder={SOFT_IMAGE_PLACEHOLDER}
                             decoding='async'
                         />
