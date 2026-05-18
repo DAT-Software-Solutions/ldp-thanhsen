@@ -12,6 +12,9 @@ export const GIOI_THIEU_MISSION_IMAGE_SRC =
 export const GIOI_THIEU_CTA_ILLUSTRATION_SRC =
     "/images/thanhsen_bg-cta2.png";
 
+export const GIOI_THIEU_CTA_ILLUSTRATION_MOBILE_SRC =
+    "/images/thanhsen_bg-cta2-mobile.png";
+
 export const GIOI_THIEU_WORKSPACE_IMAGES = [
     {
         src: "/images/thanhsen_khong-gian-chuyen-nghiep-1.png",

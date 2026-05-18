@@ -2,6 +2,9 @@
 
 export const HERO_ILLUSTRATION_SRC = "/images/thanhsen_bg-hero.png";
 
+export const HERO_ILLUSTRATION_MOBILE_SRC =
+    "/images/thanhsen_bg-hero-mobile.png";
+
 /** Section giới thiệu Home — chỉnh path; tách hai URL khi có crop mobile/desktop riêng. */
 export const HOME_ABOUT_IMAGE_SRC_MOBILE = "/images/thanhsen_gioi-thieu.png";
 

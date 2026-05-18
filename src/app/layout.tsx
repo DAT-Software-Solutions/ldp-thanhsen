@@ -90,8 +90,8 @@ export const metadata: Metadata = {
         },
     },
     icons: {
-        icon: "/favicon.ico",
-        shortcut: "/favicon.ico",
+        icon: "/images/logo.svg",
+        shortcut: "/images/logo.svg",
         apple: logoPath,
     },
 };

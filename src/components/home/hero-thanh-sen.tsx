@@ -4,22 +4,13 @@ import clsx from "clsx";
 import { CTA_HREF, ZALO_CHAT_HREF } from "@/components/layout/site-urls";
 import { Reveal } from "@/components/motion/landing-motion";
 
-import { HERO_ILLUSTRATION_SRC } from "./home-urls";
-
 const btnFocus =
     "rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary";
 
 export const HeroThanhSen = () => (
     <section
         aria-labelledby='hero-heading'
-        className='bg-surface-muted text-[#2D3436]'
-        style={{
-            minHeight: "clamp(620px, 82vh, 780px)",
-            backgroundImage: `url("${HERO_ILLUSTRATION_SRC}")`,
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-        }}>
+        className="min-h-[clamp(620px,82vh,780px)] bg-surface-muted bg-[image:url('/images/thanhsen_bg-hero-mobile.png')] bg-cover bg-center bg-no-repeat text-[#2D3436] md:bg-[url('/images/thanhsen_bg-hero.png')]">
         <div className='custom-container flex min-h-[inherit] items-start px-4 py-16 sm:px-0 sm:py-20 lg:items-center lg:py-24'>
             <Reveal className='flex max-w-xl flex-col gap-y-8 items-center sm:justify-center text-center lg:items-start lg:text-left'>
                 <div className='flex flex-col gap-y-6 sm:gap-y-4'>
