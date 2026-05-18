@@ -1,7 +1,6 @@
 /** URL / path tài nguyên trang chủ */
 
-export const HERO_ILLUSTRATION_SRC =
-    "/images/judge%20gavel%20with%20law%20books%20and%20scales.svg";
+export const HERO_ILLUSTRATION_SRC = "/images/thanhsen_bg-hero.png";
 
 /** Section giới thiệu Home — chỉnh path; tách hai URL khi có crop mobile/desktop riêng. */
 export const HOME_ABOUT_IMAGE_SRC_MOBILE = "/images/thanhsen_gioi-thieu.png";

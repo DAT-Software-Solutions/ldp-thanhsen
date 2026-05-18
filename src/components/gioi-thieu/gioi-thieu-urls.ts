@@ -10,7 +10,7 @@ export const GIOI_THIEU_MISSION_IMAGE_SRC =
     "/images/thanhsen_van-phong-thua-phat-lai-ha-tinh.png";
 
 export const GIOI_THIEU_CTA_ILLUSTRATION_SRC =
-    "/images/judge%20gavel%20with%20law%20books%20and%20scales.svg";
+    "/images/thanhsen_bg-cta2.png";
 
 export const GIOI_THIEU_WORKSPACE_IMAGES = [
     {

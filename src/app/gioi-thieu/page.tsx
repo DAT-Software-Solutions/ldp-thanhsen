@@ -62,7 +62,7 @@ export default function GioiThieuPage() {
                 background='bg-surface-muted'
             />
             <GioiThieuWorkspaceSection />
-            <GioiThieuCtaSection image='/images/gioi-thieu-cta-illustration-1.png' />
+            <GioiThieuCtaSection />
             <GioiThieuNewsSection />
         </>
     );
