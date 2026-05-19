@@ -31,19 +31,16 @@ export default function NewsCard({ item }: CardProps) {
         <Link href={getNewsHref(item)} className={clsx(cardShell, cardFocus)}>
             <span className='pointer-events-none absolute inset-0 z-10 rounded-xl border border-transparent transition-colors duration-300 group-hover:border-primary/30' />
 
-            <div className='relative aspect-5/3 w-full shrink-0 overflow-hidden rounded-t-xl bg-[#f4f6f9]'>
-                <div className='absolute inset-0 transition-transform duration-500 ease-out group-hover:scale-[1.035]'>
-                    <Image
-                        src={item.image}
-                        alt={item.title}
-                        fill
-                        className='md:w-90.75 md:h-47.5'
-                        sizes='(max-width: 639px) 50vw, 33vw'
-                        loading='lazy'
-                        placeholder={SOFT_IMAGE_PLACEHOLDER}
-                        decoding='async'
-                    />
-                </div>
+            <div className='relative aspect-video w-full shrink-0 overflow-hidden rounded-t-xl bg-[#f4f6f9]'>
+                <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className='hover:scale-[1.035] duration-300'
+                    loading='lazy'
+                    placeholder={SOFT_IMAGE_PLACEHOLDER}
+                    decoding='async'
+                />
             </div>
 
             <div className='relative z-0 flex min-h-33 flex-1 flex-col gap-2 p-3 sm:min-h-37 sm:p-4 lg:p-5'>
