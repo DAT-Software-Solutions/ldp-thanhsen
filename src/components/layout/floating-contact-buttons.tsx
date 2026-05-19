@@ -29,7 +29,7 @@ export const FloatingContactButtons = () => (
             <a
                 href={ZALO_CHAT_HREF}
                 target='_blank'
-                rel='noreferrer'
+                rel='noopener noreferrer'
                 className={`${buttonClass} focus-visible:outline-[#0068FF]`}
                 aria-label='Liên hệ qua Zalo'>
                 <span
@@ -56,7 +56,7 @@ export const FloatingContactButtons = () => (
             <a
                 href={ZALO_CHAT_HREF}
                 target='_blank'
-                rel='noreferrer'
+                rel='noopener noreferrer'
                 className='flex min-h-17 flex-col items-center justify-center gap-1 font-sans md:text-body-3 text-mobile-body-3 font-bold text-neutral-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-inset focus-visible:outline-[#0068FF]'
                 aria-label='Liên hệ Zalo nhận báo giá'>
                 <span className='flex size-8 items-center justify-center rounded-full bg-[#0068FF] text-[0.65rem] font-bold text-white'>

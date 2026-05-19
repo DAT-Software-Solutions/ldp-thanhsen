@@ -69,6 +69,7 @@ export const NewsContentPage = ({ item }: NewsContentPageProps) => {
                             src={item.image}
                             alt={item.title}
                             fill
+                            sizes='(max-width: 1023px) 100vw, calc(100vw - 330px)'
                             placeholder={SOFT_IMAGE_PLACEHOLDER}
                             decoding='async'
                         />

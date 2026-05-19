@@ -1,10 +1,14 @@
 import type { MetadataRoute } from "next";
 
-import { defaultOgImagePath, getAbsoluteUrl } from "@/lib/site-seo";
+import {
+    defaultOgImagePath,
+    getAbsoluteUrl,
+    siteModifiedDate,
+} from "@/lib/site-seo";
 import { getServicePageHref, getServicePages } from "@/mock/data";
 import { getNewsHref, newsData } from "@/mock/news";
 
-const lastModified = new Date("2026-05-15T00:00:00.000Z");
+const lastModified = new Date(siteModifiedDate);
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const staticRoutes: MetadataRoute.Sitemap = [
@@ -22,7 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             url: getAbsoluteUrl("/gioi-thieu"),
             lastModified,
             changeFrequency: "monthly",
-            priority: 0.8,
+            priority: 0.9,
             images: [
                 getAbsoluteUrl(defaultOgImagePath),
                 getAbsoluteUrl(
@@ -30,6 +34,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
                 ),
                 getAbsoluteUrl("/images/thanhsen_luat-su-le-minh-hai.png"),
             ],
+        },
+        {
+            url: getAbsoluteUrl("/dich-vu"),
+            lastModified,
+            changeFrequency: "monthly",
+            priority: 0.9,
+            images: [getAbsoluteUrl(defaultOgImagePath)],
         },
         {
             url: getAbsoluteUrl("/lien-he"),

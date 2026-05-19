@@ -7,10 +7,13 @@ import { PageHero } from "@/components/layout/page-hero";
 import { PAGE_HOME } from "@/components/layout/site-urls";
 import { JsonLd } from "@/components/seo/json-ld";
 import {
-    defaultOgImagePath,
+    buildSeoMetadata,
     getAbsoluteUrl,
     organizationJsonLd,
+    siteLanguage,
+    siteModifiedDate,
     siteName,
+    sitePublishedDate,
     websiteJsonLd,
 } from "@/lib/site-seo";
 import {
@@ -63,22 +66,14 @@ export async function generateMetadata({
         ? (service?.content ?? page.description)
         : getNewsSummary(news!);
 
-    return {
+    return buildSeoMetadata({
         title,
         description,
-        alternates: { canonical: url },
-        openGraph: {
-            title: `${title} | ${siteName}`,
-            description,
-            url,
-            images: [{ url: defaultOgImagePath, width: 1200, height: 630 }],
-        },
-        twitter: {
-            title: `${title} | ${siteName}`,
-            description,
-            images: [defaultOgImagePath],
-        },
-    };
+        path: url,
+        image: news?.image,
+        imageAlt: news?.title,
+        openGraphType: news ? "article" : "website",
+    });
 }
 
 export default async function ServiceDetailPage({
@@ -104,6 +99,12 @@ export default async function ServiceDetailPage({
             description,
             image: getAbsoluteUrl(news.image),
             url,
+            datePublished: sitePublishedDate,
+            dateModified: siteModifiedDate,
+            inLanguage: siteLanguage,
+            author: {
+                "@id": organizationJsonLd["@id"],
+            },
             publisher: {
                 "@id": organizationJsonLd["@id"],
             },
@@ -175,6 +176,7 @@ export default async function ServiceDetailPage({
             name: "Việt Nam",
         },
         serviceType: title,
+        inLanguage: siteLanguage,
         isPartOf: {
             "@id": websiteJsonLd["@id"],
         },

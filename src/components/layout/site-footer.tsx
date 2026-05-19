@@ -192,7 +192,7 @@ const CopyrightAndSocial = () => (
                 <a
                     href={FACEBOOK_PROFILE_HREF}
                     target='_blank'
-                    rel='noreferrer'
+                    rel='noopener noreferrer'
                     aria-label='Messenger'
                     className={`flex size-10 items-center justify-center rounded-full! bg-white/10 text-white transition-opacity hover:opacity-90 ${linkFocus}`}>
                     <MessengerIcon className={socialIconClass} />

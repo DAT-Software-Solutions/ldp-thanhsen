@@ -43,6 +43,7 @@ export const GioiThieuWorkspaceSection = () => (
                             alt={GIOI_THIEU_WORKSPACE_IMAGES[0].alt}
                             fill
                             className='object-cover'
+                            sizes='(max-width: 767px) 100vw, 50vw'
                             placeholder={SOFT_IMAGE_PLACEHOLDER}
                             decoding='async'
                         />
@@ -55,6 +56,7 @@ export const GioiThieuWorkspaceSection = () => (
                             alt={GIOI_THIEU_WORKSPACE_IMAGES[2].alt}
                             fill
                             className='object-cover'
+                            sizes='(max-width: 767px) 100vw, 50vw'
                             placeholder={SOFT_IMAGE_PLACEHOLDER}
                             decoding='async'
                         />
@@ -69,6 +71,7 @@ export const GioiThieuWorkspaceSection = () => (
                             alt={GIOI_THIEU_WORKSPACE_IMAGES[1].alt}
                             fill
                             className='object-cover'
+                            sizes='(max-width: 767px) 100vw, 50vw'
                             placeholder={SOFT_IMAGE_PLACEHOLDER}
                             decoding='async'
                         />
@@ -81,6 +84,7 @@ export const GioiThieuWorkspaceSection = () => (
                             alt={GIOI_THIEU_WORKSPACE_IMAGES[3].alt}
                             fill
                             className='object-cover'
+                            sizes='(max-width: 767px) 100vw, 50vw'
                             placeholder={SOFT_IMAGE_PLACEHOLDER}
                             decoding='async'
                         />

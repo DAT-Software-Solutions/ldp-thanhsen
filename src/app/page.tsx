@@ -1,5 +1,3 @@
-import type { Metadata } from "next";
-
 import { HeroThanhSen } from "@/components/home/hero-thanh-sen";
 import { HomeAboutIntroSection } from "@/components/home/home-about-intro-section";
 import { HomePressSection } from "@/components/home/home-press-section";
@@ -7,8 +5,8 @@ import { HomeWhyChooseSection } from "@/components/home/home-why-choose-section"
 import { ServicesSection } from "@/components/home/services-section";
 import { JsonLd } from "@/components/seo/json-ld";
 import {
+    buildSeoMetadata,
     defaultDescription,
-    defaultOgImagePath,
     getAbsoluteUrl,
     siteName,
     websiteJsonLd,
@@ -19,22 +17,12 @@ import { services } from "@/mock/services";
 
 const homeTitle = `${siteName} — Tư vấn pháp lý toàn diện tại Việt Nam`;
 
-export const metadata: Metadata = {
-    title: { absolute: homeTitle },
+export const metadata = buildSeoMetadata({
+    title: homeTitle,
     description: defaultDescription,
-    alternates: { canonical: "/" },
-    openGraph: {
-        title: homeTitle,
-        description: defaultDescription,
-        url: "/",
-        images: [{ url: defaultOgImagePath, width: 1200, height: 630 }],
-    },
-    twitter: {
-        title: homeTitle,
-        description: defaultDescription,
-        images: [defaultOgImagePath],
-    },
-};
+    path: "/",
+    absoluteTitle: true,
+});
 
 export default function Home() {
     const homeJsonLd = {

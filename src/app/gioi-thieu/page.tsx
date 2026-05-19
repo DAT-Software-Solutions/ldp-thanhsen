@@ -1,11 +1,9 @@
-import type { Metadata } from "next";
-
 import { GioiThieuHero } from "@/components/gioi-thieu/gioi-thieu-hero";
 import { GioiThieuNewsSection } from "@/components/gioi-thieu/gioi-thieu-news-section";
 import { GioiThieuSections } from "@/components/gioi-thieu/gioi-thieu-sections";
 import { JsonLd } from "@/components/seo/json-ld";
 import {
-    defaultOgImagePath,
+    buildSeoMetadata,
     getAbsoluteUrl,
     siteName,
     websiteJsonLd,
@@ -13,6 +11,7 @@ import {
 import { ServicesSection } from "@/components/home/services-section";
 import { GioiThieuCtaSection } from "@/components/gioi-thieu/gioi-thieu-cta-section";
 import { GioiThieuWorkspaceSection } from "@/components/gioi-thieu/gioi-thieu-workspace-section";
+import { PAGE_HOME } from "@/components/layout/site-urls";
 import { services } from "@/mock/services";
 
 const pageTitle = "Giới thiệu";
@@ -20,22 +19,11 @@ const pageTitle = "Giới thiệu";
 const pageDescription =
     "Tìm hiểu Thành Sen Group — định hướng phát triển và cam kết đồng hành cùng khách hàng trong các giải pháp pháp lý toàn diện tại Việt Nam.";
 
-export const metadata: Metadata = {
+export const metadata = buildSeoMetadata({
     title: pageTitle,
     description: pageDescription,
-    alternates: { canonical: "/gioi-thieu" },
-    openGraph: {
-        title: `${pageTitle} | ${siteName}`,
-        description: pageDescription,
-        url: "/gioi-thieu",
-        images: [{ url: defaultOgImagePath, width: 1200, height: 630 }],
-    },
-    twitter: {
-        title: `${pageTitle} | ${siteName}`,
-        description: pageDescription,
-        images: [defaultOgImagePath],
-    },
-};
+    path: "/gioi-thieu",
+});
 
 export default function GioiThieuPage() {
     const aboutJsonLd = {
@@ -50,10 +38,28 @@ export default function GioiThieuPage() {
             "@id": websiteJsonLd["@id"],
         },
     };
+    const breadcrumbJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+            {
+                "@type": "ListItem",
+                position: 1,
+                name: "Trang chá»§",
+                item: getAbsoluteUrl(PAGE_HOME),
+            },
+            {
+                "@type": "ListItem",
+                position: 2,
+                name: pageTitle,
+                item: getAbsoluteUrl("/gioi-thieu"),
+            },
+        ],
+    };
 
     return (
         <>
-            <JsonLd data={aboutJsonLd} />
+            <JsonLd data={[aboutJsonLd, breadcrumbJsonLd]} />
             <GioiThieuHero />
             <GioiThieuSections />
             <ServicesSection

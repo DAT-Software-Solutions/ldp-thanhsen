@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+
 const trimTrailingSlash = (value: string) =>
   value.endsWith("/") ? value.slice(0, -1) : value;
 
@@ -28,7 +30,10 @@ export const siteKeywords = [
 ] as const;
 
 export const defaultOgImagePath = "/opengraph-image";
+export const defaultOgImageAlt = `${siteName} - Dá»‹ch vá»¥ phĂ¡p lĂ½ toĂ n diá»‡n`;
 export const logoPath = "/images/logo.svg";
+export const sitePublishedDate = "2026-05-15T00:00:00.000Z";
+export const siteModifiedDate = "2026-05-15T00:00:00.000Z";
 export const primaryPhone = "0913294683";
 export const secondaryPhone = "0972883456";
 export const primaryEmail = "thuaphatlaihatinh@gmail.com";
@@ -75,6 +80,85 @@ export const getAbsoluteUrl = (path = "/") => {
 };
 
 export const getCanonicalUrl = (path = "/") => getAbsoluteUrl(path);
+
+const htmlTagPattern = /<[^>]*>/g;
+const whitespacePattern = /\s+/g;
+
+export const toPlainTextDescription = (value: string, maxLength = 155) => {
+  const text = value
+    .replace(htmlTagPattern, " ")
+    .replace(whitespacePattern, " ")
+    .trim();
+
+  if (text.length <= maxLength) return text;
+
+  const truncated = text.slice(0, maxLength - 1).trimEnd();
+  const lastSpace = truncated.lastIndexOf(" ");
+  return `${truncated.slice(0, lastSpace > 80 ? lastSpace : undefined)}...`;
+};
+
+type BuildSeoMetadataInput = {
+  title: string;
+  description: string;
+  path: string;
+  image?: string;
+  imageAlt?: string;
+  openGraphType?: "website" | "article";
+  absoluteTitle?: boolean;
+};
+
+export const buildSeoMetadata = ({
+  title,
+  description,
+  path,
+  image = defaultOgImagePath,
+  imageAlt = defaultOgImageAlt,
+  openGraphType = "website",
+  absoluteTitle = false,
+}: BuildSeoMetadataInput): Metadata => {
+  const canonical = getCanonicalUrl(path);
+  const metaDescription = toPlainTextDescription(description);
+  const formattedTitle = absoluteTitle ? title : `${title} | ${siteName}`;
+  const imageUrl = getAbsoluteUrl(image);
+
+  return {
+    title: absoluteTitle ? { absolute: title } : title,
+    description: metaDescription,
+    alternates: {
+      canonical,
+      languages: {
+        vi: canonical,
+      },
+    },
+    openGraph: {
+      type: openGraphType,
+      locale: siteLocale,
+      siteName,
+      title: formattedTitle,
+      description: metaDescription,
+      url: canonical,
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: imageAlt,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: formattedTitle,
+      description: metaDescription,
+      images: [
+        {
+          url: imageUrl,
+          alt: imageAlt,
+        },
+      ],
+    },
+  };
+};
 
 export const jsonLdScriptProps = (data: unknown) => ({
   __html: JSON.stringify(data).replace(/</g, "\\u003c"),
