@@ -10,13 +10,17 @@ import {
 import { LandingMotionProvider } from "@/components/motion/landing-motion";
 import {
     defaultDescription,
+    defaultOgImageAlt,
     defaultOgImagePath,
+    getAbsoluteUrl,
+    getCanonicalUrl,
     getSiteOrigin,
     logoPath,
     organizationJsonLd,
     siteLanguage,
     siteLocale,
     siteName,
+    toPlainTextDescription,
     websiteJsonLd,
 } from "@/lib/site-seo";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -39,16 +43,16 @@ export const metadata: Metadata = {
         default: siteName,
         template: `%s | ${siteName}`,
     },
-    description: defaultDescription,
+    description: toPlainTextDescription(defaultDescription),
     applicationName: siteName,
     authors: [{ name: siteName }],
     creator: siteName,
     publisher: siteName,
     category: "legal services",
     alternates: {
-        canonical: "/",
+        canonical: getCanonicalUrl("/"),
         languages: {
-            vi: "/",
+            vi: getCanonicalUrl("/"),
         },
     },
     openGraph: {
@@ -56,25 +60,25 @@ export const metadata: Metadata = {
         locale: siteLocale,
         siteName,
         title: `${siteName} — Tư vấn pháp lý & dịch vụ pháp luật`,
-        description: defaultDescription,
+        description: toPlainTextDescription(defaultDescription),
         url: "/",
         images: [
             {
-                url: defaultOgImagePath,
+                url: getAbsoluteUrl(defaultOgImagePath),
                 width: 1200,
                 height: 630,
-                alt: `${siteName} - Dịch vụ pháp lý toàn diện`,
+                alt: defaultOgImageAlt,
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
         title: `${siteName} — Tư vấn pháp lý & dịch vụ pháp luật`,
-        description: defaultDescription,
+        description: toPlainTextDescription(defaultDescription),
         images: [
             {
-                url: defaultOgImagePath,
-                alt: `${siteName} - Dịch vụ pháp lý toàn diện`,
+                url: getAbsoluteUrl(defaultOgImagePath),
+                alt: defaultOgImageAlt,
             },
         ],
     },

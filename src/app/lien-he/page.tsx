@@ -1,11 +1,10 @@
-import type { Metadata } from "next";
-
 import { BranchesMapSection } from "@/components/lien-he/branches-map-section";
 import { ContactHero } from "@/components/lien-he/contact-hero";
 import { ContactInfoForm } from "@/components/lien-he/contact-info-form";
+import { PAGE_HOME } from "@/components/layout/site-urls";
 import { JsonLd } from "@/components/seo/json-ld";
 import {
-  defaultOgImagePath,
+  buildSeoMetadata,
   getAbsoluteUrl,
   organizationJsonLd,
   siteBranches,
@@ -18,22 +17,11 @@ const pageTitle = "Liên hệ";
 const pageDescription =
   "Liên hệ Thành Sen Group để được tư vấn pháp lý. Đội ngũ sẵn sàng hỗ trợ quý khách với các dịch vụ pháp luật chuyên nghiệp và kịp thời.";
 
-export const metadata: Metadata = {
+export const metadata = buildSeoMetadata({
   title: pageTitle,
   description: pageDescription,
-  alternates: { canonical: "/lien-he" },
-  openGraph: {
-    title: `${pageTitle} | ${siteName}`,
-    description: pageDescription,
-    url: "/lien-he",
-    images: [{ url: defaultOgImagePath, width: 1200, height: 630 }],
-  },
-  twitter: {
-    title: `${pageTitle} | ${siteName}`,
-    description: pageDescription,
-    images: [defaultOgImagePath],
-  },
-};
+  path: "/lien-he",
+});
 
 export default function LienHePage() {
   const contactJsonLd = {
@@ -59,10 +47,28 @@ export default function LienHePage() {
       })),
     },
   };
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Trang chá»§",
+        item: getAbsoluteUrl(PAGE_HOME),
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: pageTitle,
+        item: getAbsoluteUrl("/lien-he"),
+      },
+    ],
+  };
 
   return (
     <>
-      <JsonLd data={contactJsonLd} />
+      <JsonLd data={[contactJsonLd, breadcrumbJsonLd]} />
       <ContactHero />
       <ContactInfoForm />
       <BranchesMapSection />

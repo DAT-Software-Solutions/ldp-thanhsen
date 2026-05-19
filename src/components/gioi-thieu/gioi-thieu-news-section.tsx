@@ -38,6 +38,7 @@ export default function NewsCard({ item }: CardProps) {
                         alt={item.title}
                         fill
                         className='md:w-90.75 md:h-47.5'
+                        sizes='(max-width: 639px) 50vw, 33vw'
                         loading='lazy'
                         placeholder={SOFT_IMAGE_PLACEHOLDER}
                         decoding='async'

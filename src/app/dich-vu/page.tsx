@@ -1,11 +1,9 @@
-import type { Metadata } from "next";
-
 import { ServicesSection } from "@/components/home/services-section";
 import { PageHero } from "@/components/layout/page-hero";
 import { PAGE_HOME } from "@/components/layout/site-urls";
 import { JsonLd } from "@/components/seo/json-ld";
 import {
-    defaultOgImagePath,
+    buildSeoMetadata,
     getAbsoluteUrl,
     siteName,
     websiteJsonLd,
@@ -17,22 +15,11 @@ const pageTitle = "Dịch vụ";
 const pageDescription =
     "Các dịch vụ pháp lý, thừa phát lại, trọng tài thương mại, thẩm định giá và đấu giá của Thành Sen Group.";
 
-export const metadata: Metadata = {
+export const metadata = buildSeoMetadata({
     title: pageTitle,
     description: pageDescription,
-    alternates: { canonical: "/dich-vu" },
-    openGraph: {
-        title: `${pageTitle} | ${siteName}`,
-        description: pageDescription,
-        url: "/dich-vu",
-        images: [{ url: defaultOgImagePath, width: 1200, height: 630 }],
-    },
-    twitter: {
-        title: `${pageTitle} | ${siteName}`,
-        description: pageDescription,
-        images: [defaultOgImagePath],
-    },
-};
+    path: "/dich-vu",
+});
 
 export default function DichVuPage() {
     const serviceListingJsonLd = {
@@ -53,10 +40,28 @@ export default function DichVuPage() {
             url: getAbsoluteUrl(service.href),
         })),
     };
+    const breadcrumbJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+            {
+                "@type": "ListItem",
+                position: 1,
+                name: "Trang chá»§",
+                item: getAbsoluteUrl(PAGE_HOME),
+            },
+            {
+                "@type": "ListItem",
+                position: 2,
+                name: pageTitle,
+                item: getAbsoluteUrl("/dich-vu"),
+            },
+        ],
+    };
 
     return (
         <>
-            <JsonLd data={serviceListingJsonLd} />
+            <JsonLd data={[serviceListingJsonLd, breadcrumbJsonLd]} />
             <PageHero
                 title={pageTitle}
                 breadcrumbItems={[
