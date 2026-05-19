@@ -2,6 +2,8 @@ import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 
+import { GioiThieuCtaSection } from "@/components/gioi-thieu/gioi-thieu-cta-section";
+import { GioiThieuNewsSection } from "@/components/gioi-thieu/gioi-thieu-news-section";
 import { SOFT_IMAGE_PLACEHOLDER } from "@/components/layout/image-placeholders";
 import { Reveal } from "@/components/motion/landing-motion";
 import { getNewsHref, newsData, type NewsItem } from "@/mock/news";
@@ -23,6 +25,7 @@ export const NewsContentPage = ({ item }: NewsContentPageProps) => {
     const listItems = item.steps ?? item.cases ?? item.benefits;
 
     return (
+        <>
         <section className='bg-white py-10 sm:py-12 lg:py-16'>
             <div className='custom-container grid gap-8 px-4 sm:px-6 lg:grid-cols-[250px_minmax(0,1fr)] lg:gap-12'>
                 <Reveal
@@ -90,5 +93,8 @@ export const NewsContentPage = ({ item }: NewsContentPageProps) => {
                 </Reveal>
             </div>
         </section>
+        <GioiThieuCtaSection />
+        <GioiThieuNewsSection />
+        </>
     );
 };

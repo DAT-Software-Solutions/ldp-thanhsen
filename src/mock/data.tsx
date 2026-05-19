@@ -1,5 +1,3 @@
-export type ServicePageSectionKey = "cta" | "news";
-
 export type ServicePage = {
     id: number;
     title: string;
@@ -13,7 +11,6 @@ export type ServicePage = {
         question: string;
         answer: string;
     }[];
-    sections?: ServicePageSectionKey[];
 };
 
 export type ServiceNavGroup = {
@@ -130,7 +127,6 @@ const servicePages: ServicePage[] = [
                 answer: "Thông thường, sau khi người trúng đấu giá thanh toán đầy đủ và hoàn thiện hồ sơ theo quy định, thủ tục sang tên có thể được thực hiện trong khoảng 30 ngày làm việc.",
             },
         ],
-        sections: ["cta", "news"],
     },
     {
         id: 2,
