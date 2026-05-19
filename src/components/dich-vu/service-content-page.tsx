@@ -1,7 +1,6 @@
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import clsx from "clsx";
 import Link from "next/link";
-import type { ComponentType } from "react";
 
 import { GioiThieuCtaSection } from "@/components/gioi-thieu/gioi-thieu-cta-section";
 import { GioiThieuNewsSection } from "@/components/gioi-thieu/gioi-thieu-news-section";
@@ -13,7 +12,6 @@ import {
 import {
     getServicePageHref,
     type ServicePage,
-    type ServicePageSectionKey,
     serviceNavGroups,
 } from "@/mock/data";
 import { getServiceByHref } from "@/mock/services";
@@ -24,11 +22,6 @@ type ServiceContentPageProps = {
 
 const navLinkFocus =
     "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary";
-
-const SERVICE_EXTRA_SECTIONS: Record<ServicePageSectionKey, ComponentType> = {
-    cta: GioiThieuCtaSection,
-    news: GioiThieuNewsSection,
-};
 
 export const ServiceContentPage = ({ page }: ServiceContentPageProps) => {
     const service = getServiceByHref(getServicePageHref(page));
@@ -194,10 +187,8 @@ export const ServiceContentPage = ({ page }: ServiceContentPageProps) => {
             </div>
         </section>
 
-        {page.sections?.map((section) => {
-            const Section = SERVICE_EXTRA_SECTIONS[section];
-            return <Section key={`${page.slug}-${section}`} />;
-        })}
+        <GioiThieuCtaSection />
+        <GioiThieuNewsSection />
         </>
     );
 };
